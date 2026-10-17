@@ -1,0 +1,7 @@
+node_modules/
+.cache/
+.generated/
+test-results/
+playwright-report/
+*.log
+docs/evidence/m1-l01/failure-*.png

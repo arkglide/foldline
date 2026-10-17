@@ -1,0 +1,17 @@
+{
+  "name": "foldline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Foldline C01-L01 native ArkGlide greybox",
+  "engines": { "node": ">=20.19.0" },
+  "scripts": {
+    "setup:engine": "node scripts/engine.mjs",
+    "prepare:game": "node scripts/prepare-game.mjs",
+    "dev": "npm run prepare:game && node scripts/serve.mjs",
+    "test": "npm run test:browser",
+    "test:browser": "npm run prepare:game && node --test --test-concurrency=1 tests/browser-l01.test.mjs",
+    "check": "node --check game/l01.js && node --check game/project.mjs && node --check scripts/prepare-game.mjs"
+  },
+  "devDependencies": { "playwright": "1.64.0" }
+}
