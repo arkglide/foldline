@@ -28,21 +28,46 @@ export async function l01Project() {
   box('ExitNorthPier', [24.15, 4.5, 14.3], [.3, 5, .6], wall);
 
   // Low equipment leaves the upper exit crown visible from O1.
-  box('CentralEquipment', [17, .95, 9], [5.8, 1.9, 9.4], dark);
+  box('CentralEquipment', [17, .95, 6.25], [5.8, 1.9, 3.9], dark);
+  box('NorthEquipment', [17, .95, 12.1], [5.8, 1.9, 3.2], dark);
   for (let x = 14.3; x <= 19.8; x += 1.1)
-    box(`EquipmentRib${x.toFixed(1)}`, [x, 1.97, 9], [.07, .14, 9.35], metal, { collision: false });
+    for (const [z, length] of [[6.25, 3.85], [12.1, 3.15]])
+      box(`EquipmentRib${x.toFixed(1)}_${z}`, [x, 1.97, z], [.07, .14, length], metal, { collision: false });
   box('CentralEndFace', [17, .95, 4.25], [5.8, 1.9, .12], '#556568');
   box('A1Host', [11, 1.6, 10.15], [4, 3.6, .3], '#a2b7b2');
   box('A1FlankLeft', [8.4, 1.6, 10.15], [1.2, 3.6, .3], wall);
   box('A1FlankRight', [13.6, 1.6, 10.15], [1.2, 3.6, .3], wall);
   box('A1CabinetCrown', [11, 3.8, 10.1], [4.2, .8, .55], dark);
   box('Shutter', [11, 1.45, 9.78], [2.5, 2.9, .16], '#72746b', { motion: 'kinematic' });
-  box('HandlePost', [10.4, .48, 8], [.34, .96, .34], dark);
-  box('ShutterHandle', [10.4, 1.1, 8], [.48, .4, .34], amber);
-  box('HandleStem', [10.4, 1.1, 7.78], [.08, .3, .12], '#fbebbb', { collision: false });
+  // The mechanical handwheel is discovered beside the pipe, not a front-facing button.
+  box('HandlePost', [13.35, .44, 8], [.25, .88, .28], dark);
+  const wheel = box('ShutterHandle', [13.35, 1.12, 8], [.68, .16, .68], amber);
+  wheel.primitive = 'torus'; wheel.rotation.z = Math.PI / 2;
+  box('WheelHub', [13.23, 1.12, 8], [.17, .18, .18], '#fbebbb', { collision: false });
+  box('WheelSpokeA', [13.21, 1.12, 8], [.08, .54, .08], dark, { collision: false });
+  box('WheelSpokeB', [13.21, 1.12, 8], [.08, .08, .54], dark, { collision: false });
+  box('WheelRod', [13.45, 1.65, 9.05], [.10, .10, 2.1], amber, { collision: false });
+  // An optional blind opens a real cross-section through the pump skid.
+  box('InspectionBlind', [14.03, 1.0, 9.35], [.16, 1.8, 1.9], '#829a98', { motion: 'kinematic' });
+  box('BlindGrip', [13.89, 1.02, 9.35], [.16, .26, .48], amber, { collision: false });
+  box('InspectionThreshold', [16.9, .06, 9.35], [5.8, .12, 1.85], '#829a98');
+  box('InspectionRoofRail', [17, 2.13, 8.45], [5.8, .12, .10], dark, { collision: false });
+  box('InspectionRoofRailNorth', [17, 2.13, 10.25], [5.8, .12, .10], dark, { collision: false });
+  box('InspectionGauge', [15.2, 1.1, 10.37], [.7, .7, .14], dark, { collision: false });
+  box('GaugeNeedle', [15.2, 1.1, 10.25], [.05, .52, .07], amber, { collision: false });
+  box('NotchPipe', [17.4, .32, 10.2], [5.1, .15, .15], '#c6ae76');
+  // Two continuous service conduits connect locked stairs and handwheel.
+  for (const [index, offset] of [[0, 0], [1, .2]]) {
+    box(`ConduitSouth${index}`, [17.55, .13, 2.35 + offset], [8.4, .14, .14], index ? metal : amber, { collision: false });
+    box(`ConduitWest${index}`, [13.35 + offset, .13, 5.15], [.14, .14, 5.6], index ? metal : amber, { collision: false });
+    box(`ConduitRise${index}`, [13.35 + offset, .61, 7.95], [.12, 1.0, .12], index ? metal : amber, { collision: false });
+  }
 
   box('UpperFloor', [22.125, 2.25, 11.1], [3.75, .3, 6.2], structural);
-  box('GalleryGuard', [20.1, 3.05, 11.1], [.3, 1.3, 6.2], metal);
+  box('GalleryGuard', [20.1, 3.6, 11.1], [.24, .20, 6.2], metal);
+  box('GalleryKick', [20.1, 2.53, 11.1], [.24, .26, 6.2], metal);
+  for (let z = 8.2; z < 14.2; z += 1.05)
+    box(`GalleryPost${z.toFixed(2)}`, [20.1, 3.06, z], [.24, 1.3, .10], metal);
   // Fifteen 16cm risers; solid cheek panels prevent jumping onto the middle steps.
   for (let i = 0; i < 15; i++) {
     const rise = (i + 1) * .16, z = 3.2 + (i + .5) * .32;
@@ -54,11 +79,20 @@ export async function l01Project() {
   box('StairGate', [22.125, 1.4, 2.75], [3.75, 2.8, .22], '#9b8b69', { motion: 'kinematic' });
   box('GateHeader', [22.125, 4.4, 2.75], [3.95, .3, .45], dark);
   box('LatchPost', [21, 2.85, 10], [.32, .9, .32], dark);
-  box('UpperLatch', [21, 3.45, 10], [.46, .4, .36], amber);
-  box('LatchStem', [21.29, 3.45, 10], [.14, .3, .08], '#fbebbb', { collision: false });
+  box('UpperLatch', [21, 3.45, 10], [.25, .68, .24], amber);
+  box('LatchStem', [21.22, 3.45, 10], [.36, .12, .12], '#fbebbb', { collision: false });
+  box('ReturnCable', [21, 4.4, 6.5], [.07, .07, 7.2], amber, { collision: false });
+  box('CableRise', [21, 3.9, 10], [.07, 1.0, .07], metal, { collision: false });
+  box('ExitCable', [22.5, 4.4, 10], [3.0, .07, .07], amber, { collision: false });
+  box('ExitCableTurn', [23.96, 4.4, 11.5], [.07, .07, 3], amber, { collision: false });
+  box('ReturnCounterweight', [23.5, 4.6, 3.0], [.55, 1, .35], dark, { collision: false });
 
   // Exit is visible before it can be reached. Opening it never loads another unit.
   box('ExitDoor', [24.12, 3.8, 13], [.22, 2.8, 1.9], '#797d71', { motion: 'kinematic' });
+  box('ExitRackRailA', [23.95, 3.8, 12.18], [.09, 2.6, .09], metal, { collision: false });
+  box('ExitRackRailB', [23.95, 3.8, 13.82], [.09, 2.6, .09], metal, { collision: false });
+  box('ExitRackBraceA', [23.93, 3.0, 13], [.12, .12, 1.75], amber, { collision: false });
+  box('ExitRackBraceB', [23.93, 4.5, 13], [.12, .12, 1.75], amber, { collision: false });
   box('ExitSignBacking', [23.86, 5.25, 13], [.1, .72, 2.2], dark, { collision: false });
   box('ExitCrown', [23.74, 5.48, 13], [.12, .12, 1.74], signal, { collision: false });
   box('ExitCrownSideA', [23.74, 5.23, 12.18], [.12, .5, .1], signal, { collision: false });
@@ -71,7 +105,7 @@ export async function l01Project() {
   box('VestibuleSouth', [24.9, 3.8, 11.85], [1.8, 2.8, .3], wall);
   box('VestibuleRoof', [24.9, 5.3, 13], [1.8, .2, 2.3], dark);
   // Thin guide strips are visual paint, never invisible collision helpers.
-  box('HandleGuide', [10.4, .012, 5.1], [.09, .02, 4], amber, { collision: false });
+  box('HandleGuide', [12.9, .012, 7.9], [1, .02, .08], amber, { collision: false });
   box('ReturnGuide', [22.125, .012, 1.35], [.1, .02, 2.2], amber, { collision: false });
   box('UpperGuide', [22.1, 2.412, 13], [3.6, .02, .08], signal, { collision: false });
   nodes.push({ id: 'Player', name: 'Player', type: 'empty',
@@ -88,30 +122,41 @@ export async function l01Project() {
     fontSize: 16, color: '#eef1e9', background: '#172427', ...extra });
   return {
     version: '0.6', name: '折径 / 侧向通行 · M1灰盒', projectId: 'foldline-c01-l01-m1',
-    scene: { nodes }, scripts: { 'l01.js': await fs.readFile(new URL('./l01.js', import.meta.url), 'utf8') },
+    scene: { nodes }, scripts: {
+      'l01.js': await fs.readFile(new URL('./l01.js', import.meta.url), 'utf8'),
+      'dialogue.js': await fs.readFile(new URL('./dialogue.js', import.meta.url), 'utf8'),
+      'companion.js': await fs.readFile(new URL('./companion.js', import.meta.url), 'utf8'),
+      'data/l01-dialogue.js': `export default ${await fs.readFile(new URL('./data/l01-dialogue.json', import.meta.url), 'utf8')};`,
+    },
     activeFileId: 'l01.js', modelRefs: [],
     settings: { gravity: { x: 0, y: -9.8, z: 0 }, backgroundColor: '#47575b',
       ambientIntensity: .85, ambientColor: '#ffffff', fpsCap: 60, fixedTimeStep: 1 / 60,
       maxSubSteps: 8, timeScale: 1,
-      build: { title: '折径 · 侧向通行 / M1 灰盒', protectCode: false, showLogs: false } },
+      build: { title: '折径 · 侧向通行 / M1-R1', protectCode: false, showLogs: false } },
     content: { materials: {}, textures: [], prefabs: {}, prefabInstances: {}, audio: [],
       physics: { groups: [{ name: 'Default', mask: 1 }], debug: false },
-      mixer: { buses: [{ id: 'Master', name: 'Master', parentId: null, volume: 1, mute: false }],
+      mixer: { buses: [{ id: 'Master', name: 'Master', parentId: null, volume: 1, mute: false },
+        { id: 'CompanionVoice', name: '栈雀', parentId: 'Master', volume: .9, mute: false },
+        { id: 'BroadcastVoice', name: '衡务广播', parentId: 'Master', volume: .75, mute: false },
+        { id: 'mechanical', name: '机械反馈', parentId: 'Master', volume: .35, mute: false }],
         snapshots: [], ducking: [], maxVoices: 8 }, animationControllers: {}, retargetProfiles: {},
       gameplay: { captureInput: true,
         actions: [['moveX', ['KeyD'], ['KeyA']], ['moveZ', ['KeyW'], ['KeyS']],
-          ['jump', ['Space'], []], ['interact', ['KeyE'], []], ['retry', ['KeyR'], []]]
+          ['jump', ['Space'], []], ['interact', ['KeyE'], []], ['retry', ['KeyR'], []],
+          ['voice', ['KeyV'], []], ['subtitles', ['KeyB'], []]]
           .map(([name, positive, negative]) => ({ name, positive, negative })),
         hud: [
           label('title', '折径 / FOLDLINE     01 · 侧向通行', 3, 3, { fontSize: 19 }),
           label('objective', '抵达高处的出口', 3, 8),
-          label('stage', 'C01-L01  ·  灰盒测试入口', 3, 12, { fontSize: 13, color: '#c5cec9' }),
-          label('controls', 'WASD 移动   鼠标观察   E 操作   空格跳跃   R 重试   Esc 暂停', 3, 94, { fontSize: 14 }),
+          label('stage', 'C01-L01 · M1-R1 · 栈雀已挂载', 3, 12, { fontSize: 13, color: '#c5cec9' }),
+          label('controls', 'WASD 移动   鼠标观察   E 操作/按住转轮   R 重试   Esc 暂停', 3, 95, { fontSize: 13 }),
+          label('dialogue', '', 50, 82, { anchorX: .5, width: 82, height: 8, fontSize: 18 }),
+          label('audioStatus', '', 3, 17, { fontSize: 12, color: '#c5cec9' }),
           label('prompt', '', 50, 78, { anchorX: .5, width: 70, height: 6, fontSize: 18 }),
-          label('notice', '', 50, 86, { anchorX: .5, width: 75, height: 5 }),
+          label('notice', '', 50, 72, { anchorX: .5, width: 75, height: 5, fontSize: 14 }),
           label('crosshair', '·', 50, 50, { anchorX: .5, anchorY: .5, fontSize: 34, background: 'transparent' }),
           label('pauseTitle', '侧向通行', 50, 39, { anchorX: .5, fontSize: 34, width: 50, height: 9 }),
-          label('pauseHint', '点击画面开始 / 继续 · R 重试\n观察空间，找到通往上层的路径。', 50, 51,
+          label('pauseHint', '点击画面开始 / 继续 · R 重试\nV 语音开关 · B 字幕开关', 50, 51,
             { anchorX: .5, width: 65, height: 12, fontSize: 19 }),
         ] } },
   };
