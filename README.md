@@ -13,8 +13,11 @@ npm run dev
 
 在本机浏览器打开 `http://127.0.0.1:4173`，启动外层播放器后点击游戏画面取得鼠标控制。WASD 移动，鼠标观察，E 交互，Space 跳跃，Esc 暂停，R 重试。工程自动获取固定 SHA 的 ArkGlide 并生成本地运行文件；首次准备需要网络，不运行完整编辑器构建。
 
+Windows 若使用旧版脚本遇到 `spawn npm ENOENT`，请更新 `scripts/engine.mjs` 后重试；已有 `.cache` 可以保留。启动脚本现通过 Node 调用 npm CLI，避免直接启动 `npm.cmd`。
+
 ```sh
 npm run check
+npm run test:setup
 npm run test:browser
 ```
 
