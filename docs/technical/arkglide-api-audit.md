@@ -1,6 +1,6 @@
 # ArkGlide API 核查与设计边界
 
-核查日期：2026-10-17。结论：现有接口足以支撑**受约束的单人折口、跨门抓取和设施机关设计**；不能据此宣布 Foldline 可玩、达到 Portal 2 的物理保真度或已支持任意复杂组合。
+核查日期：2026-10-17。M0 结论：现有接口足以支撑**受约束的单人折口、跨门抓取和设施机关设计**；不能仅据接口核查宣布 Foldline 可玩、达到 Portal 2 的物理保真度或支持任意复杂组合。下文 M0 证据保留其原始范围；M1 的 L01 集成结果另列于文末。
 
 ## 来源、基线与实际执行
 
@@ -99,3 +99,13 @@ node --test --test-reporter=tap --test-concurrency=1 \
 ## 发布约束
 
 引擎快照 [LICENSE](https://github.com/arkglide/arkglide/blob/da8ea1cf098ad99ccc89451d34bf4e272cdc15aa/LICENSE) 为 **AGPL-3.0**；本游戏现有 MIT 文件不消除引擎和第三方的许可义务。导出链含许可复制步骤。正式发布前须确认组合、分发、源代码提供及素材授权方案；本轮未改变许可，也未发布运行包。
+
+## M1 · L01 原生集成记录
+
+本轮仍固定 `da8ea1cf098ad99ccc89451d34bf4e272cdc15aa`，通过 `scripts/engine.mjs` 获取独立缓存 checkout 并校验精确 SHA、已跟踪文件无修改与依赖锁指纹；不修改引擎源码。`scripts/prepare-game.mjs` 使用官方 `normalizeProject`、runtime 同步及 `createStaticGame` 导出本地 HTTP 文件，不执行完整编辑器构建、不调用 ZIP 生成。
+
+游戏使用 `physics.character`、`cameras.createRig`、`portals.addSurface/place/link/watch/raycast`、`motion.create`、`saves.capture/restore` 及原生输入/所有者清理。通关路径没有脚本写玩家坐标、切镜头或区域瞬移；只有 R/跌落重试恢复原生入口快照。出口区域只判定完成，不搬运玩家。
+
+M1 浏览器检查是在 Chromium/WebGL2 中发送键鼠输入，读取原生遍历事件、角色/相机与资源遥测，并实际截取画面。覆盖双向及反复穿越、门缘碰撞、部分跳跃边界、实体楼梯、暂停/重试/重载与卸载；完整结果、浏览器版本、原始日志及限制见 [L01 记录](../m1-c01-l01.md)。这不是重新执行 M0 的 79 项引擎测试，也不覆盖未来抓取、自由放门、升降平台或目标设备性能。
+
+实际接入修正：timeScale=0 时原生输入禁用，故首次点击先恢复模拟一帧再请求鼠标锁定；暂停菜单 R 使用所有者跟踪的键盘监听；遮板移开后才执行原生安装射线；梯闩移至远离 B1 的位置，避免 1.8m 真实跨门交互射线提前命中。以上属于输入菜单和关卡布局，没有以 L01 特例替代引擎物理。本轮未确认需要引擎重构的通用缺陷。

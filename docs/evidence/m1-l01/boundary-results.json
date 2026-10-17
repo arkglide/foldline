@@ -1,0 +1,3291 @@
+{
+  "kind": "automated browser input technical validation; finite sampled checks, not exhaustive collision proof",
+  "inputs": [
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 9.5,
+        "y": -1.4305114748314196e-7,
+        "z": 3
+      },
+      "target": {
+        "x": 18.5,
+        "z": 1.7
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 18.36506462097168,
+        "y": -8.344650270775134e-8,
+        "z": 1.7537305355072021
+      },
+      "target": {
+        "x": 22,
+        "z": 1.7
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "hold",
+      "keys": [
+        "w"
+      ],
+      "durationMs": 1300
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 22.14337158203125,
+        "y": -8.344650270775134e-8,
+        "z": 2.319999933242798
+      },
+      "target": {
+        "x": 22,
+        "z": 1.7
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 22.00551414489746,
+        "y": -1.4305114748314196e-7,
+        "z": 1.7677807807922363
+      },
+      "target": {
+        "x": 19.4,
+        "z": 1.7
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 19.645687103271484,
+        "y": -8.344650270775134e-8,
+        "z": 1.6789418458938599
+      },
+      "target": {
+        "x": 19.4,
+        "z": 3.7
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "hold",
+      "keys": [
+        "w",
+        "Space"
+      ],
+      "durationMs": 1400
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 19.633358001708984,
+        "y": -8.344650270775134e-8,
+        "z": 3.8402740955352783
+      },
+      "target": {
+        "x": 18.5,
+        "z": 3.7
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "hold",
+      "keys": [
+        "w",
+        "Space"
+      ],
+      "durationMs": 1400
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 18.251073837280273,
+        "y": -8.344650270775134e-8,
+        "z": 3.869999885559082
+      },
+      "target": {
+        "x": 18.5,
+        "z": 3.3
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 18.46076202392578,
+        "y": -8.344650270775134e-8,
+        "z": 3.4085845947265625
+      },
+      "target": {
+        "x": 10.4,
+        "z": 3.3
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 10.618112564086914,
+        "y": -8.344650270775134e-8,
+        "z": 3.2629427909851074
+      },
+      "target": {
+        "x": 10.4,
+        "z": 6.8
+      }
+    },
+    {
+      "action": "interact",
+      "target": {
+        "x": 10.4,
+        "y": 1.1,
+        "z": 8
+      }
+    },
+    {
+      "action": "press",
+      "key": "e"
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 10.38603401184082,
+        "y": -8.344650270775134e-8,
+        "z": 6.765799522399902
+      },
+      "target": {
+        "x": 9.6,
+        "z": 7
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 9.677474975585938,
+        "y": -8.344650270775134e-8,
+        "z": 6.99328088760376
+      },
+      "target": {
+        "x": 9.6,
+        "z": 9
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "hold",
+      "keys": [
+        "w"
+      ],
+      "durationMs": 1100
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 9.527830123901367,
+        "y": -8.344650270775134e-8,
+        "z": 9.679999351501465
+      },
+      "target": {
+        "x": 9.6,
+        "z": 8.8
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 9.614753723144531,
+        "y": -8.344650270775134e-8,
+        "z": 8.811368942260742
+      },
+      "target": {
+        "x": 11,
+        "z": 8.8
+      }
+    },
+    {
+      "action": "walk-through-portal",
+      "source": "A1",
+      "destination": "B1",
+      "before": {
+        "x": 10.946005821228027,
+        "y": 0.8999999165534973,
+        "z": 8.769999504089355
+      }
+    }
+  ],
+  "gateSamples": [
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 21.738439559936523,
+        "y": 0.8999999165534973,
+        "z": 1.6681251525878906
+      },
+      "footPosition": {
+        "x": 21.738439559936523,
+        "y": -8.344650270775134e-8,
+        "z": 1.6681251525878906
+      },
+      "eyePosition": {
+        "x": 21.73843765258789,
+        "y": 1.5999999046325684,
+        "z": 1.6681255102157593
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0,
+        "y": -0.16333332657814026,
+        "z": 0
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 21.738439559936523,
+        "y": 0.8999999165534973,
+        "z": 1.6681251525878906
+      },
+      "footPosition": {
+        "x": 21.738439559936523,
+        "y": -8.344650270775134e-8,
+        "z": 1.6681251525878906
+      },
+      "eyePosition": {
+        "x": 21.73843765258789,
+        "y": 1.5999999046325684,
+        "z": 1.6681255102157593
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0,
+        "y": -0.16333332657814026,
+        "z": 0
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 21.766433715820312,
+        "y": 0.8999999761581421,
+        "z": 1.9442321062088013
+      },
+      "footPosition": {
+        "x": 21.766433715820312,
+        "y": -2.384185793236071e-8,
+        "z": 1.9442321062088013
+      },
+      "eyePosition": {
+        "x": 21.766433715820312,
+        "y": 1.600000023841858,
+        "z": 1.9442319869995117
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0.3096596300601959,
+        "y": -0.16333332657814026,
+        "z": 3.0540695190429688
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 21.766433715820312,
+        "y": 0.8999999761581421,
+        "z": 1.9442321062088013
+      },
+      "footPosition": {
+        "x": 21.766433715820312,
+        "y": -2.384185793236071e-8,
+        "z": 1.9442321062088013
+      },
+      "eyePosition": {
+        "x": 21.766433715820312,
+        "y": 1.600000023841858,
+        "z": 1.9442319869995117
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0.3096596300601959,
+        "y": -0.16333332657814026,
+        "z": 3.0540695190429688
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 21.81422996520996,
+        "y": 0.8999999761581421,
+        "z": 2.319999933242798
+      },
+      "footPosition": {
+        "x": 21.81422996520996,
+        "y": -2.384185793236071e-8,
+        "z": 2.319999933242798
+      },
+      "eyePosition": {
+        "x": 21.81422996520996,
+        "y": 1.600000023841858,
+        "z": 2.320000171661377
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0.3816765546798706,
+        "y": -0.16333332657814026,
+        "z": 3.7643485069274902
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 21.81422996520996,
+        "y": 0.8999999761581421,
+        "z": 2.319999933242798
+      },
+      "footPosition": {
+        "x": 21.81422996520996,
+        "y": -2.384185793236071e-8,
+        "z": 2.319999933242798
+      },
+      "eyePosition": {
+        "x": 21.81422996520996,
+        "y": 1.600000023841858,
+        "z": 2.320000171661377
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0.3816765546798706,
+        "y": -0.16333332657814026,
+        "z": 3.7643485069274902
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 21.86663246154785,
+        "y": 0.8999999761581421,
+        "z": 2.319999933242798
+      },
+      "footPosition": {
+        "x": 21.86663246154785,
+        "y": -2.384185793236071e-8,
+        "z": 2.319999933242798
+      },
+      "eyePosition": {
+        "x": 21.86663246154785,
+        "y": 1.600000023841858,
+        "z": 2.3199996948242188
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0.3984253704547882,
+        "y": -0.16333332657814026,
+        "z": 3.9295363426208496
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 21.86663246154785,
+        "y": 0.8999999761581421,
+        "z": 2.319999933242798
+      },
+      "footPosition": {
+        "x": 21.86663246154785,
+        "y": -2.384185793236071e-8,
+        "z": 2.319999933242798
+      },
+      "eyePosition": {
+        "x": 21.86663246154785,
+        "y": 1.600000023841858,
+        "z": 2.3199996948242188
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0.3984253704547882,
+        "y": -0.16333332657814026,
+        "z": 3.9295363426208496
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 21.920106887817383,
+        "y": 0.8999999165534973,
+        "z": 2.319999933242798
+      },
+      "footPosition": {
+        "x": 21.920106887817383,
+        "y": -8.344650270775134e-8,
+        "z": 2.319999933242798
+      },
+      "eyePosition": {
+        "x": 21.92010498046875,
+        "y": 1.5999999046325684,
+        "z": 2.320000171661377
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0.40232062339782715,
+        "y": -0.16333332657814026,
+        "z": 3.96795392036438
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 21.920106887817383,
+        "y": 0.8999999165534973,
+        "z": 2.319999933242798
+      },
+      "footPosition": {
+        "x": 21.920106887817383,
+        "y": -8.344650270775134e-8,
+        "z": 2.319999933242798
+      },
+      "eyePosition": {
+        "x": 21.92010498046875,
+        "y": 1.5999999046325684,
+        "z": 2.320000171661377
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0.40232062339782715,
+        "y": -0.16333332657814026,
+        "z": 3.96795392036438
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 21.973831176757812,
+        "y": 0.8999999165534973,
+        "z": 2.319999933242798
+      },
+      "footPosition": {
+        "x": 21.973831176757812,
+        "y": -8.344650270775134e-8,
+        "z": 2.319999933242798
+      },
+      "eyePosition": {
+        "x": 21.973831176757812,
+        "y": 1.5999999046325684,
+        "z": 2.319999933242798
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0.4032265543937683,
+        "y": -0.16333332657814026,
+        "z": 3.976888656616211
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 21.973831176757812,
+        "y": 0.8999999165534973,
+        "z": 2.319999933242798
+      },
+      "footPosition": {
+        "x": 21.973831176757812,
+        "y": -8.344650270775134e-8,
+        "z": 2.319999933242798
+      },
+      "eyePosition": {
+        "x": 21.973831176757812,
+        "y": 1.5999999046325684,
+        "z": 2.319999933242798
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0.4032265543937683,
+        "y": -0.16333332657814026,
+        "z": 3.976888656616211
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 21.973831176757812,
+        "y": 0.8999999165534973,
+        "z": 2.319999933242798
+      },
+      "footPosition": {
+        "x": 21.973831176757812,
+        "y": -8.344650270775134e-8,
+        "z": 2.319999933242798
+      },
+      "eyePosition": {
+        "x": 21.973831176757812,
+        "y": 1.5999999046325684,
+        "z": 2.319999933242798
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0.4032265543937683,
+        "y": -0.16333332657814026,
+        "z": 3.976888656616211
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 22.027612686157227,
+        "y": 0.8999999761581421,
+        "z": 2.319999933242798
+      },
+      "footPosition": {
+        "x": 22.027612686157227,
+        "y": -2.384185793236071e-8,
+        "z": 2.319999933242798
+      },
+      "eyePosition": {
+        "x": 22.027612686157227,
+        "y": 1.600000023841858,
+        "z": 2.320000171661377
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0.40343722701072693,
+        "y": -0.16333332657814026,
+        "z": 3.978966474533081
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 22.027612686157227,
+        "y": 0.8999999761581421,
+        "z": 2.319999933242798
+      },
+      "footPosition": {
+        "x": 22.027612686157227,
+        "y": -2.384185793236071e-8,
+        "z": 2.319999933242798
+      },
+      "eyePosition": {
+        "x": 22.027612686157227,
+        "y": 1.600000023841858,
+        "z": 2.320000171661377
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0.40343722701072693,
+        "y": -0.16333332657814026,
+        "z": 3.978966474533081
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 22.081411361694336,
+        "y": 0.8999998569488525,
+        "z": 2.319999933242798
+      },
+      "footPosition": {
+        "x": 22.081411361694336,
+        "y": -1.4305114748314196e-7,
+        "z": 2.319999933242798
+      },
+      "eyePosition": {
+        "x": 22.081411361694336,
+        "y": 1.5999999046325684,
+        "z": 2.320000171661377
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0.4034862220287323,
+        "y": -0.16333332657814026,
+        "z": 3.97944974899292
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 22.081411361694336,
+        "y": 0.8999998569488525,
+        "z": 2.319999933242798
+      },
+      "footPosition": {
+        "x": 22.081411361694336,
+        "y": -1.4305114748314196e-7,
+        "z": 2.319999933242798
+      },
+      "eyePosition": {
+        "x": 22.081411361694336,
+        "y": 1.5999999046325684,
+        "z": 2.320000171661377
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0.4034862220287323,
+        "y": -0.16333332657814026,
+        "z": 3.97944974899292
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 22.14337158203125,
+        "y": 0.8999999165534973,
+        "z": 2.319999933242798
+      },
+      "footPosition": {
+        "x": 22.14337158203125,
+        "y": -8.344650270775134e-8,
+        "z": 2.319999933242798
+      },
+      "eyePosition": {
+        "x": 22.143369674682617,
+        "y": 1.5999999046325684,
+        "z": 2.320000171661377
+      },
+      "rotation": {
+        "x": -0.0009987233164188026,
+        "y": 0.05050205094384749,
+        "z": 0.00005050203543148685,
+        "w": 0.9987234520994398
+      },
+      "velocity": {
+        "x": 0,
+        "y": -0.16333332657814026,
+        "z": 0
+      },
+      "interactTarget": "StairGate",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    }
+  ],
+  "cheekSamples": [
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.3966121673584,
+        "y": 0.8999999761581421,
+        "z": 3.4094512462615967
+      },
+      "footPosition": {
+        "x": 19.3966121673584,
+        "y": -2.384185793236071e-8,
+        "z": 3.4094512462615967
+      },
+      "eyePosition": {
+        "x": 19.3966121673584,
+        "y": 1.600000023841858,
+        "z": 3.4094512462615967
+      },
+      "rotation": {
+        "x": -0.0007534358464547216,
+        "y": 0.6575205036298299,
+        "z": 0.0006575203671815521,
+        "w": 0.7534359863658433
+      },
+      "velocity": {
+        "x": 0,
+        "y": -0.16333332657814026,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.4505558013916,
+        "y": 1.150333285331726,
+        "z": 3.4168193340301514
+      },
+      "footPosition": {
+        "x": 19.4505558013916,
+        "y": 0.25033328533172605,
+        "z": 3.4168193340301514
+      },
+      "eyePosition": {
+        "x": 19.4505558013916,
+        "y": 1.850333333015442,
+        "z": 3.4168193340301514
+      },
+      "rotation": {
+        "x": -0.0007534358464547216,
+        "y": 0.6575205036298299,
+        "z": 0.0006575203671815521,
+        "w": 0.7534359863658433
+      },
+      "velocity": {
+        "x": 0.9577735662460327,
+        "y": 3.5099997520446777,
+        "z": 0.13082163035869598
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.4505558013916,
+        "y": 1.150333285331726,
+        "z": 3.4168193340301514
+      },
+      "footPosition": {
+        "x": 19.4505558013916,
+        "y": 0.25033328533172605,
+        "z": 3.4168193340301514
+      },
+      "eyePosition": {
+        "x": 19.4505558013916,
+        "y": 1.850333333015442,
+        "z": 3.4168193340301514
+      },
+      "rotation": {
+        "x": -0.0007534358464547216,
+        "y": 0.6575205036298299,
+        "z": 0.0006575203671815521,
+        "w": 0.7534359863658433
+      },
+      "velocity": {
+        "x": 0.9577735662460327,
+        "y": 3.5099997520446777,
+        "z": 0.13082163035869598
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.60853385925293,
+        "y": 1.4836111068725586,
+        "z": 3.43839693069458
+      },
+      "footPosition": {
+        "x": 19.60853385925293,
+        "y": 0.5836111068725586,
+        "z": 3.43839693069458
+      },
+      "eyePosition": {
+        "x": 19.60853385925293,
+        "y": 2.1836111545562744,
+        "z": 3.43839693069458
+      },
+      "rotation": {
+        "x": -0.0007534358464547216,
+        "y": 0.6575205036298299,
+        "z": 0.0006575203671815521,
+        "w": 0.7534359863658433
+      },
+      "velocity": {
+        "x": 1.6513333320617676,
+        "y": 2.366665840148926,
+        "z": 0.22555458545684814
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.630001068115234,
+        "y": 1.7011666297912598,
+        "z": 3.476591110229492
+      },
+      "footPosition": {
+        "x": 19.630001068115234,
+        "y": 0.8011666297912597,
+        "z": 3.476591110229492
+      },
+      "eyePosition": {
+        "x": 19.630001068115234,
+        "y": 2.4011666774749756,
+        "z": 3.476590871810913
+      },
+      "rotation": {
+        "x": -0.0007534358513991226,
+        "y": 0.6575205079447893,
+        "z": 0.0006575203616986943,
+        "w": 0.7534359814214414
+      },
+      "velocity": {
+        "x": 0,
+        "y": 1.0599992275238037,
+        "z": 0.33382073044776917
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.630001068115234,
+        "y": 1.7011666297912598,
+        "z": 3.476591110229492
+      },
+      "footPosition": {
+        "x": 19.630001068115234,
+        "y": 0.8011666297912597,
+        "z": 3.476591110229492
+      },
+      "eyePosition": {
+        "x": 19.630001068115234,
+        "y": 2.4011666774749756,
+        "z": 3.476590871810913
+      },
+      "rotation": {
+        "x": -0.0007534358513991226,
+        "y": 0.6575205079447893,
+        "z": 0.0006575203616986943,
+        "w": 0.7534359814214414
+      },
+      "velocity": {
+        "x": 0,
+        "y": 1.0599992275238037,
+        "z": 0.33382073044776917
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.63174057006836,
+        "y": 1.7444998025894165,
+        "z": 3.531038761138916
+      },
+      "footPosition": {
+        "x": 19.63174057006836,
+        "y": 0.8444998025894165,
+        "z": 3.531038761138916
+      },
+      "eyePosition": {
+        "x": 19.63174057006836,
+        "y": 2.4444997310638428,
+        "z": 3.531038761138916
+      },
+      "rotation": {
+        "x": -0.0007534358417420877,
+        "y": 0.6575205079447893,
+        "z": 0.0006575203712668675,
+        "w": 0.7534359814214414
+      },
+      "velocity": {
+        "x": -0.06937180459499359,
+        "y": -0.24666748940944672,
+        "z": 0.4695128798484802
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.63174057006836,
+        "y": 1.7444998025894165,
+        "z": 3.531038761138916
+      },
+      "footPosition": {
+        "x": 19.63174057006836,
+        "y": 0.8444998025894165,
+        "z": 3.531038761138916
+      },
+      "eyePosition": {
+        "x": 19.63174057006836,
+        "y": 2.4444997310638428,
+        "z": 3.531038761138916
+      },
+      "rotation": {
+        "x": -0.0007534358417420877,
+        "y": 0.6575205079447893,
+        "z": 0.0006575203712668675,
+        "w": 0.7534359814214414
+      },
+      "velocity": {
+        "x": -0.06937180459499359,
+        "y": -0.24666748940944672,
+        "z": 0.4695128798484802
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.629751205444336,
+        "y": 1.6626663208007812,
+        "z": 3.580350637435913
+      },
+      "footPosition": {
+        "x": 19.629751205444336,
+        "y": 0.7626663208007812,
+        "z": 3.580350637435913
+      },
+      "eyePosition": {
+        "x": 19.629751205444336,
+        "y": 2.362666368484497,
+        "z": 3.580350637435913
+      },
+      "rotation": {
+        "x": -0.0007534358417420877,
+        "y": 0.6575205079447893,
+        "z": 0.0006575203712668675,
+        "w": 0.7534359814214414
+      },
+      "velocity": {
+        "x": -0.009372279047966003,
+        "y": -1.2266675233840942,
+        "z": 0.5174092054367065
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.630001068115234,
+        "y": 1.482832908630371,
+        "z": 3.636828660964966
+      },
+      "footPosition": {
+        "x": 19.630001068115234,
+        "y": 0.5828329086303711,
+        "z": 3.636828660964966
+      },
+      "eyePosition": {
+        "x": 19.630001068115234,
+        "y": 2.182833194732666,
+        "z": 3.636828660964966
+      },
+      "rotation": {
+        "x": -0.0007534358466864887,
+        "y": 0.6575205122597487,
+        "z": 0.0006575203657840097,
+        "w": 0.7534359764770394
+      },
+      "velocity": {
+        "x": 0,
+        "y": -2.206667423248291,
+        "z": 0.5986089706420898
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.630001068115234,
+        "y": 1.258110523223877,
+        "z": 3.690096139907837
+      },
+      "footPosition": {
+        "x": 19.630001068115234,
+        "y": 0.35811052322387693,
+        "z": 3.690096139907837
+      },
+      "eyePosition": {
+        "x": 19.630001068115234,
+        "y": 1.9581105709075928,
+        "z": 3.690096139907837
+      },
+      "rotation": {
+        "x": -0.0007534358949716639,
+        "y": 0.6575205122597487,
+        "z": 0.0006575204049438089,
+        "w": 0.7534359764770394
+      },
+      "velocity": {
+        "x": 0,
+        "y": -3.023334503173828,
+        "z": 0.6662754416465759
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.630001068115234,
+        "y": 0.9653326272964478,
+        "z": 3.74900221824646
+      },
+      "footPosition": {
+        "x": 19.630001068115234,
+        "y": 0.06533262729644773,
+        "z": 3.74900221824646
+      },
+      "eyePosition": {
+        "x": 19.630001068115234,
+        "y": 1.6653326749801636,
+        "z": 3.74900221824646
+      },
+      "rotation": {
+        "x": -0.0007534358853146289,
+        "y": 0.6575205122597487,
+        "z": 0.0006575204145119833,
+        "w": 0.7534359764770394
+      },
+      "velocity": {
+        "x": 0,
+        "y": -3.8400015830993652,
+        "z": 0.733941912651062
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.630001068115234,
+        "y": 0.8999999165534973,
+        "z": 3.7947635650634766
+      },
+      "footPosition": {
+        "x": 19.630001068115234,
+        "y": -8.344650270775134e-8,
+        "z": 3.7947635650634766
+      },
+      "eyePosition": {
+        "x": 19.630001068115234,
+        "y": 1.600000023841858,
+        "z": 3.7947635650634766
+      },
+      "rotation": {
+        "x": -0.0007534358853146289,
+        "y": 0.6575205122597487,
+        "z": 0.0006575204145119833,
+        "w": 0.7534359764770394
+      },
+      "velocity": {
+        "x": 2.06912899017334,
+        "y": -0.16333332657814026,
+        "z": 0.42073512077331543
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.63337516784668,
+        "y": 0.8999999761581421,
+        "z": 3.840134859085083
+      },
+      "footPosition": {
+        "x": 19.63337516784668,
+        "y": -2.384185793236071e-8,
+        "z": 3.840134859085083
+      },
+      "eyePosition": {
+        "x": 19.63337516784668,
+        "y": 1.600000023841858,
+        "z": 3.840134859085083
+      },
+      "rotation": {
+        "x": -0.0007534358756575939,
+        "y": 0.6575205122597487,
+        "z": 0.0006575204240801566,
+        "w": 0.7534359764770394
+      },
+      "velocity": {
+        "x": 3.334155797958374,
+        "y": -0.16333332657814026,
+        "z": 0.4574294090270996
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.63337516784668,
+        "y": 0.8999999761581421,
+        "z": 3.840134859085083
+      },
+      "footPosition": {
+        "x": 19.63337516784668,
+        "y": -2.384185793236071e-8,
+        "z": 3.840134859085083
+      },
+      "eyePosition": {
+        "x": 19.63337516784668,
+        "y": 1.600000023841858,
+        "z": 3.840134859085083
+      },
+      "rotation": {
+        "x": -0.0007534358756575939,
+        "y": 0.6575205122597487,
+        "z": 0.0006575204240801566,
+        "w": 0.7534359764770394
+      },
+      "velocity": {
+        "x": 3.334155797958374,
+        "y": -0.16333332657814026,
+        "z": 0.4574294090270996
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.633358001708984,
+        "y": 0.8999999165534973,
+        "z": 3.8402740955352783
+      },
+      "footPosition": {
+        "x": 19.633358001708984,
+        "y": -8.344650270775134e-8,
+        "z": 3.8402740955352783
+      },
+      "eyePosition": {
+        "x": 19.633358001708984,
+        "y": 1.600000023841858,
+        "z": 3.8402740955352783
+      },
+      "rotation": {
+        "x": -0.0007534358806019951,
+        "y": 0.6575205165747082,
+        "z": 0.0006575204090291235,
+        "w": 0.7534359715326375
+      },
+      "velocity": {
+        "x": 3.816967725753784,
+        "y": -0.16333332657814026,
+        "z": 0.5213569402694702
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.633358001708984,
+        "y": 0.8999999165534973,
+        "z": 3.8402740955352783
+      },
+      "footPosition": {
+        "x": 19.633358001708984,
+        "y": -8.344650270775134e-8,
+        "z": 3.8402740955352783
+      },
+      "eyePosition": {
+        "x": 19.633358001708984,
+        "y": 1.600000023841858,
+        "z": 3.8402740955352783
+      },
+      "rotation": {
+        "x": -0.0007534358806019951,
+        "y": 0.6575205165747082,
+        "z": 0.0006575204090291235,
+        "w": 0.7534359715326375
+      },
+      "velocity": {
+        "x": 3.816967725753784,
+        "y": -0.16333332657814026,
+        "z": 0.5213569402694702
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.633358001708984,
+        "y": 0.8999999165534973,
+        "z": 3.8402740955352783
+      },
+      "footPosition": {
+        "x": 19.633358001708984,
+        "y": -8.344650270775134e-8,
+        "z": 3.8402740955352783
+      },
+      "eyePosition": {
+        "x": 19.633358001708984,
+        "y": 1.600000023841858,
+        "z": 3.8402740955352783
+      },
+      "rotation": {
+        "x": -0.00075343587094496,
+        "y": 0.6575205165747082,
+        "z": 0.000657520418597298,
+        "w": 0.7534359715326375
+      },
+      "velocity": {
+        "x": 3.929191827774048,
+        "y": -0.16333332657814026,
+        "z": 0.5366854071617126
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 19.633358001708984,
+        "y": 0.8999999165534973,
+        "z": 3.8402740955352783
+      },
+      "footPosition": {
+        "x": 19.633358001708984,
+        "y": -8.344650270775134e-8,
+        "z": 3.8402740955352783
+      },
+      "eyePosition": {
+        "x": 19.633358001708984,
+        "y": 1.600000023841858,
+        "z": 3.8402740955352783
+      },
+      "rotation": {
+        "x": -0.0007534358612879249,
+        "y": 0.6575205165747082,
+        "z": 0.0006575204281654701,
+        "w": 0.7534359715326375
+      },
+      "velocity": {
+        "x": 0,
+        "y": -0.16333332657814026,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    }
+  ],
+  "equipmentSamples": [
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.677845001220703,
+        "y": 0.8999998569488525,
+        "z": 3.7353360652923584
+      },
+      "footPosition": {
+        "x": 18.677845001220703,
+        "y": -1.4305114748314196e-7,
+        "z": 3.7353360652923584
+      },
+      "eyePosition": {
+        "x": 18.677846908569336,
+        "y": 1.5999999046325684,
+        "z": 3.7353360652923584
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": 0,
+        "y": -0.16333332657814026,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.677845001220703,
+        "y": 0.8999998569488525,
+        "z": 3.7353360652923584
+      },
+      "footPosition": {
+        "x": 18.677845001220703,
+        "y": -1.4305114748314196e-7,
+        "z": 3.7353360652923584
+      },
+      "eyePosition": {
+        "x": 18.677846908569336,
+        "y": 1.5999999046325684,
+        "z": 3.7353360652923584
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": 0,
+        "y": -0.16333332657814026,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.663105010986328,
+        "y": 1.3571109771728516,
+        "z": 3.8700873851776123
+      },
+      "footPosition": {
+        "x": 18.663105010986328,
+        "y": 0.45711097717285154,
+        "z": 3.8700873851776123
+      },
+      "eyePosition": {
+        "x": 18.66310691833496,
+        "y": 2.0571110248565674,
+        "z": 3.8700876235961914
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.14860796928405762,
+        "y": 2.856666088104248,
+        "z": 1.3585631847381592
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.663105010986328,
+        "y": 1.3571109771728516,
+        "z": 3.8700873851776123
+      },
+      "footPosition": {
+        "x": 18.663105010986328,
+        "y": 0.45711097717285154,
+        "z": 3.8700873851776123
+      },
+      "eyePosition": {
+        "x": 18.66310691833496,
+        "y": 2.0571110248565674,
+        "z": 3.8700876235961914
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.14860796928405762,
+        "y": 2.856666088104248,
+        "z": 1.3585631847381592
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.636760711669922,
+        "y": 1.6399998664855957,
+        "z": 3.869999885559082
+      },
+      "footPosition": {
+        "x": 18.636760711669922,
+        "y": 0.7399998664855957,
+        "z": 3.869999885559082
+      },
+      "eyePosition": {
+        "x": 18.636760711669922,
+        "y": 2.3399999141693115,
+        "z": 3.869999885559082
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.23559796810150146,
+        "y": 1.5499991178512573,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.636760711669922,
+        "y": 1.6399998664855957,
+        "z": 3.869999885559082
+      },
+      "footPosition": {
+        "x": 18.636760711669922,
+        "y": 0.7399998664855957,
+        "z": 3.869999885559082
+      },
+      "eyePosition": {
+        "x": 18.636760711669922,
+        "y": 2.3399999141693115,
+        "z": 3.869999885559082
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.23559796810150146,
+        "y": 1.5499991178512573,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.609392166137695,
+        "y": 1.7378331422805786,
+        "z": 3.869999885559082
+      },
+      "footPosition": {
+        "x": 18.609392166137695,
+        "y": 0.8378331422805786,
+        "z": 3.869999885559082
+      },
+      "eyePosition": {
+        "x": 18.609394073486328,
+        "y": 2.437833070755005,
+        "z": 3.870000123977661
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.3008405268192291,
+        "y": 0.5699991583824158,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.609392166137695,
+        "y": 1.7378331422805786,
+        "z": 3.869999885559082
+      },
+      "footPosition": {
+        "x": 18.609392166137695,
+        "y": 0.8378331422805786,
+        "z": 3.869999885559082
+      },
+      "eyePosition": {
+        "x": 18.609394073486328,
+        "y": 2.437833070755005,
+        "z": 3.870000123977661
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.3008405268192291,
+        "y": 0.5699991583824158,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.562753677368164,
+        "y": 1.7158329486846924,
+        "z": 3.869999885559082
+      },
+      "footPosition": {
+        "x": 18.562753677368164,
+        "y": 0.8158329486846924,
+        "z": 3.869999885559082
+      },
+      "eyePosition": {
+        "x": 18.562755584716797,
+        "y": 2.415832996368408,
+        "z": 3.869999885559082
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.3878306448459625,
+        "y": -0.7366675138473511,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.535085678100586,
+        "y": 1.639499545097351,
+        "z": 3.869999885559082
+      },
+      "footPosition": {
+        "x": 18.535085678100586,
+        "y": 0.739499545097351,
+        "z": 3.869999885559082
+      },
+      "eyePosition": {
+        "x": 18.53508758544922,
+        "y": 2.3394994735717773,
+        "z": 3.869999885559082
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.4313257038593292,
+        "y": -1.390000820159912,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.488147735595703,
+        "y": 1.4433327913284302,
+        "z": 3.869999885559082
+      },
+      "footPosition": {
+        "x": 18.488147735595703,
+        "y": 0.5433327913284302,
+        "z": 3.869999885559082
+      },
+      "eyePosition": {
+        "x": 18.488147735595703,
+        "y": 2.1433329582214355,
+        "z": 3.869999885559082
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.4965682923793793,
+        "y": -2.3700008392333984,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.425142288208008,
+        "y": 1.0906105041503906,
+        "z": 3.869999885559082
+      },
+      "footPosition": {
+        "x": 18.425142288208008,
+        "y": 0.1906105041503906,
+        "z": 3.869999885559082
+      },
+      "eyePosition": {
+        "x": 18.425142288208008,
+        "y": 1.7906105518341064,
+        "z": 3.869999885559082
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.5726844668388367,
+        "y": -3.5133347511291504,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.425142288208008,
+        "y": 1.0906105041503906,
+        "z": 3.869999885559082
+      },
+      "footPosition": {
+        "x": 18.425142288208008,
+        "y": 0.1906105041503906,
+        "z": 3.869999885559082
+      },
+      "eyePosition": {
+        "x": 18.425142288208008,
+        "y": 1.7906105518341064,
+        "z": 3.869999885559082
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.5726844668388367,
+        "y": -3.5133347511291504,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.425142288208008,
+        "y": 1.0906105041503906,
+        "z": 3.869999885559082
+      },
+      "footPosition": {
+        "x": 18.425142288208008,
+        "y": 0.1906105041503906,
+        "z": 3.869999885559082
+      },
+      "eyePosition": {
+        "x": 18.425142288208008,
+        "y": 1.7906105518341064,
+        "z": 3.869999885559082
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.5726844668388367,
+        "y": -3.5133347511291504,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.363079071044922,
+        "y": 0.8999999761581421,
+        "z": 3.869999885559082
+      },
+      "footPosition": {
+        "x": 18.363079071044922,
+        "y": -2.384185793236071e-8,
+        "z": 3.869999885559082
+      },
+      "eyePosition": {
+        "x": 18.363079071044922,
+        "y": 1.600000023841858,
+        "z": 3.869999885559082
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.32738202810287476,
+        "y": -0.16333332657814026,
+        "z": 2.389988660812378
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.363079071044922,
+        "y": 0.8999999761581421,
+        "z": 3.869999885559082
+      },
+      "footPosition": {
+        "x": 18.363079071044922,
+        "y": -2.384185793236071e-8,
+        "z": 3.869999885559082
+      },
+      "eyePosition": {
+        "x": 18.363079071044922,
+        "y": 1.600000023841858,
+        "z": 3.869999885559082
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.32738202810287476,
+        "y": -0.16333332657814026,
+        "z": 2.389988660812378
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.31496238708496,
+        "y": 0.8999999761581421,
+        "z": 3.869999885559082
+      },
+      "footPosition": {
+        "x": 18.31496238708496,
+        "y": -2.384185793236071e-8,
+        "z": 3.869999885559082
+      },
+      "eyePosition": {
+        "x": 18.31496238708496,
+        "y": 1.600000023841858,
+        "z": 3.869999885559082
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.39482367038726807,
+        "y": -0.16333332657814026,
+        "z": 3.608891010284424
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.31496238708496,
+        "y": 0.8999999761581421,
+        "z": 3.869999885559082
+      },
+      "footPosition": {
+        "x": 18.31496238708496,
+        "y": -2.384185793236071e-8,
+        "z": 3.869999885559082
+      },
+      "eyePosition": {
+        "x": 18.31496238708496,
+        "y": 1.600000023841858,
+        "z": 3.869999885559082
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.39482367038726807,
+        "y": -0.16333332657814026,
+        "z": 3.608891010284424
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.259538650512695,
+        "y": 0.9000000357627869,
+        "z": 3.869999885559082
+      },
+      "footPosition": {
+        "x": 18.259538650512695,
+        "y": 3.5762786843029915e-8,
+        "z": 3.869999885559082
+      },
+      "eyePosition": {
+        "x": 18.259538650512695,
+        "y": 1.6000001430511475,
+        "z": 3.869999885559082
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": -0.425603985786438,
+        "y": -0.16333332657814026,
+        "z": 3.8908400535583496
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "locked",
+      "position": {
+        "x": 18.251073837280273,
+        "y": 0.8999999165534973,
+        "z": 3.869999885559082
+      },
+      "footPosition": {
+        "x": 18.251073837280273,
+        "y": -8.344650270775134e-8,
+        "z": 3.869999885559082
+      },
+      "eyePosition": {
+        "x": 18.251075744628906,
+        "y": 1.5999999046325684,
+        "z": 3.870000123977661
+      },
+      "rotation": {
+        "x": -0.0009985157981059626,
+        "y": -0.05444951601086169,
+        "z": -0.00005444950797512411,
+        "w": 0.9985160172920362
+      },
+      "velocity": {
+        "x": 0,
+        "y": -0.16333332657814026,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 0,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    }
+  ],
+  "edgeSamples": [
+    {
+      "ready": true,
+      "error": "",
+      "phase": "active",
+      "position": {
+        "x": 9.569236755371094,
+        "y": 0.8999999165534973,
+        "z": 8.852936744689941
+      },
+      "footPosition": {
+        "x": 9.569236755371094,
+        "y": -8.344650270775134e-8,
+        "z": 8.852936744689941
+      },
+      "eyePosition": {
+        "x": 9.569236755371094,
+        "y": 1.600000023841858,
+        "z": 8.852935791015625
+      },
+      "rotation": {
+        "x": 0.0009999734979341504,
+        "y": -0.007069139248382872,
+        "z": 0.000007069132676183124,
+        "w": 0.9999745112389394
+      },
+      "velocity": {
+        "x": 0,
+        "y": -0.040833331644535065,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 1,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "active",
+      "position": {
+        "x": 9.569236755371094,
+        "y": 0.8999999165534973,
+        "z": 8.852936744689941
+      },
+      "footPosition": {
+        "x": 9.569236755371094,
+        "y": -8.344650270775134e-8,
+        "z": 8.852936744689941
+      },
+      "eyePosition": {
+        "x": 9.569236755371094,
+        "y": 1.600000023841858,
+        "z": 8.852935791015625
+      },
+      "rotation": {
+        "x": 0.0009999734979341504,
+        "y": -0.007069139248382872,
+        "z": 0.000007069132676183124,
+        "w": 0.9999745112389394
+      },
+      "velocity": {
+        "x": 0,
+        "y": -0.040833331644535065,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 1,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "active",
+      "position": {
+        "x": 9.565727233886719,
+        "y": 0.8999999761581421,
+        "z": 9.101112365722656
+      },
+      "footPosition": {
+        "x": 9.565727233886719,
+        "y": -2.384185793236071e-8,
+        "z": 9.101112365722656
+      },
+      "eyePosition": {
+        "x": 9.565727233886719,
+        "y": 1.600000023841858,
+        "z": 9.101112365722656
+      },
+      "rotation": {
+        "x": 0.0009999734979341504,
+        "y": -0.007069139248382872,
+        "z": 0.000007069132676183124,
+        "w": 0.9999745112389394
+      },
+      "velocity": {
+        "x": -0.04206478223204613,
+        "y": -0.040833331644535065,
+        "z": 2.9750163555145264
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 1,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "active",
+      "position": {
+        "x": 9.565727233886719,
+        "y": 0.8999999761581421,
+        "z": 9.101112365722656
+      },
+      "footPosition": {
+        "x": 9.565727233886719,
+        "y": -2.384185793236071e-8,
+        "z": 9.101112365722656
+      },
+      "eyePosition": {
+        "x": 9.565727233886719,
+        "y": 1.600000023841858,
+        "z": 9.101112365722656
+      },
+      "rotation": {
+        "x": 0.0009999734979341504,
+        "y": -0.007069139248382872,
+        "z": 0.000007069132676183124,
+        "w": 0.9999745112389394
+      },
+      "velocity": {
+        "x": -0.04206478223204613,
+        "y": -0.040833331644535065,
+        "z": 2.9750163555145264
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 1,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "active",
+      "position": {
+        "x": 9.559221267700195,
+        "y": 0.8999999761581421,
+        "z": 9.561358451843262
+      },
+      "footPosition": {
+        "x": 9.559221267700195,
+        "y": -2.384185793236071e-8,
+        "z": 9.561358451843262
+      },
+      "eyePosition": {
+        "x": 9.559221267700195,
+        "y": 1.600000023841858,
+        "z": 9.561358451843262
+      },
+      "rotation": {
+        "x": 0.0009999734979341504,
+        "y": -0.007069139248382872,
+        "z": 0.000007069132676183124,
+        "w": 0.9999745112389394
+      },
+      "velocity": {
+        "x": -0.05284057930111885,
+        "y": -0.040833331644535065,
+        "z": 3.737130641937256
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 1,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "active",
+      "position": {
+        "x": 9.559221267700195,
+        "y": 0.8999999761581421,
+        "z": 9.561358451843262
+      },
+      "footPosition": {
+        "x": 9.559221267700195,
+        "y": -2.384185793236071e-8,
+        "z": 9.561358451843262
+      },
+      "eyePosition": {
+        "x": 9.559221267700195,
+        "y": 1.600000023841858,
+        "z": 9.561358451843262
+      },
+      "rotation": {
+        "x": 0.0009999734979341504,
+        "y": -0.007069139248382872,
+        "z": 0.000007069132676183124,
+        "w": 0.9999745112389394
+      },
+      "velocity": {
+        "x": -0.05284057930111885,
+        "y": -0.040833331644535065,
+        "z": 3.737130641937256
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 1,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "active",
+      "position": {
+        "x": 9.559221267700195,
+        "y": 0.8999999761581421,
+        "z": 9.561358451843262
+      },
+      "footPosition": {
+        "x": 9.559221267700195,
+        "y": -2.384185793236071e-8,
+        "z": 9.561358451843262
+      },
+      "eyePosition": {
+        "x": 9.559221267700195,
+        "y": 1.600000023841858,
+        "z": 9.561358451843262
+      },
+      "rotation": {
+        "x": 0.0009999734979341504,
+        "y": -0.007069139248382872,
+        "z": 0.000007069132676183124,
+        "w": 0.9999745112389394
+      },
+      "velocity": {
+        "x": -0.05284057930111885,
+        "y": -0.040833331644535065,
+        "z": 3.737130641937256
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 1,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "active",
+      "position": {
+        "x": 9.551944732666016,
+        "y": 0.8999999761581421,
+        "z": 9.679999351501465
+      },
+      "footPosition": {
+        "x": 9.551944732666016,
+        "y": -2.384185793236071e-8,
+        "z": 9.679999351501465
+      },
+      "eyePosition": {
+        "x": 9.551944732666016,
+        "y": 1.600000023841858,
+        "z": 9.679998397827148
+      },
+      "rotation": {
+        "x": 0.0009999734979341504,
+        "y": -0.007069139248382872,
+        "z": 0.000007069132676183124,
+        "w": 0.9999745112389394
+      },
+      "velocity": {
+        "x": -0.05560103803873062,
+        "y": -0.040833331644535065,
+        "z": 3.9323630332946777
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 1,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "active",
+      "position": {
+        "x": 9.551944732666016,
+        "y": 0.8999999761581421,
+        "z": 9.679999351501465
+      },
+      "footPosition": {
+        "x": 9.551944732666016,
+        "y": -2.384185793236071e-8,
+        "z": 9.679999351501465
+      },
+      "eyePosition": {
+        "x": 9.551944732666016,
+        "y": 1.600000023841858,
+        "z": 9.679998397827148
+      },
+      "rotation": {
+        "x": 0.0009999734979341504,
+        "y": -0.007069139248382872,
+        "z": 0.000007069132676183124,
+        "w": 0.9999745112389394
+      },
+      "velocity": {
+        "x": -0.05560103803873062,
+        "y": -0.040833331644535065,
+        "z": 3.9323630332946777
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 1,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "active",
+      "position": {
+        "x": 9.544471740722656,
+        "y": 0.8999999761581421,
+        "z": 9.679999351501465
+      },
+      "footPosition": {
+        "x": 9.544471740722656,
+        "y": -2.384185793236071e-8,
+        "z": 9.679999351501465
+      },
+      "eyePosition": {
+        "x": 9.544471740722656,
+        "y": 1.600000023841858,
+        "z": 9.679999351501465
+      },
+      "rotation": {
+        "x": 0.0009999734979341504,
+        "y": -0.007069139248382872,
+        "z": 0.000007069132676183124,
+        "w": 0.9999745112389394
+      },
+      "velocity": {
+        "x": -0.056308187544345856,
+        "y": -0.040833331644535065,
+        "z": 3.9823758602142334
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 1,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "active",
+      "position": {
+        "x": 9.544471740722656,
+        "y": 0.8999999761581421,
+        "z": 9.679999351501465
+      },
+      "footPosition": {
+        "x": 9.544471740722656,
+        "y": -2.384185793236071e-8,
+        "z": 9.679999351501465
+      },
+      "eyePosition": {
+        "x": 9.544471740722656,
+        "y": 1.600000023841858,
+        "z": 9.679999351501465
+      },
+      "rotation": {
+        "x": 0.0009999734979341504,
+        "y": -0.007069139248382872,
+        "z": 0.000007069132676183124,
+        "w": 0.9999745112389394
+      },
+      "velocity": {
+        "x": -0.056308187544345856,
+        "y": -0.040833331644535065,
+        "z": 3.9823758602142334
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 1,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "active",
+      "position": {
+        "x": 9.544471740722656,
+        "y": 0.8999999761581421,
+        "z": 9.679999351501465
+      },
+      "footPosition": {
+        "x": 9.544471740722656,
+        "y": -2.384185793236071e-8,
+        "z": 9.679999351501465
+      },
+      "eyePosition": {
+        "x": 9.544471740722656,
+        "y": 1.600000023841858,
+        "z": 9.679999351501465
+      },
+      "rotation": {
+        "x": 0.0009999734979341504,
+        "y": -0.007069139248382872,
+        "z": 0.000007069132676183124,
+        "w": 0.9999745112389394
+      },
+      "velocity": {
+        "x": -0.056308187544345856,
+        "y": -0.040833331644535065,
+        "z": 3.9823758602142334
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 1,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "active",
+      "position": {
+        "x": 9.536947250366211,
+        "y": 0.8999999761581421,
+        "z": 9.679999351501465
+      },
+      "footPosition": {
+        "x": 9.536947250366211,
+        "y": -2.384185793236071e-8,
+        "z": 9.679999351501465
+      },
+      "eyePosition": {
+        "x": 9.536948204040527,
+        "y": 1.600000023841858,
+        "z": 9.679999351501465
+      },
+      "rotation": {
+        "x": 0.0009999734979341504,
+        "y": -0.007069139248382872,
+        "z": 0.000007069132676183124,
+        "w": 0.9999745112389394
+      },
+      "velocity": {
+        "x": -0.05648934096097946,
+        "y": -0.040833331644535065,
+        "z": 3.995187997817993
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 1,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "active",
+      "position": {
+        "x": 9.536947250366211,
+        "y": 0.8999999761581421,
+        "z": 9.679999351501465
+      },
+      "footPosition": {
+        "x": 9.536947250366211,
+        "y": -2.384185793236071e-8,
+        "z": 9.679999351501465
+      },
+      "eyePosition": {
+        "x": 9.536948204040527,
+        "y": 1.600000023841858,
+        "z": 9.679999351501465
+      },
+      "rotation": {
+        "x": 0.0009999734979341504,
+        "y": -0.007069139248382872,
+        "z": 0.000007069132676183124,
+        "w": 0.9999745112389394
+      },
+      "velocity": {
+        "x": -0.05648934096097946,
+        "y": -0.040833331644535065,
+        "z": 3.995187997817993
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 1,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    },
+    {
+      "ready": true,
+      "error": "",
+      "phase": "active",
+      "position": {
+        "x": 9.527830123901367,
+        "y": 0.8999999165534973,
+        "z": 9.679999351501465
+      },
+      "footPosition": {
+        "x": 9.527830123901367,
+        "y": -8.344650270775134e-8,
+        "z": 9.679999351501465
+      },
+      "eyePosition": {
+        "x": 9.527831077575684,
+        "y": 1.5999999046325684,
+        "z": 9.679999351501465
+      },
+      "rotation": {
+        "x": 0.0009999734979341504,
+        "y": -0.007069139248382872,
+        "z": 0.000007069132676183124,
+        "w": 0.9999745112389394
+      },
+      "velocity": {
+        "x": 0,
+        "y": -0.040833331644535065,
+        "z": 0
+      },
+      "interactTarget": "",
+      "portalEvents": [],
+      "blockedEvents": [],
+      "returnStairOpen": false,
+      "shutterProgress": 1,
+      "gateProgress": 0,
+      "exitProgress": 0,
+      "completed": false,
+      "retryCount": 0,
+      "paused": false
+    }
+  ],
+  "portalTexture": {
+    "colors": 591,
+    "pixels": 1024000,
+    "size": {
+      "width": 1280,
+      "height": 800
+    }
+  },
+  "finalSnapshot": {
+    "ready": true,
+    "error": "",
+    "phase": "active",
+    "position": {
+      "x": 23.83851432800293,
+      "y": 3.299999952316284,
+      "z": 10.026606559753418
+    },
+    "footPosition": {
+      "x": 23.83851432800293,
+      "y": 2.3999999523162843,
+      "z": 10.026606559753418
+    },
+    "eyePosition": {
+      "x": 23.83851432800293,
+      "y": 4,
+      "z": 10.026606559753418
+    },
+    "rotation": {
+      "x": 0.0007272640181213473,
+      "y": -0.6863562392634728,
+      "z": 0.0006863555074129473,
+      "w": 0.727264822407168
+    },
+    "velocity": {
+      "x": 0,
+      "y": -0.040833331644535065,
+      "z": 0
+    },
+    "interactTarget": "",
+    "portalEvents": [
+      {
+        "source": "A1",
+        "destination": "B1",
+        "position": {
+          "x": 23.993425369262695,
+          "y": 3.300585389137268,
+          "z": 10.01763153076172
+        },
+        "velocity": {
+          "x": -3.8280017375946045,
+          "y": 0.049819253385066986,
+          "z": 0.2218216210603718
+        }
+      }
+    ],
+    "blockedEvents": [],
+    "returnStairOpen": false,
+    "shutterProgress": 1,
+    "gateProgress": 0,
+    "exitProgress": 0,
+    "completed": false,
+    "retryCount": 0,
+    "paused": false
+  }
+}

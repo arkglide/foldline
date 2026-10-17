@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-10-17T10:52:18.221553+00:00",
+  "kind": "automated real-input browser technical validation; not human blind playtesting",
+  "command": "node --test --test-reporter=tap --test-concurrency=1 tests/browser-l01.test.mjs",
+  "node": "v24.19.0",
+  "chromium": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+  "playwright": "1.64.0",
+  "engineCommit": "da8ea1cf098ad99ccc89451d34bf4e272cdc15aa",
+  "branch": "m1/c01-l01-greybox",
+  "baseCommit": "996ab93e0dd4ec9272d01333783502b235421d49",
+  "result": {
+    "passed": 3,
+    "failed": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "durationMs": 101321.073209
+  },
+  "rendering": "Chromium headless, ANGLE SwiftShader, WebGL2; not a target-device performance benchmark",
+  "input": "Playwright keyboard plus relative PointerEvent through native input/rig; no player/camera/state setters",
+  "pauseCheck": "Browser document.exitPointerLock then keyboard R; hardware Escape remains unverified. Native outer player pause/resume tested separately.",
+  "sha256": {
+    "game/l01.js": "52aadf20a4adad14bdc92bb6986aa0591db523fcdaa126a3a2f237883790afb4",
+    "game/project.mjs": "af857e55916542fd59d4d78cbd1e620efdc17f832a76e95ed40183450a946dd4",
+    "tests/input-driver.mjs": "bbb0284add2887b4db710ea1d0ada0bcfbe9c46f770432d0fcff6bb06754f350",
+    "tests/browser-l01.test.mjs": "8e48b71142ca0ba8d036eda830daa1c2904df71c680a92b34fd8b6179c4c4d22"
+  }
+}
