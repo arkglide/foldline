@@ -32,6 +32,25 @@ async function exists(file) {
   catch (error) { if (error.code === 'ENOENT') return false; throw error; }
 }
 
+export async function runNpm(args, cwd, {
+  npmExecPath = process.env.npm_execpath,
+  nodeExecPath = process.execPath,
+  platform = process.platform,
+  quiet = false,
+} = {}) {
+  // npm run supplies the actual JavaScript CLI, including on Windows where
+  // npm.cmd cannot be launched by spawn() without a command interpreter.
+  // Calling Node directly also preserves spaces and shell characters in paths.
+  if (!npmExecPath && platform === 'win32') {
+    const bundled = path.join(path.dirname(nodeExecPath), 'node_modules/npm/bin/npm-cli.js');
+    if (await exists(bundled)) npmExecPath = bundled;
+  }
+  if (npmExecPath) return run(nodeExecPath, [npmExecPath, ...args], cwd, { quiet });
+  if (platform === 'win32')
+    throw new Error('Cannot locate npm-cli.js. Start with npm run dev or npm run setup:engine so npm_execpath is available.');
+  return run('npm', args, cwd, { quiet });
+}
+
 async function verifyCheckout(directory) {
   const checkoutRoot = await run('git', ['rev-parse', '--show-toplevel'], directory, { quiet: true });
   if (await realpath(checkoutRoot) !== await realpath(directory))
@@ -90,7 +109,7 @@ export async function ensureEngine({ root = PROJECT_ROOT, source = process.env.F
     if (error.code !== 'ENOENT') throw error;
   }
   if (!installed) {
-    await run('npm', ['ci', '--ignore-scripts', '--no-audit', '--no-fund', '--cache', path.join(cacheRoot, 'npm')], directory);
+    await runNpm(['ci', '--ignore-scripts', '--no-audit', '--no-fund', '--cache', path.join(cacheRoot, 'npm')], directory);
     await writeFile(marker, `${fingerprint}\n`);
   }
   await verifyCheckout(directory);
