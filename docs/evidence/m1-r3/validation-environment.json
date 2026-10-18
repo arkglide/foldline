@@ -1,0 +1,161 @@
+{
+  "recordedAt": "2026-10-18T12:31:32.820040+00:00",
+  "baselineCommit": "b5a110c178e1227962c1cc1d59422c6ec6608403",
+  "baseMainMerge": "020598c",
+  "engineCommit": "da8ea1cf098ad99ccc89451d34bf4e272cdc15aa",
+  "environment": {
+    "platform": "linux",
+    "node": "v24.19.0",
+    "chromium": "154.0.8037.57",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "reportedCpus": 5,
+    "viewport": "1280x800 DPR1",
+    "concurrentBrowsers": 1
+  },
+  "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "build": {
+    "level": "C01-L01",
+    "stage": "L01-visual-sample-pending-human-review",
+    "engineCommit": "da8ea1cf098ad99ccc89451d34bf4e272cdc15aa",
+    "revision": "M1-R3",
+    "art": {
+      "artBatches": 8,
+      "artTriangles": 6946,
+      "embeddedImages": 4
+    },
+    "voiceLanguage": "en",
+    "subtitleLanguages": [
+      "zh-CN",
+      "en"
+    ],
+    "voice": {
+      "generated": [],
+      "missing": [
+        {
+          "id": "C01-L01-ZQ-001",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-001.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-002",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-002.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-010",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-010.wav"
+        },
+        {
+          "id": "C01-L01-HW-001",
+          "character": "hengwu",
+          "file": "assets/voice/l01/C01-L01-HW-001.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-003",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-003.wav"
+        },
+        {
+          "id": "C01-L01-HW-002",
+          "character": "hengwu",
+          "file": "assets/voice/l01/C01-L01-HW-002.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-005",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-005.wav"
+        },
+        {
+          "id": "C01-L01-HW-004",
+          "character": "hengwu",
+          "file": "assets/voice/l01/C01-L01-HW-004.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-006",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-006.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-011",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-011.wav"
+        },
+        {
+          "id": "C01-L01-HW-005",
+          "character": "hengwu",
+          "file": "assets/voice/l01/C01-L01-HW-005.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-007",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-007.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-008",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-008.wav"
+        },
+        {
+          "id": "C01-L01-HW-003",
+          "character": "hengwu",
+          "file": "assets/voice/l01/C01-L01-HW-003.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-009",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-009.wav"
+        }
+      ]
+    }
+  },
+  "checks": {
+    "syntax": "npm run check passed",
+    "unit": {
+      "passed": 42,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 1975.197951
+    },
+    "browser": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 255347.788599
+    },
+    "humanR2": "User explicitly reported accepted",
+    "humanR3": "Pending user review; automated actual input is not blind playtesting"
+  },
+  "sourceSHA256": {
+    "game/l01.js": "0f8d7a42f85eba52ac471e6af788d2709630dccdf40b6769ef824c59315ffa69",
+    "game/companion.js": "d3b19d02583ca645736b89f8600e8515eaa798d82adcef0ac6e859baec45fe70",
+    "game/l01-art.js": "55d361e0eda70ca9fb179767df987b17e6711e96e13cbbd3251ef33d5325e861",
+    "game/project.mjs": "542b0aa063fb695c4d0bbdb151d8488ad76f1cea702925da081a730a5705ba11",
+    "game/art/l01-visuals.mjs": "bb9f1a27b2f44db43a0a20ab91563ae761913f156da9796476c0fcad318152a5",
+    "game/art/geometry.mjs": "3c42abbbe651fc80a96eec5b7332fb9ad89ecdc72561180bb4d86390edbf4306",
+    "game/data/l01-dialogue.json": "faa0a7d383905edec377b2d7bb016b350366003626e30deedc5e9a47383dfb72",
+    "scripts/prepare-game.mjs": "5e5f8583197913689baf41da56d48af9e48ccc069bbdf17ebe2629a4f300785f",
+    "scripts/benchmark-l01.mjs": "74d73cd7fd06fb9d1bca2cee4a6fd916e0efee7eb1a64d0c1cef3c9a3dd513db",
+    "tests/browser-l01-r3.test.mjs": "16a924c1d50ab4bc14ed00b9eb7e6e94dcea413164cea45595ca29c3c281ff4f",
+    "tests/input-driver.mjs": "6f0dfb1cc6f3a70748c90194909b934a44e0b95128a797f2e1681de4f117e216",
+    "tests/l01-art.test.mjs": "2bdd1ba4e03de8dcaee83ed8b5ba583e558313ca7dfe34388eac94384e578cb6",
+    "assets/art/l01/concrete023-color.jpg": "5484867ff4175b12481655ef84f6f76033f859a748bd055ca403bc5aa5dcd689",
+    "assets/art/l01/metal032-color.jpg": "c38476e28f619cd2577203e5c340f64facc2ed7d7acf561ab8009badf86fa20f",
+    "assets/art/l01/metal032-normal-gl.jpg": "41cf7e56b4721bd22b9d6ec90c57fb7000f75b8a822913c9d843d628cc1894f3",
+    "assets/art/l01/signage.svg": "ffd92434c18744527cc05e3213cfc1d2b6276f7c107ff174e6402181427956e9",
+    "assets/art/l01/signage.png": "071d444f6b7f22c0c876de37e2c4f94e34db25ba80b9744c84cff89c49f16b78",
+    "assets/art/l01/gate.svg": "de12e66dd36a7966e21797a77c49e8865b3bc04de86e013bcf690f903f7bb483",
+    "assets/art/l01/gate.png": "c70f724dcc672be9999f7a23c30ad5dd96cdde76130be377a670782db2c97020"
+  },
+  "evidenceSHA256": {
+    "docs/evidence/m1-r3/unit-tests.tap": "d782c6b5fc47044569eeddd50f72e604c6131ab5f3dc9c5ca2d44496ef8c80fb",
+    "docs/evidence/m1-r3/browser-tests.tap": "00274d34e880ea76c397f7cc85b124cb3a075f26b402c253c4bfab70441ca814",
+    "docs/evidence/m1-r3/input-route.json": "9b243e87fe543d247513aa3f0605973aeeaa3d58c1f4b57dd8be79ef303c8217",
+    "docs/evidence/m1-r3/lifecycle-results.json": "c72e3f971e773cf344a6af95223de28022adcfa0b5b04161036dee95e657c192"
+  },
+  "limits": [
+    "Linux software rendering; no Windows GPU benchmark",
+    "No English voice WAV files in this checkout; user-local R2 voice acceptance is separate",
+    "No final art/comfort/experience acceptance claimed"
+  ]
+}

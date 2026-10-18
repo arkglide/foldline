@@ -125,3 +125,9 @@ M1 浏览器检查是在 Chromium/WebGL2 中发送键鼠输入，读取原生遍
 保持固定引擎及原生ESM注册方式，新增游戏层 `dialogue-preferences.js`。`ctx.storage.read(key)`异步返回JSON或null，`write(key,json)`返回Promise；opaque iframe通过原生host桥接，不直接访问localStorage。导出gameId取自稳定projectId，正常同源可跨播放器重进/刷新保留选项。存储调用在设置变化时发出，销毁阶段不再新写；读写失败降级，不阻塞关卡。存储禁用或站点数据被清理时不能承诺持久化。
 
 原生音频句柄决定有声字幕结束，切换语言只更新HUD，仍播放同一英语文件。实际英语WAV0/15，Node受控句柄、PCM夹具不计作配音或试听证据。原始/成品metadata升英语v2，避免稳定ID误用旧中文录音。对应针对性/浏览器结果见[R2记录](../m1-r2-review.md)，未重跑历史79项引擎测试，不扩张引擎能力。
+
+## M1-R3 · 正式视觉候选与公开渲染边界
+
+固定SHA仍为`da8ea1cf098ad99ccc89451d34bf4e272cdc15aa`。核查原生`scene-runtime.js`的glTF导入、PBR材质库（albedo/normal/metallicRoughness及uvScale）、lightType与环境设置；`visuals.createMaterial/createTexture/apply(includeChildren)/createMesh`可用于共享材质与紧凑栈雀。官方`createStaticGame`接收model/texture buffer Map，资源在本地生成包内，无在线素材依赖。
+
+项目公开设置无bloom/tone mapping/雾参数，未臆造API。当前以两盏点光、环境光、原生glTF静态顶点烘色、小面积PBR金属和canvas轻微saturate/contrast实现最小画面统一；没有引擎修改、私有渲染器访问或额外屏幕采样通道。自动化测试中的renderer读取仅用于检查/性能研究，不进入游戏实现。实际能力证据与限制见[R3记录](../m1-r3-review.md)。

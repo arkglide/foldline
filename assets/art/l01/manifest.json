@@ -1,0 +1,110 @@
+{
+  "recordedAt": "2026-10-18",
+  "scope": "C01-L01 only",
+  "files": [
+    {
+      "file": "concrete023-color.jpg",
+      "source": "https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete023/Concrete023_SQ_Color.jpg?99132",
+      "assetPage": "https://ambientcg.com/a/Concrete023",
+      "author": "Lennart Demes / ambientCG",
+      "license": "CC0-1.0",
+      "licenseURL": "https://docs.ambientcg.com/license/",
+      "sourceSHA256": "cac2a93631fba5f7730589d6f591002fe7f8699a39181bc6b31e2c3df149dafc",
+      "sourceBytes": 1892865,
+      "sourceResolution": [
+        2048,
+        2048
+      ],
+      "resolution": [
+        512,
+        512
+      ],
+      "processing": "ImageMagick resize 512x512, strip metadata, JPEG quality 88",
+      "sha256": "5484867ff4175b12481655ef84f6f76033f859a748bd055ca403bc5aa5dcd689",
+      "bytes": 74807
+    },
+    {
+      "file": "metal032-color.jpg",
+      "source": "https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal032/Metal032_SQ_Color.jpg?2445",
+      "assetPage": "https://ambientcg.com/a/Metal032",
+      "author": "Lennart Demes / ambientCG",
+      "license": "CC0-1.0",
+      "licenseURL": "https://docs.ambientcg.com/license/",
+      "sourceSHA256": "6baa1779f01efb6f877a1334368437f034cfc8f970a8aef1295dee84221a537e",
+      "sourceBytes": 703170,
+      "sourceResolution": [
+        2048,
+        2048
+      ],
+      "resolution": [
+        512,
+        512
+      ],
+      "processing": "ImageMagick resize 512x512, strip metadata, JPEG quality 88",
+      "sha256": "c38476e28f619cd2577203e5c340f64facc2ed7d7acf561ab8009badf86fa20f",
+      "bytes": 10884
+    },
+    {
+      "file": "metal032-normal-gl.jpg",
+      "source": "https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal032/Metal032_SQ_NormalDX.jpg?3563",
+      "assetPage": "https://ambientcg.com/a/Metal032",
+      "author": "Lennart Demes / ambientCG",
+      "license": "CC0-1.0",
+      "licenseURL": "https://docs.ambientcg.com/license/",
+      "sourceSHA256": "b0031d734af620df61d0357a76c0a10cf58b293fc55ad348771f67bbc1f19da5",
+      "sourceBytes": 53216,
+      "sourceResolution": [
+        2048,
+        2048
+      ],
+      "resolution": [
+        512,
+        512
+      ],
+      "processing": "ImageMagick resize 512x512, invert green channel (NormalDX to glTF/OpenGL NormalGL), strip metadata, JPEG quality 88",
+      "sha256": "41cf7e56b4721bd22b9d6ec90c57fb7000f75b8a822913c9d843d628cc1894f3",
+      "bytes": 3359
+    },
+    {
+      "file": "signage.svg",
+      "source": "Foldline original L01 art",
+      "author": "arkglide / Foldline",
+      "license": "MIT",
+      "licenseURL": "../../../LICENSE",
+      "processing": "Original SVG; PNG rasterized with Chromium 154, DPR1. System DejaVu Sans, no font distributed.",
+      "sha256": "ffd92434c18744527cc05e3213cfc1d2b6276f7c107ff174e6402181427956e9",
+      "bytes": 1427
+    },
+    {
+      "file": "signage.png",
+      "source": "Foldline original L01 art",
+      "author": "arkglide / Foldline",
+      "license": "MIT",
+      "licenseURL": "../../../LICENSE",
+      "processing": "Original SVG; PNG rasterized with Chromium 154, DPR1. System DejaVu Sans, no font distributed.",
+      "sha256": "071d444f6b7f22c0c876de37e2c4f94e34db25ba80b9744c84cff89c49f16b78",
+      "bytes": 46861
+    },
+    {
+      "file": "gate.svg",
+      "source": "Foldline original L01 art",
+      "author": "arkglide / Foldline",
+      "license": "MIT",
+      "licenseURL": "../../../LICENSE",
+      "processing": "Original SVG; PNG rasterized with Chromium 154, DPR1. System DejaVu Sans, no font distributed.",
+      "sha256": "de12e66dd36a7966e21797a77c49e8865b3bc04de86e013bcf690f903f7bb483",
+      "bytes": 842
+    },
+    {
+      "file": "gate.png",
+      "source": "Foldline original L01 art",
+      "author": "arkglide / Foldline",
+      "license": "MIT",
+      "licenseURL": "../../../LICENSE",
+      "processing": "Original SVG; PNG rasterized with Chromium 154, DPR1. System DejaVu Sans, no font distributed.",
+      "sha256": "c70f724dcc672be9999f7a23c30ad5dd96cdde76130be377a670782db2c97020",
+      "bytes": 10740
+    }
+  ],
+  "unused": "Poly Haven concrete_wall_007, metal_plate, painted_metal_shutter researched/downloaded to temporary paths only, not shipped. ambientCG ZIP and some asset pages returned HTTP 403; actual installed textures use the official API-linked surface map files. Concrete023 NormalDX was sampled but omitted after switching the broad concrete surface to baked static vertex lighting."
+}

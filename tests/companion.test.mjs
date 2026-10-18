@@ -1,6 +1,19 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { setup } from '../.cache/arkglide/tests/helpers/foundations.mjs';
+import { setup as foundations } from '../.cache/arkglide/tests/helpers/foundations.mjs';
+import fs from 'node:fs';
+
+// Same native runtime as production, supplied with the actual packaged metal
+// asset. NullEngine verifies ownership/geometry; browser tests verify decoding.
+function setup() {
+  const base = foundations();
+  const raw = fs.readFileSync(new URL('../assets/art/l01/metal032-color.jpg', import.meta.url));
+  const visuals = ArkGlideVisuals.create(base.B, { scene: base.scene,
+    find: base.entities.sceneAPI.find, getObject: base.entities.getObject, register: base.entities.register,
+    getTextures: () => [{id:'zanque-service-metal',mime:'image/jpeg'}],
+    getTextureBuffers: () => new Map([['zanque-service-metal',raw]]) });
+  return {...base, visuals, v: visuals.forOwner(base.owner), done() {visuals.dispose();base.done();}};
+}
 import { createCompanion } from '../game/companion.js';
 
 // Use the pinned engine's native visual/lifecycle runtime and Babylon NullEngine.
@@ -11,8 +24,8 @@ test('栈雀 uses native visible parts without collision bodies or per-frame all
     const camera = { position: { x: 3, y: 1.6, z: 4 }, rotation: { x: 0, y: 0, z: 0, w: 1 } };
     const companion = createCompanion({ visuals: s.v }, { getPose: () => camera });
     const first = companion.snapshot();
-    assert.deepEqual(first.resources, { meshes: 12, materials: 5 });
-    assert.equal(s.visuals.stats().visualResources, 17);
+    assert.deepEqual(first.resources, { meshes: 12, materials: 5, textures: 1 });
+    assert.equal(s.visuals.stats().visualResources, 18);
     assert.equal(s.physics.stats().physicsBodies, 0);
     assert.ok(first.parts.every(p => s.entities.sceneAPI.find(p.id)));
     const housing = s.entities.getObject('zanque:housing').getBoundingInfo().boundingBox;
@@ -21,7 +34,7 @@ test('栈雀 uses native visible parts without collision bodies or per-frame all
     for (let i = 0; i < 120; i++) companion.update(1 / 60, { speaking: true });
     assert.equal(companion.snapshot().mode, 'speaking');
     assert.notDeepEqual(companion.snapshot().parts, first.parts, 'articulated parts visibly change pose');
-    assert.equal(s.visuals.stats().visualResources, 17);
+    assert.equal(s.visuals.stats().visualResources, 18);
     companion.update(1 / 60, { observing: true });
     assert.equal(companion.snapshot().mode, 'observing');
     const beforePause = companion.snapshot();
@@ -50,7 +63,7 @@ test('mapped camera anchors 栈雀 immediately, without a world interpolation tr
     assert.ok(Math.abs(moved.mountDistance - initial.mountDistance) < 1e-10);
     assert.ok(moved.parts.every(p => Math.hypot(p.position.x - 24, p.position.y - 4, p.position.z - 10) < 1.15));
     assert.deepEqual(camera.position, { x: 24, y: 4, z: 10 }, 'module never changes player/view input');
-    assert.equal(s.visuals.stats().visualResources, 17);
+    assert.equal(s.visuals.stats().visualResources, 18);
   } finally { s.done(); }
 });
 
@@ -63,15 +76,15 @@ test('retry snap reuses parts; explicit disposal and native owner cleanup releas
     for (let i = 0; i < 5; i++) {
       companion.update(1 / 60, { speaking: true }); companion.snap();
       assert.deepEqual(companion.snapshot().parts.map(p => p.id), ids);
-      assert.equal(s.visuals.stats().visualResources, 17);
+      assert.equal(s.visuals.stats().visualResources, 18);
     }
     companion.dispose(); companion.dispose();
-    assert.deepEqual(companion.snapshot().resources, { meshes: 0, materials: 0 });
+    assert.deepEqual(companion.snapshot().resources, { meshes: 0, materials: 0, textures: 0 });
     assert.equal(s.visuals.stats().visualResources, 0);
     assert.ok(ids.every(id => !s.entities.sceneAPI.find(id)));
     const next = createCompanion({ visuals: s.v }, { getPose: () => camera });
     s.owner.abort();
-    assert.deepEqual(next.snapshot().resources, { meshes: 0, materials: 0 });
+    assert.deepEqual(next.snapshot().resources, { meshes: 0, materials: 0, textures: 0 });
     assert.equal(s.visuals.stats().visualResources, 0);
     assert.equal(s.physics.stats().physicsBodies, 0);
     assert.deepEqual(s.errors, []);
@@ -111,7 +124,7 @@ test('live-aperture shoulder fold retracts locally and stays folded across a map
     assert.equal(companion.snapshot().retracted, false);
     assert.ok(companion.snapshot().localOffset.z > .69);
     assert.deepEqual(companion.snapshot().parts.map(p => p.id), ids);
-    assert.equal(s.visuals.stats().visualResources, 17);
+    assert.equal(s.visuals.stats().visualResources, 18);
     assert.equal(s.physics.stats().physicsBodies, 0);
     companion.dispose();
     assert.equal(s.visuals.stats().visualResources, 0);
@@ -128,7 +141,7 @@ test('dialogue delivery changes articulation while pause, mount and resource bou
       for (let i = 0; i < 30; i++) companion.update(1 / 60, { speaking: true, delivery });
       const state = companion.snapshot();
       assert.equal(state.delivery, delivery);
-      assert.deepEqual(state.resources, { meshes: 12, materials: 5 });
+      assert.deepEqual(state.resources, { meshes: 12, materials: 5, textures: 1 });
       assert.equal(s.physics.stats().physicsBodies, 0);
       assert.ok(state.parts.every(p => Math.hypot(p.position.x - camera.position.x,
         p.position.y - camera.position.y, p.position.z - camera.position.z) < 1.05));

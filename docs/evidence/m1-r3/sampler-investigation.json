@@ -1,0 +1,17 @@
+{
+  "kind": "Developer rendering-only profiling; private renderer mutation is confined to this experiment, not game code or gameplay validation",
+  "results": [
+    {
+      "mode": "trilinear",
+      "fps": 4.1963072496200216,
+      "frameMs": 11.599999999627471,
+      "renderMs": 6.699999999254942
+    },
+    {
+      "mode": "bilinear",
+      "fps": 4.794151135613123,
+      "frameMs": 9.300000000745058,
+      "renderMs": 1.699999999254942
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+
+> foldline@0.1.0 test:unit
+> npm run setup:engine && node --test --test-concurrency=1 tests/engine-setup.test.mjs tests/dialogue.test.mjs tests/dialogue-preferences.test.mjs tests/voice-assets-r2.test.mjs tests/companion.test.mjs tests/l01-art.test.mjs
+
+
+> foldline@0.1.0 setup:engine
+> node scripts/engine.mjs
+
+/workspace/foldline/.cache/arkglide
+BJS - [12:22:09]: Babylon.js v9.28.0 - Null engine
+BJS - [12:22:09]: Babylon.js v9.28.0 - Null engine
+BJS - [12:22:09]: Babylon.js v9.28.0 - Null engine
+BJS - [12:22:09]: Babylon.js v9.28.0 - Null engine
+BJS - [12:22:09]: Babylon.js v9.28.0 - Null engine
+BJS - [12:22:09]: Babylon.js v9.28.0 - Null engine
+BJS - [12:22:09]: Babylon.js v9.28.0 - Null engine
+BJS - [12:22:09]: Babylon.js v9.28.0 - Null engine
+BJS - [12:22:09]: Babylon.js v9.28.0 - Null engine
+✔ 栈雀 uses native visible parts without collision bodies or per-frame allocation (36.879467ms)
+✔ mapped camera anchors 栈雀 immediately, without a world interpolation trail (6.408758ms)
+✔ retry snap reuses parts; explicit disposal and native owner cleanup release all companion resources (8.00034ms)
+✔ live-aperture shoulder fold retracts locally and stays folded across a mapped view (4.838939ms)
+✔ dialogue delivery changes articulation while pause, mount and resource bounds remain stable (24.592618ms)
+✔ preferences use one versioned native key and survive a fresh runtime independently of checkpoints (4.169144ms)
+✔ late reads merge untouched saved fields but never overwrite settings the player already changed (0.642916ms)
+✔ writes are serial and coalesce rapid input without a stale final preference snapshot (0.695785ms)
+✔ invalid/corrupt stored preferences fall back, and failed writes retry only after another explicit change (1.112852ms)
+✔ dispose suppresses late read callbacks, new writes, and follow-up writes after an in-flight one (1.61772ms)
+✔ unknown language and invalid values cannot corrupt a persisted preference document (0.480562ms)
+✔ R2 data separates English voice and both subtitles, with valid unique assets and causal delivery (2.748439ms)
+✔ missing voice assets honestly report 0/15 and retain localized subtitles without replay (1.25135ms)
+✔ switching an active subtitle updates text and name immediately without restarting English audio or its clock (0.780543ms)
+✔ serial priority queue never plays a reply before its parent actually starts (2.179865ms)
+✔ a consumed event is insufficient for a reply, and cancelled or expired parents produce no orphan response (0.510678ms)
+✔ new progression cancels queued observations without interrupting the line already playing (0.404317ms)
+✔ pause freezes the voice and subtitle clock, then resumes the same line (0.540893ms)
+✔ checkpoint v1 stores event progression separately from settings and drops live audio/queue on restore (0.943467ms)
+✔ voice/subtitles/language remain independent through retry; enabling voice never restarts a partial sentence (0.454072ms)
+✔ failed native playback falls back without blocking events, retries, or later queue progress (0.592971ms)
+✔ native read preference failure is non-blocking and a later explicit setting write can recover (7.839318ms)
+✔ PCM processing preserves browser-decodable duration, controls peak, fades edges, and rejects invalid/silent WAV (6.853877ms)
+✔ npm CLI launch preserves arguments with spaces and shell characters on Windows (37.166404ms)
+✔ failed npm CLI remains an installation failure (29.513901ms)
+✔ direct Windows invocation gives a useful error when no npm CLI is available (1.677791ms)
+✔ installed npm CLI can be launched through the same runner (68.048875ms)
+✔ CRLF runtime sync can look dirty in status while pinned content stays unchanged (61.544659ms)
+✔ real source and binary edits are reported and preserved (32.661795ms)
+✔ staged edits are still refused when the working file is reverted to HEAD (38.034107ms)
+✔ checkout verification still rejects the wrong pin and nested checkouts (30.653844ms)
+✔ L01 art preserves every accepted native collider, player and moving interaction target (40.712815ms)
+✔ L01 art packs a bounded self-contained glTF without adding runtime network dependencies (31.981509ms)
+✔ downloaded art and authored signage match their recorded provenance checksums (4.155423ms)
+✔ an entirely missing English set is an honest subtitle fallback, strict delivery rejects it (7.412327ms)
+✔ stable IDs cannot package unmanifested WAV or a version 1 Chinese manifest (8.202884ms)
+✔ English processing records actual alternate English culture, hashes and separate voiceText (14.542489ms)
+✔ Chinese subtitle and display-name edits do not require an English rerecord; English edits do (12.524958ms)
+✔ Chinese takes, outdated rate, duplicate IDs and corrupted raw hashes are rejected before output changes (13.245435ms)
+✔ replaced or malformed processed WAV cannot bypass the English package manifest (6.944774ms)
+✔ a merged partial rerecord replaces its take and preserves untouched voice metadata and output (9.737489ms)
+✔ partial English production packages only verified takes and rejects old raw metadata (4.205689ms)
+ℹ tests 42
+ℹ suites 0
+ℹ pass 42
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1975.197951
