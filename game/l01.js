@@ -1,5 +1,6 @@
 import { createDialogue } from './dialogue.js';
 import { createCompanion } from './companion.js';
+import { createL01Art } from './l01-art.js';
 import dialogueData from './data/l01-dialogue.js';
 
 /** C01-L01 only. Native ArkGlide script; no gameplay teleport or camera cuts. */
@@ -12,11 +13,11 @@ export default function (ctx) {
   const initialRotation = { x: Math.sin(pitch / 2) * Math.cos(yaw / 2),
     y: Math.cos(pitch / 2) * Math.sin(yaw / 2), z: -Math.sin(pitch / 2) * Math.sin(yaw / 2),
     w: Math.cos(pitch / 2) * Math.cos(yaw / 2) };
-  let rig, controller, a, b, shutter, gate, exit, blind, initialSnapshot, companion, dialogue;
+  let art, rig, controller, a, b, shutter, gate, exit, blind, initialSnapshot, companion, dialogue;
   let noticeAge = 0, observationTime = 0, upperLookTime = 0, holdingWheel = false;
   let mountObstruction = '', companionEntities = [];
   const feedback = [], audioErrors = [];
-  let handleMaterial, latchMaterial, exitMaterial;
+  let handleMaterial, latchMaterial, exitMaterial, restoreCanvasGrade;
   let ready = false, alive = true, retrying = false, startingControl = false, retryCount = 0, paused = true, error = '';
   let interactTarget = '', portalEvents = [], blockedEvents = [];
   let flags = { handleRequested: false, portalsActive: false, latchRequested: false,
@@ -169,6 +170,7 @@ export default function (ctx) {
   }
   return {
     onStart() {
+      art = createL01Art(ctx);
       controller = physics.character(entity);
       rig = cameras.createRig({ id: 'l01-first-person', target: entity, mode: 'firstPerson',
         rotation: initialRotation, eyeOffset: { x: 0, y: .7, z: 0 }, fov: 75,
@@ -225,6 +227,12 @@ export default function (ctx) {
         text('notice', '通路边缘受阻，请调整站位。');
       });
       const canvas = document.getElementById('renderCanvas');
+      // Public canvas composition: restrained grade, before the independent HUD.
+      // The pinned engine exposes no tone-mapping/bloom API. No blur, temporal
+      // pass, altered portal quality or renderer-private access is used.
+      const previousFilter = canvas.style.filter;
+      canvas.style.filter = 'saturate(0.94) contrast(1.025)';
+      restoreCanvasGrade = () => { canvas.style.filter = previousFilter; };
       events.listen(canvas, 'pointerdown', async () => {
         if (!input.isPointerLocked() && ready && !retrying && !startingControl) {
           startingControl = true;
@@ -375,7 +383,7 @@ export default function (ctx) {
     },
     onDestroy() {
       alive = false; ready = false;
-      stopFeedback(); dialogue?.dispose(); companion?.dispose();
+      stopFeedback(); dialogue?.dispose(); companion?.dispose(); art?.dispose(); restoreCanvasGrade?.();
       delete globalThis.foldlineL01;
       // Native owner cleanup releases surfaces, portals, rig, motions, providers,
       // material overlays and all events.listen/onPointerLock subscriptions.

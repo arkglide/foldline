@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="512" viewBox="0 0 1024 512">
+<rect width="1024" height="512" fill="#172d30"/>
+<g fill="#cbd8cb" font-family="DejaVu Sans,sans-serif" font-weight="bold">
+<text x="30" y="84" font-size="77">01</text><text x="158" y="57" font-size="27" letter-spacing="5">CHENGWAN STATION</text><text x="158" y="93" font-size="21" letter-spacing="3">INSPECTION COURT</text>
+<text x="30" y="196" font-size="66">A1</text><text x="175" y="171" font-size="25">FIXED LINK</text><text x="175" y="207" font-size="17" letter-spacing="3">CALIBRATED ANCHOR</text>
+<text x="550" y="196" font-size="66">B1</text><text x="695" y="171" font-size="25">FIXED LINK</text><text x="695" y="207" font-size="17" letter-spacing="3">UPPER GALLERY</text>
+<text x="30" y="303" font-size="31">MANUAL RETURN</text><text x="30" y="338" font-size="19" letter-spacing="4">COUNTERWEIGHT / 02</text>
+<text x="550" y="303" font-size="34">P-01 / P-02</text><text x="550" y="338" font-size="19" letter-spacing="2">PRESSURE REGULATION</text>
+<text x="30" y="440" font-size="32">INSPECTION ACCESS</text><text x="30" y="474" font-size="19" letter-spacing="3">KEEP LANDING CLEAR</text>
+<text x="550" y="440" font-size="34">EXIT →</text><text x="550" y="474" font-size="19" letter-spacing="3">MANUAL CIRCUIT</text>
+</g><g stroke="#c8a35f" stroke-width="4"><path d="M30 112H994M30 230H994M30 360H994M30 490H994"/></g>
+</svg>

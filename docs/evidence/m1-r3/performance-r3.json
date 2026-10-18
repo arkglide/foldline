@@ -1,0 +1,1379 @@
+{
+  "recordedAt": "2026-10-18T12:28:57.984Z",
+  "build": {
+    "level": "C01-L01",
+    "stage": "L01-visual-sample-pending-human-review",
+    "engineCommit": "da8ea1cf098ad99ccc89451d34bf4e272cdc15aa",
+    "revision": "M1-R3",
+    "art": {
+      "artBatches": 8,
+      "artTriangles": 6946,
+      "embeddedImages": 4
+    },
+    "voiceLanguage": "en",
+    "subtitleLanguages": [
+      "zh-CN",
+      "en"
+    ],
+    "voice": {
+      "generated": [],
+      "missing": [
+        {
+          "id": "C01-L01-ZQ-001",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-001.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-002",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-002.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-010",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-010.wav"
+        },
+        {
+          "id": "C01-L01-HW-001",
+          "character": "hengwu",
+          "file": "assets/voice/l01/C01-L01-HW-001.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-003",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-003.wav"
+        },
+        {
+          "id": "C01-L01-HW-002",
+          "character": "hengwu",
+          "file": "assets/voice/l01/C01-L01-HW-002.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-005",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-005.wav"
+        },
+        {
+          "id": "C01-L01-HW-004",
+          "character": "hengwu",
+          "file": "assets/voice/l01/C01-L01-HW-004.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-006",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-006.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-011",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-011.wav"
+        },
+        {
+          "id": "C01-L01-HW-005",
+          "character": "hengwu",
+          "file": "assets/voice/l01/C01-L01-HW-005.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-007",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-007.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-008",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-008.wav"
+        },
+        {
+          "id": "C01-L01-HW-003",
+          "character": "hengwu",
+          "file": "assets/voice/l01/C01-L01-HW-003.wav"
+        },
+        {
+          "id": "C01-L01-ZQ-009",
+          "character": "zhanque",
+          "file": "assets/voice/l01/C01-L01-ZQ-009.wav"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "platform": "linux",
+    "node": "v24.19.0",
+    "chromium": "154.0.8037.57",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "reportedCpus": 5,
+    "viewport": "1280x800 DPR1",
+    "concurrentBrowsers": 1
+  },
+  "method": {
+    "warmupMs": 2000,
+    "sampleMs": 6000,
+    "iterations": 2,
+    "frameRate": "Native frameCount delta / elapsed wall time",
+    "nativeDurations": "Submission/CPU durations, not GPU completion; do not invert to infer FPS",
+    "pose": "Real keyboard/pointer inputs, A1 positioning tolerance 0.32m. Actual body/camera poses retained.",
+    "limit": "Short software-rendered cloud samples, not Windows hardware or human playtesting"
+  },
+  "results": [
+    {
+      "label": "r3",
+      "iteration": 0,
+      "condition": "entry",
+      "loadedBytes": 14252024,
+      "loadedRequests": 63,
+      "errors": [],
+      "frame": 41,
+      "at": 11301.400000000373,
+      "frameMs": 14.400000000372529,
+      "renderMs": 3.800000000745058,
+      "pose": {
+        "ready": true,
+        "error": "",
+        "phase": "locked",
+        "position": {
+          "x": 9.5,
+          "y": 0.8999998569488525,
+          "z": 3
+        },
+        "footPosition": {
+          "x": 9.5,
+          "y": -1.4305114748314196e-7,
+          "z": 3
+        },
+        "eyePosition": {
+          "x": 9.5,
+          "y": 1.5999997854232788,
+          "z": 2.999999761581421
+        },
+        "rotation": {
+          "x": -0.04424967251117367,
+          "y": 0.46432064111205384,
+          "z": 0.02323539649321268,
+          "w": 0.8842558665961299
+        },
+        "velocity": {
+          "x": 0,
+          "y": -0.16333332657814026,
+          "z": 0
+        },
+        "interactTarget": "",
+        "portalEvents": [],
+        "blockedEvents": [],
+        "returnStairOpen": false,
+        "shutterProgress": 0,
+        "gateProgress": 0,
+        "exitProgress": 0,
+        "blindProgress": 0,
+        "holdingWheel": false,
+        "companion": {
+          "disposed": false,
+          "mode": "speaking",
+          "animationMode": "speaking",
+          "delivery": "dry",
+          "snapCount": 1,
+          "retracted": false,
+          "retraction": 0,
+          "worldPosition": {
+            "x": 10.31791359709003,
+            "y": 1.3898768029703907,
+            "z": 3.0903244886641703
+          },
+          "localOffset": {
+            "x": 0.39,
+            "y": -0.2814122568267169,
+            "z": 0.7
+          },
+          "mountDistance": 0.8492896304454809,
+          "collisionBodies": 0,
+          "resources": {
+            "meshes": 12,
+            "materials": 5,
+            "textures": 1
+          },
+          "parts": [
+            {
+              "id": "zanque:housing",
+              "position": {
+                "x": 10.31791359709003,
+                "y": 1.3898768029703907,
+                "z": 3.0903244886641703
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:display-bezel",
+              "position": {
+                "x": 10.268427328598465,
+                "y": 1.3818790102891692,
+                "z": 3.050389087751831
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:status-left",
+              "position": {
+                "x": 10.238328957569408,
+                "y": 1.3850955647070444,
+                "z": 3.069379334487937
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:status-right",
+              "position": {
+                "x": 10.280471565856633,
+                "y": 1.385928740788194,
+                "z": 3.0169911287755946
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:folded-top",
+              "position": {
+                "x": 10.310929157386836,
+                "y": 1.4592535118656886,
+                "z": 3.0858093599465377
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:hinge-left",
+              "position": {
+                "x": 10.270236745474815,
+                "y": 1.3813670856619857,
+                "z": 3.171817609581061
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:hinge-right",
+              "position": {
+                "x": 10.3874137538832,
+                "y": 1.383683721594938,
+                "z": 3.0261528424784516
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:wing-left",
+              "position": {
+                "x": 10.23857283293519,
+                "y": 1.387979076301758,
+                "z": 3.1956949599994586
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:wing-right",
+              "position": {
+                "x": 10.403842531590747,
+                "y": 1.39124652379623,
+                "z": 2.990245337323673
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:mount-brace",
+              "position": {
+                "x": 10.337924751384937,
+                "y": 1.3245427383555333,
+                "z": 3.105382982196777
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:tool-left",
+              "position": {
+                "x": 10.295931914935379,
+                "y": 1.2903779723804616,
+                "z": 3.1278925210413715
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:tool-right",
+              "position": {
+                "x": 10.331393378006336,
+                "y": 1.2910790595706971,
+                "z": 3.083809762576108
+              },
+              "active": true
+            }
+          ]
+        },
+        "mountObstruction": "",
+        "dialogue": {
+          "version": 1,
+          "consumedEvents": [
+            "court.enter",
+            "exit.seen"
+          ],
+          "startedLines": [
+            "C01-L01-ZQ-001",
+            "C01-L01-ZQ-002"
+          ],
+          "voiceEnabled": true,
+          "subtitlesEnabled": true,
+          "subtitleLanguage": "zh-CN",
+          "preferencesReady": true,
+          "pendingWrites": 0,
+          "persistenceError": null,
+          "paused": false,
+          "currentLine": "C01-L01-ZQ-002",
+          "currentSpeaker": "zhanque",
+          "currentDelivery": "dry",
+          "currentText": "出口在那儿。我还盼着它能跟我们在一层呢。",
+          "localizedSpeaker": "栈雀",
+          "currentMode": "subtitle",
+          "elapsed": 3.2747999999970197,
+          "audioPlaying": false,
+          "queue": [],
+          "availableAudio": [],
+          "missingAudio": [
+            "C01-L01-ZQ-001",
+            "C01-L01-ZQ-002",
+            "C01-L01-ZQ-010",
+            "C01-L01-HW-001",
+            "C01-L01-ZQ-003",
+            "C01-L01-HW-002",
+            "C01-L01-ZQ-005",
+            "C01-L01-HW-004",
+            "C01-L01-ZQ-006",
+            "C01-L01-ZQ-011",
+            "C01-L01-HW-005",
+            "C01-L01-ZQ-007",
+            "C01-L01-ZQ-008",
+            "C01-L01-HW-003",
+            "C01-L01-ZQ-009"
+          ],
+          "history": [
+            {
+              "id": "C01-L01-ZQ-001",
+              "event": "court.enter",
+              "clock": 0.25,
+              "mode": "subtitle"
+            },
+            {
+              "id": "C01-L01-ZQ-002",
+              "event": "exit.seen",
+              "clock": 4.962599999999626,
+              "mode": "subtitle"
+            }
+          ],
+          "errors": [],
+          "expired": 0,
+          "cancelled": 0,
+          "disposed": false
+        },
+        "audioErrors": [],
+        "completed": false,
+        "retryCount": 0,
+        "paused": false
+      },
+      "meshes": 111,
+      "materials": 115,
+      "usedMaterials": 28,
+      "textures": 7,
+      "lights": 3,
+      "triangles": 9408,
+      "physics": {
+        "physicsBodies": 74,
+        "physicsContacts": 1,
+        "physicsSubscriptions": 0,
+        "physicsBackend": "jolt-wasm",
+        "physicsCharacters": 1,
+        "physicsConstraints": 0,
+        "physicsShapeCache": 0,
+        "physicsCacheBytes": 0,
+        "physicsQueriesActive": 0,
+        "physicsDebugMeshes": 0
+      },
+      "portals": {
+        "portals": 2,
+        "portalSurfaces": 2,
+        "portalTravelers": 1,
+        "portalClones": 0,
+        "portalViews": 0,
+        "portalRenderedViews": 0,
+        "portalTraversals": 0
+      },
+      "visuals": {
+        "visualResources": 30
+      },
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "filter": "saturate(0.94) contrast(1.025)",
+      "fps": 4.327995472250622
+    },
+    {
+      "label": "r3",
+      "iteration": 0,
+      "condition": "portal",
+      "loadedBytes": 14252024,
+      "loadedRequests": 63,
+      "errors": [],
+      "frame": 109,
+      "at": 38272.199999999255,
+      "frameMs": 29.5,
+      "renderMs": 7.400000000372529,
+      "pose": {
+        "ready": true,
+        "error": "",
+        "phase": "active",
+        "position": {
+          "x": 10.966084480285645,
+          "y": 0.8999999165534973,
+          "z": 8.562200546264648
+        },
+        "footPosition": {
+          "x": 10.966084480285645,
+          "y": -8.344650270775134e-8,
+          "z": 8.562200546264648
+        },
+        "eyePosition": {
+          "x": 10.966084480285645,
+          "y": 1.5999999046325684,
+          "z": 8.562201499938965
+        },
+        "rotation": {
+          "x": 0.000999993958502097,
+          "y": -0.0014764150512633686,
+          "z": 0.0000014764083457039998,
+          "w": 0.999998405574481
+        },
+        "velocity": {
+          "x": 0,
+          "y": -0.040833331644535065,
+          "z": 0
+        },
+        "interactTarget": "",
+        "portalEvents": [],
+        "blockedEvents": [],
+        "returnStairOpen": false,
+        "shutterProgress": 1,
+        "gateProgress": 0,
+        "exitProgress": 0,
+        "blindProgress": 0,
+        "holdingWheel": false,
+        "companion": {
+          "disposed": false,
+          "mode": "speaking",
+          "animationMode": "speaking",
+          "delivery": "curious",
+          "snapCount": 1,
+          "retracted": false,
+          "retraction": 0,
+          "worldPosition": {
+            "x": 11.35401747591988,
+            "y": 1.3149518191495364,
+            "z": 9.26278135319191
+          },
+          "localOffset": {
+            "x": 0.39,
+            "y": -0.2836486629822067,
+            "z": 0.7000000000000013
+          },
+          "mountDistance": 0.8500332645980461,
+          "collisionBodies": 0,
+          "resources": {
+            "meshes": 12,
+            "materials": 5,
+            "textures": 1
+          },
+          "parts": [
+            {
+              "id": "zanque:housing",
+              "position": {
+                "x": 11.35401747591988,
+                "y": 1.3149518191495364,
+                "z": 9.26278135319191
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:display-bezel",
+              "position": {
+                "x": 11.365415862954007,
+                "y": 1.3151662394603774,
+                "z": 9.199712166400388
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:status-left",
+              "position": {
+                "x": 11.334036037843529,
+                "y": 1.3180710920468155,
+                "z": 9.182867108242066
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:status-right",
+              "position": {
+                "x": 11.400063837536578,
+                "y": 1.3224065853021347,
+                "z": 9.194814940013158
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:folded-top",
+              "position": {
+                "x": 11.349462357029898,
+                "y": 1.3846764982958057,
+                "z": 9.262653597917865
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:hinge-left",
+              "position": {
+                "x": 11.260506263042586,
+                "y": 1.2998671028284585,
+                "z": 9.258943354110839
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:hinge-right",
+              "position": {
+                "x": 11.444095754872041,
+                "y": 1.3119218889530044,
+                "z": 9.292164154645095
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:wing-left",
+              "position": {
+                "x": 11.224508941230988,
+                "y": 1.3087285522025138,
+                "z": 9.243383241383002
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:wing-right",
+              "position": {
+                "x": 11.48182855195961,
+                "y": 1.3256245784514809,
+                "z": 9.28994562017922
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:mount-brace",
+              "position": {
+                "x": 11.355402727348814,
+                "y": 1.24708572296885,
+                "z": 9.279752457427962
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:tool-left",
+              "position": {
+                "x": 11.317938704851118,
+                "y": 1.2133379777939903,
+                "z": 9.24983848992712
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:tool-right",
+              "position": {
+                "x": 11.37349868264161,
+                "y": 1.2169861367527346,
+                "z": 9.259892153246698
+              },
+              "active": true
+            }
+          ]
+        },
+        "mountObstruction": "",
+        "dialogue": {
+          "version": 1,
+          "consumedEvents": [
+            "court.enter",
+            "exit.seen",
+            "fold.ready"
+          ],
+          "startedLines": [
+            "C01-L01-ZQ-001",
+            "C01-L01-ZQ-002",
+            "C01-L01-HW-002",
+            "C01-L01-ZQ-005"
+          ],
+          "voiceEnabled": true,
+          "subtitlesEnabled": true,
+          "subtitleLanguage": "zh-CN",
+          "preferencesReady": true,
+          "pendingWrites": 0,
+          "persistenceError": null,
+          "paused": false,
+          "currentLine": "C01-L01-ZQ-005",
+          "currentSpeaker": "zhanque",
+          "currentDelivery": "curious",
+          "currentText": "会不会是装货平台？那种栏杆我好像见过。",
+          "localizedSpeaker": "栈雀",
+          "currentMode": "subtitle",
+          "elapsed": 2.5,
+          "audioPlaying": false,
+          "queue": [
+            "C01-L01-HW-004"
+          ],
+          "availableAudio": [],
+          "missingAudio": [
+            "C01-L01-ZQ-001",
+            "C01-L01-ZQ-002",
+            "C01-L01-ZQ-010",
+            "C01-L01-HW-001",
+            "C01-L01-ZQ-003",
+            "C01-L01-HW-002",
+            "C01-L01-ZQ-005",
+            "C01-L01-HW-004",
+            "C01-L01-ZQ-006",
+            "C01-L01-ZQ-011",
+            "C01-L01-HW-005",
+            "C01-L01-ZQ-007",
+            "C01-L01-ZQ-008",
+            "C01-L01-HW-003",
+            "C01-L01-ZQ-009"
+          ],
+          "history": [
+            {
+              "id": "C01-L01-ZQ-001",
+              "event": "court.enter",
+              "clock": 0.25,
+              "mode": "subtitle"
+            },
+            {
+              "id": "C01-L01-ZQ-002",
+              "event": "exit.seen",
+              "clock": 4.962599999999626,
+              "mode": "subtitle"
+            },
+            {
+              "id": "C01-L01-HW-002",
+              "event": "fold.ready",
+              "clock": 16.594399999994778,
+              "mode": "subtitle"
+            },
+            {
+              "id": "C01-L01-ZQ-005",
+              "event": "fold.ready",
+              "clock": 21.366799999995152,
+              "mode": "subtitle"
+            }
+          ],
+          "errors": [],
+          "expired": 0,
+          "cancelled": 0,
+          "disposed": false
+        },
+        "audioErrors": [],
+        "completed": false,
+        "retryCount": 0,
+        "paused": false
+      },
+      "meshes": 111,
+      "materials": 115,
+      "usedMaterials": 28,
+      "textures": 11,
+      "lights": 3,
+      "triangles": 9500,
+      "physics": {
+        "physicsBodies": 74,
+        "physicsContacts": 1,
+        "physicsSubscriptions": 0,
+        "physicsBackend": "jolt-wasm",
+        "physicsCharacters": 1,
+        "physicsConstraints": 0,
+        "physicsShapeCache": 0,
+        "physicsCacheBytes": 0,
+        "physicsQueriesActive": 0,
+        "physicsDebugMeshes": 0
+      },
+      "portals": {
+        "portals": 2,
+        "portalSurfaces": 2,
+        "portalTravelers": 1,
+        "portalClones": 0,
+        "portalViews": 4,
+        "portalRenderedViews": 4,
+        "portalTraversals": 0
+      },
+      "visuals": {
+        "visualResources": 30
+      },
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "filter": "saturate(0.94) contrast(1.025)",
+      "fps": 2.1648986660898974,
+      "inputLog": [
+        {
+          "action": "pointer-lock"
+        },
+        {
+          "action": "pointer-lock"
+        },
+        {
+          "action": "walk",
+          "from": {
+            "x": 9.5,
+            "y": -1.4305114748314196e-7,
+            "z": 3
+          },
+          "target": {
+            "x": 12.1,
+            "z": 8
+          }
+        },
+        {
+          "action": "pointer-lock"
+        },
+        {
+          "action": "walk",
+          "from": {
+            "x": 11.998505592346191,
+            "y": -8.344650270775134e-8,
+            "z": 7.720743179321289
+          },
+          "target": {
+            "x": 11,
+            "z": 8.5
+          }
+        }
+      ]
+    },
+    {
+      "label": "r3",
+      "iteration": 1,
+      "condition": "entry",
+      "loadedBytes": 14252024,
+      "loadedRequests": 63,
+      "errors": [],
+      "frame": 38,
+      "at": 11305,
+      "frameMs": 11.599999999627471,
+      "renderMs": 1.699999999254942,
+      "pose": {
+        "ready": true,
+        "error": "",
+        "phase": "locked",
+        "position": {
+          "x": 9.5,
+          "y": 0.8999998569488525,
+          "z": 3
+        },
+        "footPosition": {
+          "x": 9.5,
+          "y": -1.4305114748314196e-7,
+          "z": 3
+        },
+        "eyePosition": {
+          "x": 9.5,
+          "y": 1.5999997854232788,
+          "z": 2.999999761581421
+        },
+        "rotation": {
+          "x": -0.04424967251117367,
+          "y": 0.46432064111205384,
+          "z": 0.02323539649321268,
+          "w": 0.8842558665961299
+        },
+        "velocity": {
+          "x": 0,
+          "y": -0.16333332657814026,
+          "z": 0
+        },
+        "interactTarget": "",
+        "portalEvents": [],
+        "blockedEvents": [],
+        "returnStairOpen": false,
+        "shutterProgress": 0,
+        "gateProgress": 0,
+        "exitProgress": 0,
+        "blindProgress": 0,
+        "holdingWheel": false,
+        "companion": {
+          "disposed": false,
+          "mode": "speaking",
+          "animationMode": "speaking",
+          "delivery": "dry",
+          "snapCount": 1,
+          "retracted": false,
+          "retraction": 0,
+          "worldPosition": {
+            "x": 10.318088900926734,
+            "y": 1.387754397824971,
+            "z": 3.0904453878548006
+          },
+          "localOffset": {
+            "x": 0.39,
+            "y": -0.2835453183674726,
+            "z": 0.7
+          },
+          "mountDistance": 0.8499988033451874,
+          "collisionBodies": 0,
+          "resources": {
+            "meshes": 12,
+            "materials": 5,
+            "textures": 1
+          },
+          "parts": [
+            {
+              "id": "zanque:housing",
+              "position": {
+                "x": 10.318088900926734,
+                "y": 1.387754397824971,
+                "z": 3.0904453878548006
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:display-bezel",
+              "position": {
+                "x": 10.268527444216666,
+                "y": 1.3805250139555405,
+                "z": 3.0504567679653274
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:status-left",
+              "position": {
+                "x": 10.238461682457903,
+                "y": 1.3838803828792359,
+                "z": 3.069474630654792
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:status-right",
+              "position": {
+                "x": 10.280607396191366,
+                "y": 1.3847142996945936,
+                "z": 3.0170889349923926
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:folded-top",
+              "position": {
+                "x": 10.311756768422606,
+                "y": 1.4572259224095645,
+                "z": 3.086456917936444
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:hinge-left",
+              "position": {
+                "x": 10.270338609165794,
+                "y": 1.379075980598538,
+                "z": 3.171877696778055
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:hinge-right",
+              "position": {
+                "x": 10.38752425222957,
+                "y": 1.3813946761339226,
+                "z": 3.0262199088387005
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:wing-left",
+              "position": {
+                "x": 10.23873993163502,
+                "y": 1.3860994811763416,
+                "z": 3.195723947185196
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:wing-right",
+              "position": {
+                "x": 10.40393440358706,
+                "y": 1.3893681041455987,
+                "z": 2.9903928098952033
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:mount-brace",
+              "position": {
+                "x": 10.337485755839111,
+                "y": 1.3221228676702117,
+                "z": 3.1050059095431743
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:tool-left",
+              "position": {
+                "x": 10.2951748061719,
+                "y": 1.2881847912756126,
+                "z": 3.127261232391881
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:tool-right",
+              "position": {
+                "x": 10.330638882362253,
+                "y": 1.2888865017665843,
+                "z": 3.0831805860418133
+              },
+              "active": true
+            }
+          ]
+        },
+        "mountObstruction": "",
+        "dialogue": {
+          "version": 1,
+          "consumedEvents": [
+            "court.enter",
+            "exit.seen"
+          ],
+          "startedLines": [
+            "C01-L01-ZQ-001",
+            "C01-L01-ZQ-002"
+          ],
+          "voiceEnabled": true,
+          "subtitlesEnabled": true,
+          "subtitleLanguage": "zh-CN",
+          "preferencesReady": true,
+          "pendingWrites": 0,
+          "persistenceError": null,
+          "paused": false,
+          "currentLine": "C01-L01-ZQ-002",
+          "currentSpeaker": "zhanque",
+          "currentDelivery": "dry",
+          "currentText": "出口在那儿。我还盼着它能跟我们在一层呢。",
+          "localizedSpeaker": "栈雀",
+          "currentMode": "subtitle",
+          "elapsed": 2.4998999999985103,
+          "audioPlaying": false,
+          "queue": [],
+          "availableAudio": [],
+          "missingAudio": [
+            "C01-L01-ZQ-001",
+            "C01-L01-ZQ-002",
+            "C01-L01-ZQ-010",
+            "C01-L01-HW-001",
+            "C01-L01-ZQ-003",
+            "C01-L01-HW-002",
+            "C01-L01-ZQ-005",
+            "C01-L01-HW-004",
+            "C01-L01-ZQ-006",
+            "C01-L01-ZQ-011",
+            "C01-L01-HW-005",
+            "C01-L01-ZQ-007",
+            "C01-L01-ZQ-008",
+            "C01-L01-HW-003",
+            "C01-L01-ZQ-009"
+          ],
+          "history": [
+            {
+              "id": "C01-L01-ZQ-001",
+              "event": "court.enter",
+              "clock": 0.25,
+              "mode": "subtitle"
+            },
+            {
+              "id": "C01-L01-ZQ-002",
+              "event": "exit.seen",
+              "clock": 4.777399999998509,
+              "mode": "subtitle"
+            }
+          ],
+          "errors": [],
+          "expired": 0,
+          "cancelled": 0,
+          "disposed": false
+        },
+        "audioErrors": [],
+        "completed": false,
+        "retryCount": 0,
+        "paused": false
+      },
+      "meshes": 111,
+      "materials": 115,
+      "usedMaterials": 28,
+      "textures": 7,
+      "lights": 3,
+      "triangles": 9408,
+      "physics": {
+        "physicsBodies": 74,
+        "physicsContacts": 1,
+        "physicsSubscriptions": 0,
+        "physicsBackend": "jolt-wasm",
+        "physicsCharacters": 1,
+        "physicsConstraints": 0,
+        "physicsShapeCache": 0,
+        "physicsCacheBytes": 0,
+        "physicsQueriesActive": 0,
+        "physicsDebugMeshes": 0
+      },
+      "portals": {
+        "portals": 2,
+        "portalSurfaces": 2,
+        "portalTravelers": 1,
+        "portalClones": 0,
+        "portalViews": 0,
+        "portalRenderedViews": 0,
+        "portalTraversals": 0
+      },
+      "visuals": {
+        "visualResources": 30
+      },
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "filter": "saturate(0.94) contrast(1.025)",
+      "fps": 3.662637765125256
+    },
+    {
+      "label": "r3",
+      "iteration": 1,
+      "condition": "portal",
+      "loadedBytes": 14252024,
+      "loadedRequests": 63,
+      "errors": [],
+      "frame": 108,
+      "at": 37646.800000000745,
+      "frameMs": 45.90000000037253,
+      "renderMs": 12.100000001490116,
+      "pose": {
+        "ready": true,
+        "error": "",
+        "phase": "active",
+        "position": {
+          "x": 11.101402282714844,
+          "y": 0.8999999165534973,
+          "z": 8.461316108703613
+        },
+        "footPosition": {
+          "x": 11.101402282714844,
+          "y": -8.344650270775134e-8,
+          "z": 8.461316108703613
+        },
+        "eyePosition": {
+          "x": 11.101402282714844,
+          "y": 1.5999999046325684,
+          "z": 8.461316108703613
+        },
+        "rotation": {
+          "x": 0.0009995640907306243,
+          "y": -0.029472155232710052,
+          "z": 0.000029472126662773943,
+          "w": 0.999565096996633
+        },
+        "velocity": {
+          "x": 0,
+          "y": -0.040833331644535065,
+          "z": 0
+        },
+        "interactTarget": "",
+        "portalEvents": [],
+        "blockedEvents": [],
+        "returnStairOpen": false,
+        "shutterProgress": 1,
+        "gateProgress": 0,
+        "exitProgress": 0,
+        "blindProgress": 0,
+        "holdingWheel": false,
+        "companion": {
+          "disposed": false,
+          "mode": "speaking",
+          "animationMode": "speaking",
+          "delivery": "curious",
+          "snapCount": 1,
+          "retracted": false,
+          "retraction": 0,
+          "worldPosition": {
+            "x": 11.449515119934478,
+            "y": 1.3152680222516975,
+            "z": 9.182511279600616
+          },
+          "localOffset": {
+            "x": 0.39,
+            "y": -0.28333245439836413,
+            "z": 0.7
+          },
+          "mountDistance": 0.8499278009374769,
+          "collisionBodies": 0,
+          "resources": {
+            "meshes": 12,
+            "materials": 5,
+            "textures": 1
+          },
+          "parts": [
+            {
+              "id": "zanque:housing",
+              "position": {
+                "x": 11.449515119934478,
+                "y": 1.3152680222516975,
+                "z": 9.182511279600616
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:display-bezel",
+              "position": {
+                "x": 11.464423670457451,
+                "y": 1.3143124364240657,
+                "z": 9.12018541415436
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:status-left",
+              "position": {
+                "x": 11.43404787084514,
+                "y": 1.3170186487532616,
+                "z": 9.101560839261927
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:status-right",
+              "position": {
+                "x": 11.499322257730427,
+                "y": 1.3213485961268707,
+                "z": 9.117108298594461
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:folded-top",
+              "position": {
+                "x": 11.445275567876603,
+                "y": 1.384993917908365,
+                "z": 9.180892024840942
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:hinge-left",
+              "position": {
+                "x": 11.356300599895183,
+                "y": 1.3004274951659183,
+                "z": 9.173711401813517
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:hinge-right",
+              "position": {
+                "x": 11.537795236600616,
+                "y": 1.312466861034002,
+                "z": 9.216940922884469
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:wing-left",
+              "position": {
+                "x": 11.321067392392095,
+                "y": 1.3083127511988346,
+                "z": 9.156022608823221
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:wing-right",
+              "position": {
+                "x": 11.57592393789463,
+                "y": 1.3252185466034716,
+                "z": 9.216725925482397
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:mount-brace",
+              "position": {
+                "x": 11.449655850760077,
+                "y": 1.247713271653968,
+                "z": 9.200734346823936
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:tool-left",
+              "position": {
+                "x": 11.413777959375428,
+                "y": 1.2135586091608854,
+                "z": 9.169372830943006
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:tool-right",
+              "position": {
+                "x": 11.468703967852074,
+                "y": 1.2172021014630687,
+                "z": 9.182455449161846
+              },
+              "active": true
+            }
+          ]
+        },
+        "mountObstruction": "",
+        "dialogue": {
+          "version": 1,
+          "consumedEvents": [
+            "court.enter",
+            "exit.seen",
+            "fold.ready"
+          ],
+          "startedLines": [
+            "C01-L01-ZQ-001",
+            "C01-L01-ZQ-002",
+            "C01-L01-HW-002",
+            "C01-L01-ZQ-005"
+          ],
+          "voiceEnabled": true,
+          "subtitlesEnabled": true,
+          "subtitleLanguage": "zh-CN",
+          "preferencesReady": true,
+          "pendingWrites": 0,
+          "persistenceError": null,
+          "paused": false,
+          "currentLine": "C01-L01-ZQ-005",
+          "currentSpeaker": "zhanque",
+          "currentDelivery": "curious",
+          "currentText": "会不会是装货平台？那种栏杆我好像见过。",
+          "localizedSpeaker": "栈雀",
+          "currentMode": "subtitle",
+          "elapsed": 3.25,
+          "audioPlaying": false,
+          "queue": [
+            "C01-L01-HW-004"
+          ],
+          "availableAudio": [],
+          "missingAudio": [
+            "C01-L01-ZQ-001",
+            "C01-L01-ZQ-002",
+            "C01-L01-ZQ-010",
+            "C01-L01-HW-001",
+            "C01-L01-ZQ-003",
+            "C01-L01-HW-002",
+            "C01-L01-ZQ-005",
+            "C01-L01-HW-004",
+            "C01-L01-ZQ-006",
+            "C01-L01-ZQ-011",
+            "C01-L01-HW-005",
+            "C01-L01-ZQ-007",
+            "C01-L01-ZQ-008",
+            "C01-L01-HW-003",
+            "C01-L01-ZQ-009"
+          ],
+          "history": [
+            {
+              "id": "C01-L01-ZQ-001",
+              "event": "court.enter",
+              "clock": 0.25,
+              "mode": "subtitle"
+            },
+            {
+              "id": "C01-L01-ZQ-002",
+              "event": "exit.seen",
+              "clock": 4.777399999998509,
+              "mode": "subtitle"
+            },
+            {
+              "id": "C01-L01-HW-002",
+              "event": "fold.ready",
+              "clock": 15.69249999999441,
+              "mode": "subtitle"
+            },
+            {
+              "id": "C01-L01-ZQ-005",
+              "event": "fold.ready",
+              "clock": 20.464299999995156,
+              "mode": "subtitle"
+            }
+          ],
+          "errors": [],
+          "expired": 0,
+          "cancelled": 0,
+          "disposed": false
+        },
+        "audioErrors": [],
+        "completed": false,
+        "retryCount": 0,
+        "paused": false
+      },
+      "meshes": 111,
+      "materials": 115,
+      "usedMaterials": 28,
+      "textures": 10,
+      "lights": 3,
+      "triangles": 9500,
+      "physics": {
+        "physicsBodies": 74,
+        "physicsContacts": 1,
+        "physicsSubscriptions": 0,
+        "physicsBackend": "jolt-wasm",
+        "physicsCharacters": 1,
+        "physicsConstraints": 0,
+        "physicsShapeCache": 0,
+        "physicsCacheBytes": 0,
+        "physicsQueriesActive": 0,
+        "physicsDebugMeshes": 0
+      },
+      "portals": {
+        "portals": 2,
+        "portalSurfaces": 2,
+        "portalTravelers": 1,
+        "portalClones": 0,
+        "portalViews": 3,
+        "portalRenderedViews": 3,
+        "portalTraversals": 0
+      },
+      "visuals": {
+        "visualResources": 30
+      },
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "filter": "saturate(0.94) contrast(1.025)",
+      "fps": 2.1648626144879266,
+      "inputLog": [
+        {
+          "action": "pointer-lock"
+        },
+        {
+          "action": "pointer-lock"
+        },
+        {
+          "action": "walk",
+          "from": {
+            "x": 9.5,
+            "y": -1.4305114748314196e-7,
+            "z": 3
+          },
+          "target": {
+            "x": 12.1,
+            "z": 8
+          }
+        },
+        {
+          "action": "pointer-lock"
+        },
+        {
+          "action": "walk",
+          "from": {
+            "x": 12.101361274719238,
+            "y": -8.344650270775134e-8,
+            "z": 7.949193000793457
+          },
+          "target": {
+            "x": 11,
+            "z": 8.5
+          }
+        }
+      ]
+    }
+  ]
+}

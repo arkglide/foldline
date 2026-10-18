@@ -115,12 +115,24 @@ export class InputDriver {
     for (const key of [...this.keys]) await this.keyUp(key);
   }
 
+  async consumedFrame() {
+    // Input and screenshots can arrive between native paced frames, especially
+    // under software PBR rendering. Observe a whole future native frame; never
+    // advance simulation or mutate gameplay state to acknowledge a key.
+    if ((await this.snapshot()).paused) {
+      await this.frame.evaluate(async () => { await new Promise(requestAnimationFrame); });
+      return;
+    }
+    const before = await this.frame.evaluate(() => time.frameCount);
+    await this.frame.waitForFunction(value => time.frameCount > value, before, { timeout: 8000 });
+  }
+
   async press(key) {
     this.log.push({ action: 'press', key });
     await this.keyDown(key);
-    await sleep(100);
+    await this.consumedFrame();
     await this.keyUp(key);
-    await sleep(100);
+    await this.consumedFrame();
   }
 
   async pressInCanvas(key) {
@@ -146,7 +158,7 @@ export class InputDriver {
     } finally {
       for (const key of [...keys].reverse()) await this.keyUp(key);
     }
-    await sleep(200);
+    await this.consumedFrame();
     samples.push(await this.snapshot());
     return samples;
   }

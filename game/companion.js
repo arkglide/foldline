@@ -31,60 +31,69 @@ function rotate(q, p) {
 function axis(axisName, angle) {
   return { x: 0, y: 0, z: 0, [axisName]: Math.sin(angle / 2), w: Math.cos(angle / 2) };
 }
+// Chamfered eight-sided extrusion: actual bevel normals, rather than a flat
+// cube outline. Small service grooves/fasteners are merged into each moving
+// part, retaining the reviewed 12 independent parts and five materials.
 function boxGeometry(size) {
-  const [x, y, z] = size.map(n => n * MODEL_SCALE / 2), positions = [], normals = [], indices = [];
-  const faces = [
-    [[1, 0, 0], [[x, -y, -z], [x, y, -z], [x, y, z], [x, -y, z]]],
-    [[-1, 0, 0], [[-x, -y, z], [-x, y, z], [-x, y, -z], [-x, -y, -z]]],
-    [[0, 1, 0], [[-x, y, -z], [-x, y, z], [x, y, z], [x, y, -z]]],
-    [[0, -1, 0], [[-x, -y, z], [-x, -y, -z], [x, -y, -z], [x, -y, z]]],
-    [[0, 0, 1], [[x, -y, z], [x, y, z], [-x, y, z], [-x, -y, z]]],
-    [[0, 0, -1], [[-x, -y, -z], [-x, y, -z], [x, y, -z], [x, -y, -z]]],
-  ];
-  for (const [normal, vertices] of faces) {
-    const start = positions.length / 3;
-    for (const v of vertices) { positions.push(...v); normals.push(...normal); }
-    indices.push(start, start + 1, start + 2, start, start + 2, start + 3);
-  }
-  return { positions, normals, indices };
+  const [x,y,z]=size.map(v=>v*MODEL_SCALE/2),b=Math.min(x,y,z)*.22;
+  const ring=[[-x+b,-y],[x-b,-y],[x,-y+b],[x,y-b],[x-b,y],[-x+b,y],[-x,y-b],[-x,-y+b]];
+  const positions=[],normals=[],indices=[],uvs=[];
+  function face(points,n){const base=positions.length/3;for(const p of points){positions.push(...p);normals.push(...n);uvs.push((p[0]/x+1)/2,(p[1]/y+1)/2);}for(let j=1;j<points.length-1;j++)indices.push(base,base+j,base+j+1);}
+  face(ring.map(([a,c])=>[a,c,z]),[0,0,1]);
+  face([...ring].reverse().map(([a,c])=>[a,c,-z]),[0,0,-1]);
+  for(let i=0;i<ring.length;i++){const a=ring[i],c=ring[(i+1)%ring.length],dx=c[0]-a[0],dy=c[1]-a[1],l=Math.hypot(dx,dy);face([[a[0],a[1],-z],[c[0],c[1],-z],[c[0],c[1],z],[a[0],a[1],z]],[dy/l,-dx/l,0]);}
+  return {positions,normals,indices,uvs};
+}
+function detailGeometry(size, details = []) {
+  const result=boxGeometry(size);
+  for(const [s,offset] of details){const g=boxGeometry(s),base=result.positions.length/3;
+    for(let i=0;i<g.positions.length;i++)result.positions.push(g.positions[i]+offset[i%3]*MODEL_SCALE);
+    result.normals.push(...g.normals);result.uvs.push(...g.uvs);result.indices.push(...g.indices.map(i=>i+base));}
+  return result;
 }
 
 export function createCompanion({ visuals }, { getPose }) {
   if (typeof getPose !== 'function') throw TypeError('栈雀 requires a native camera pose reader.');
-  const parts = [], materials = [];
+  const parts = [], materials = [], textures = [];
   let disposed = false, phase = 0, mode = 'idle', paused = false, snapCount = 0;
   let local = { ...MOUNT }, worldPosition = null, lastEye = null, lampState = '';
   let speech = 0, observation = 0, retracted = false, retraction = 0, delivery = 'matterOfFact';
   const material = options => { const handle = visuals.createMaterial(options); materials.push(handle); return handle; };
   let lights;
   try {
-    const shell = material({ color: '#7c8e86', doubleSided: true });
+    const serviceTexture = visuals.createTexture({ assetId: 'zanque-service-metal' }); textures.push(serviceTexture);
+    const shell = material({ color: '#8fa49a', texture: serviceTexture, doubleSided: true });
     const dark = material({ color: '#243b3b', doubleSided: true });
-    const folded = material({ color: '#b6a16c', doubleSided: true });
-    const hinge = material({ color: '#a6b9af', doubleSided: true });
+    const folded = material({ color: '#b8a77b', texture: serviceTexture, doubleSided: true });
+    const hinge = material({ color: '#a6b9af', texture: serviceTexture, doubleSided: true });
     lights = material({ color: '#b6e4d4', emissive: '#295d51', unlit: true, doubleSided: true });
-    function part(name, size, offset, surface, wing = 0) {
-      const handle = visuals.createMesh(boxGeometry(size), { id: `zanque:${name}`, name: `栈雀 · ${name}`, material: surface });
+    function part(name, size, offset, surface, wing = 0, details = []) {
+      const handle = visuals.createMesh(detailGeometry(size, details), { id: `zanque:${name}`, name: `栈雀 · ${name}`, material: surface });
       parts.push({ name, handle, offset: { x: offset[0] * MODEL_SCALE,
         y: offset[1] * MODEL_SCALE, z: offset[2] * MODEL_SCALE }, wing, position: null });
     }
     // Flat layered housing and a paired rectangular status display. No sphere
     // or single circular lens; folded side tools establish its industrial role.
     part('housing', [.23, .14, .14], [0, 0, 0], shell);
-    part('display-bezel', [.184, .082, .018], [0, .005, -.078], dark);
+    part('display-bezel', [.184, .082, .018], [0, .005, -.078], dark, 0,
+      Array.from({length:6},(_,i)=>[[.004,.036,.006],[-.065+i*.026,-.007,-.014]]));
     part('status-left', [.048, .016, .012], [-.041, .012, -.091], lights);
     part('status-right', [.048, .016, .012], [.041, .012, -.091], lights);
-    part('folded-top', [.165, .030, .10], [0, .085, .006], folded);
-    part('hinge-left', [.032, .048, .04], [-.114, -.012, .015], hinge);
-    part('hinge-right', [.032, .048, .04], [.114, -.012, .015], hinge);
-    part('wing-left', [.09, .035, .19], [-.162, -.012, .005], folded, -1);
-    part('wing-right', [.09, .035, .19], [.162, -.012, .005], folded, 1);
+    part('folded-top', [.165, .030, .10], [0, .085, .006], folded, 0,
+      [[ [.06,.004,.038],[-.043,.017,-.01] ],[ [.015,.004,.038],[.048,.017,-.01] ]]);
+    part('hinge-left', [.032, .048, .04], [-.114, -.012, .015], hinge, 0, [[[.012,.024,.007],[0,0,-.024]]]);
+    part('hinge-right', [.032, .048, .04], [.114, -.012, .015], hinge, 0, [[[.012,.024,.007],[0,0,-.024]]]);
+    part('wing-left', [.09, .035, .19], [-.162, -.012, .005], folded, -1,
+      [[[.008,.010,.14],[-.024,.021,0]],[[.008,.010,.14],[.024,.021,0]]]);
+    part('wing-right', [.09, .035, .19], [.162, -.012, .005], folded, 1,
+      [[[.008,.010,.14],[-.024,.021,0]],[[.008,.010,.14],[.024,.021,0]]]);
     part('mount-brace', [.17, .028, .17], [0, -.084, .015], dark);
     part('tool-left', [.027, .065, .026], [-.054, -.12, -.015], hinge);
     part('tool-right', [.027, .065, .026], [.015, -.12, -.015], hinge);
   } catch (error) {
     for (const { handle } of parts.reverse()) handle.destroy();
     for (const handle of materials.reverse()) handle.destroy();
+    for (const handle of textures.reverse()) handle.destroy();
     throw error;
   }
 
@@ -114,7 +123,7 @@ export function createCompanion({ visuals }, { getPose }) {
       part.position = add(worldPosition, rotate(rotation, offset));
       part.handle.setPose({ position: part.position, rotation: multiply(rotation, joint) });
     }
-    const level = Math.round(42 + speech * (40 + 20 * Math.sin(phase * 15)) + observation * 15);
+    const level = Math.round(108 + speech * (60 + 20 * Math.sin(phase * 15)) + observation * 18);
     const glow = `#${Math.round(level * .42).toString(16).padStart(2, '0')}${level.toString(16).padStart(2, '0')}${Math.round(level * .85).toString(16).padStart(2, '0')}`;
     if (glow !== lampState) { lights.update({ emissive: glow }); lampState = glow; }
   }
@@ -159,7 +168,7 @@ export function createCompanion({ visuals }, { getPose }) {
         worldPosition.y - lastEye.y, worldPosition.z - lastEye.z) : null,
       collisionBodies: 0,
       resources: { meshes: parts.filter(p => p.handle.active).length,
-        materials: materials.filter(m => m.active).length },
+        materials: materials.filter(m => m.active).length, textures: textures.filter(t => t.active).length },
       parts: parts.map(p => ({ id: p.handle.entity.id, position: p.position && { ...p.position }, active: p.handle.active })),
     };
   }
@@ -168,6 +177,7 @@ export function createCompanion({ visuals }, { getPose }) {
     disposed = true;
     for (const { handle } of [...parts].reverse()) handle.destroy();
     for (const handle of [...materials].reverse()) handle.destroy();
+    for (const handle of [...textures].reverse()) handle.destroy();
   }
   try { snap(); } catch (error) { dispose(); throw error; }
   return Object.freeze({ update, snap, snapshot, dispose });

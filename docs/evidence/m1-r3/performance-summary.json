@@ -1,0 +1,58 @@
+{
+  "baselineCommit": "b5a110c178e1227962c1cc1d59422c6ec6608403",
+  "order": [
+    "r2 iteration 0",
+    "r2 iteration 1",
+    "r3 iteration 0",
+    "r3 iteration 1"
+  ],
+  "summary": {
+    "entry": {
+      "r2MeanFPS": 13.88570274613315,
+      "r3MeanFPS": 3.995316618687939,
+      "fpsChangePercent": -71.22711978116814,
+      "r2Samples": [
+        13.283961277255342,
+        14.487444215010958
+      ],
+      "r3Samples": [
+        4.327995472250622,
+        3.662637765125256
+      ],
+      "r2PortalViews": [
+        0,
+        0
+      ],
+      "r3PortalViews": [
+        0,
+        0
+      ]
+    },
+    "portal": {
+      "r2MeanFPS": 4.572140209615567,
+      "r3MeanFPS": 2.164880640288912,
+      "fpsChangePercent": -52.65060691410996,
+      "r2Samples": [
+        4.661538973795781,
+        4.4827414454353525
+      ],
+      "r3Samples": [
+        2.1648986660898974,
+        2.1648626144879266
+      ],
+      "r2PortalViews": [
+        4,
+        4
+      ],
+      "r3PortalViews": [
+        4,
+        3
+      ]
+    }
+  },
+  "sourceResults": [
+    "performance-r2.json",
+    "performance-r3.json"
+  ],
+  "notHumanTesting": true
+}
