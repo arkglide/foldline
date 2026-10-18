@@ -429,8 +429,8 @@ export async function dressL01(project) {
   project.modelRefs = [
     { assetId: "L01IndustrialDress", fileName: "l01-industrial.glb" },
   ];
-  project.name = "折径 / 侧向通行 · L01视觉样板";
-  project.settings.build.title = "折径 · 侧向通行 / M1-R3";
+  project.name = "折径 / 侧向通行";
+  project.settings.build.title = "折径 · 侧向通行";
   project.settings.ambientIntensity = 0.58;
   project.settings.ambientColor = "#b9ccc8";
   project.settings.backgroundColor = "#243a40";
@@ -442,8 +442,6 @@ export async function dressL01(project) {
   lights[1].intensity = 0.33;
   lights[1].color = "#b8d9d1";
 
-  project.content.gameplay.hud.find((h) => h.id === "stage").text =
-    "C01-L01 · M1-R3 · 视觉样板待审";
   // Bake restrained local light and contact darkening into static vertex
   // colours. This is an authored lighting approximation, not GI or dynamic
   // shadows. Only the small brushed-steel batch keeps live PBR/normal shading.

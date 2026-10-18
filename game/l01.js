@@ -72,8 +72,8 @@ export default function (ctx) {
   }
   function settingsHint(value) {
     text('pauseHint', value.subtitleLanguage === 'en' ?
-      'Click to start / resume · R Retry\nV English voice · B Subtitles · L Language' :
-      '点击画面开始 / 继续 · R 重试\nV 英语语音 · B 字幕开关 · L 字幕语言');
+      'Click to start / resume · WASD Move · Mouse Look\nE Interact / Hold wheel · Space Jump · R Retry · Esc Pause\nV English voice · B Subtitles · L Language' :
+      '点击画面开始 / 继续 · WASD移动 · 鼠标观察\nE操作 / 按住转轮 · 空格跳跃 · R重试 · Esc暂停\nV英语语音 · B字幕 · L字幕语言');
   }
   function showPause(value) {
     ui.get('pauseTitle')?.setVisible(value);

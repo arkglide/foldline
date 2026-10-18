@@ -2,7 +2,7 @@
 
 原创第一人称剧情空间解谜游戏。长期目标为约九章、30～40 个核心谜题、首次正常游玩约 3～5 小时；规模须由实际游玩调整。
 
-**当前为 M1-R3：仅 C01-L01《侧向通行》的正式视觉样板候选。** R2已由用户试玩认可；本轮保留其玩法、角色和对白，升级工业场景、栈雀外观、照明与轻量画面调色，待用户审查新版，不制作相邻关卡。
+**当前为M2：C01-L02《隔栏借物》可玩候选。** 用户已认可L01质量基线；本轮仅推进L02的窄折口、真实跨门借物、锁存与同风格工业空间。L02仍待真人试玩，不制作S01/S02/L03。
 
 使用 Node.js ≥20.19（本轮为 24.19.0）：
 
@@ -11,11 +11,25 @@ npm ci
 npm run dev
 ```
 
-在本机浏览器打开 `http://127.0.0.1:4173`，启动外层播放器后点击游戏画面取得鼠标控制。WASD 移动，鼠标观察，E 交互（手轮需按住，松手保持进度），Space 跳跃，Esc 暂停，R 重试，V 切换英语语音，B 切换字幕，L 切换中文/英文字幕。默认中文；语言及V/B偏好同源下跨重试、关卡重进和刷新保留。工程自动获取固定 SHA 的 ArkGlide 并生成本地运行文件；首次准备需要网络，不运行完整编辑器构建。
+在本机浏览器打开 `http://127.0.0.1:4173`，启动外层播放器后点击游戏画面取得鼠标控制。WASD 移动，鼠标观察，E拿取/松手（L02）或交互/按住转轮（L01），Space 跳跃，Esc 暂停，R 重试，V 切换英语语音，B 切换字幕，L 切换中文/英文字幕。默认中文；语言及V/B偏好同源下跨重试、关卡重进和刷新保留。工程自动获取固定 SHA 的 ArkGlide 并生成本地运行文件；首次准备需要网络，不运行完整编辑器构建。
 
-当前已知风险：云端1280×800 SwiftShader软件渲染，R3入口约4.0FPS（R2约13.9），近门约2.2FPS（R2约4.6）；Windows GPU尚未实测。完整资源/性能数据与待审项见[R3记录](docs/m1-r3-review.md)。
+默认`npm run dev`启动L02；`npm run dev:l01`保留已认可的L01。两者是独立测试入口，没有制作L01→L02的整章转换或S01。暂停页提供完整操作；左下无常驻操作块，左上仅标题和目标。
 
-当前云端仓库有4个原创机械音效，未收到用户本地已试听的15句英语WAV；R3保留现有配音与双语字幕接口。依照[离线配音制作说明](docs/voice-production.md)生成并处理 WAV 后，再运行 `npm run dev` 自动打包，运行游戏的玩家不需安装TTS。旧中文录音须备份并重新制作，不能沿用相同ID冒充英语。
+L02从玻璃外观察唯一接驳匣，经身体不适配的固定窄口用原生弹簧抓取取回，松手放稳在锁存坞，接通后实体出口开启。可以重复取放，R恢复本关安全检查点。没有自由放门或吸附传送取件。
+
+[M2交付记录](docs/m2-l02-review.md)包含实际操作、截图、资源与性能；当前设备为云端SwiftShader软件渲染，不能替代Windows GPU性能验收。历史L01/R3约4FPS入口的限制仍保留。
+
+云端L01英语WAV为0/15（用户本地已认可），L02新英语WAV为0/7，缺音可用双语字幕；4个机械音效已接入。Windows新关制作：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tts.ps1 -Level l02
+# 上一步成功后再依次执行；详见配音文档的失败停止流程。
+node scripts/voice-assets.mjs --level=l02 --process
+node scripts/voice-assets.mjs --level=l02 --check --strict
+npm run dev
+```
+
+[离线配音说明](docs/voice-production.md)保留完整触发/文本/声音参数和迁移方式。L02录音与L01目录隔离，不覆盖已有本地声音。旧中文录音必须先备份重录，不能复用ID冒充英语。
 
 Windows 若使用旧版脚本遇到 `spawn npm ENOENT`，请更新 `scripts/engine.mjs` 后重试；已有 `.cache` 可以保留。启动脚本现通过 Node 调用 npm CLI，避免直接启动 `npm.cmd`。
 
@@ -26,10 +40,13 @@ npm run check
 npm run test:setup
 npm run test:unit
 npm run test:browser
+npm run test:browser:l01
 ```
 
 浏览器测试使用 Chromium；默认路径 `/usr/bin/chromium`，其他安装位置用 `PLAYWRIGHT_CHROMIUM_EXECUTABLE` 指定。测试会更新已提交的操作记录与截图，属于真实输入的自动化技术检查，不是玩家盲测。
 
+- [M2 L02可玩版、截图和技术验证](docs/m2-l02-review.md)
+- [L02空间与借物设计](docs/design/l02-borrow.md) · [素材/许可](assets/art/l02/README.md)
 - [M1-R3 视觉样板、截图与性能记录](docs/m1-r3-review.md)
 - [实际素材与许可证](assets/art/l01/README.md)
 - [M1-R2 英语对白、字幕与验证记录](docs/m1-r2-review.md)

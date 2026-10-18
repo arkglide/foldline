@@ -24,16 +24,17 @@ export function cameraAngles(rotation) {
  * ArkGlide portal browser test, avoiding CDP pointer-lock recenter cancellation.
  */
 export class InputDriver {
-  constructor(page, frame, { sensitivity = 0.002 } = {}) {
+  constructor(page, frame, { sensitivity = 0.002, stateName = 'foldlineL01' } = {}) {
     this.page = page;
     this.frame = frame;
     this.sensitivity = sensitivity;
+    this.stateName = stateName;
     this.log = [];
     this.keys = new Set();
   }
 
   async snapshot() {
-    return this.frame.evaluate(() => foldlineL01.snapshot());
+    return this.frame.evaluate(name => globalThis[name].snapshot(), this.stateName);
   }
 
   async waitFor(predicate, label, timeoutMs = 15000) {

@@ -68,7 +68,7 @@ export function processPcmWave(bytes, processing) {
 const engineName = 'Windows System.Speech';
 const englishCulture = value => typeof value === 'string' && /^en(?:-[A-Za-z0-9]+)+$/.test(value);
 const digest = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
-const migration = 'Back up assets/voice/l01 and .cache/voice/raw outside their active paths, then regenerate English takes with scripts/tts.ps1.';
+const migration = 'Back up the selected level voice assets and raw takes outside their active paths, then regenerate English takes with scripts/tts.ps1 -Level l01 (or l02).';
 
 function uniqueRecords(records, context) {
   const seen = new Set();
@@ -95,10 +95,15 @@ function sameProcessing(a, b) {
   return a && ['highPassHz', 'lowPassHz', 'peak'].every(key => a[key] === b[key]);
 }
 
-export async function loadVoiceAssets(data, { root = repoRoot, strict = false } = {}) {
-  validateDialogue(data);
+function validateLevel(data, level) {
+  if (!['l01', 'l02'].includes(level) || data.lines.some(line => !line.file.startsWith(`assets/voice/${level}/`)))
+    throw Error('Dialogue and voice package level must match (l01 or l02)');
+}
+
+export async function loadVoiceAssets(data, { root = repoRoot, strict = false, level = 'l01' } = {}) {
+  validateDialogue(data); validateLevel(data, level);
   let manifest;
-  try { manifest = JSON.parse(await fs.readFile(path.join(root, 'assets/voice/l01/manifest.json'), 'utf8')); }
+  try { manifest = JSON.parse(await fs.readFile(path.join(root, `assets/voice/${level}/manifest.json`), 'utf8')); }
   catch (error) { if (error.code !== 'ENOENT') throw error; }
   if (manifest) validateProvenance(manifest, 'generated', 'voice asset manifest');
   const assets = [], buffers = new Map(), report = { generated: [], missing: [] };
@@ -129,8 +134,8 @@ export async function loadVoiceAssets(data, { root = repoRoot, strict = false } 
   return { assets, buffers, report };
 }
 
-export async function processVoiceAssets(data, { root = repoRoot, rawDirectory = path.join(root, '.cache/voice/raw') } = {}) {
-  validateDialogue(data);
+export async function processVoiceAssets(data, { root = repoRoot, level = 'l01', rawDirectory = path.join(root, level === 'l01' ? '.cache/voice/raw' : `.cache/voice/${level}/raw`) } = {}) {
+  validateDialogue(data); validateLevel(data, level);
   const production = JSON.parse(await fs.readFile(path.join(rawDirectory, 'production.json'), 'utf8'));
   validateProvenance(production, 'lines', 'Windows take metadata');
   const generated = [], missing = [], outputFiles = [];
@@ -153,19 +158,23 @@ export async function processVoiceAssets(data, { root = repoRoot, rawDirectory =
     await fs.mkdir(path.dirname(target), { recursive: true }); await fs.writeFile(target, processed);
   }
   const manifest = { version: 2, engine: production.engine, spokenLanguage: 'en', generated, missing };
-  const target = path.join(root, 'assets/voice/l01/manifest.json');
+  const target = path.join(root, `assets/voice/${level}/manifest.json`);
   await fs.mkdir(path.dirname(target), { recursive: true }); await fs.writeFile(target, JSON.stringify(manifest, null, 2) + '\n');
   return manifest;
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const data = JSON.parse(await fs.readFile(path.join(repoRoot, 'game/data/l01-dialogue.json'), 'utf8'));
   const args = process.argv.slice(2);
-  if (args.some(arg => !['--process', '--check', '--strict'].includes(arg))) throw Error('Usage: node scripts/voice-assets.mjs [--process] [--check] [--strict]');
+  const levelArg = args.find(a => a.startsWith('--level='));
+  const level = levelArg?.slice(8) || 'l01';
+  if (!['l01','l02'].includes(level)) throw Error('Unknown voice level');
+  if (levelArg) args.splice(args.indexOf(levelArg), 1);
+  const data = JSON.parse(await fs.readFile(path.join(repoRoot, `game/data/${level}-dialogue.json`), 'utf8'));
+  if (args.some(arg => !['--process', '--check', '--strict'].includes(arg))) throw Error('Usage: node scripts/voice-assets.mjs [--level=l01|l02] [--process] [--check] [--strict]');
   if (args.includes('--process')) {
-    const result = await processVoiceAssets(data);
+    const result = await processVoiceAssets(data, { level });
     console.log(`Windows takes processed: ${result.generated.length}; missing: ${result.missing.length}`);
   }
-  const { report } = await loadVoiceAssets(data, { strict: args.includes('--strict') });
+  const { report } = await loadVoiceAssets(data, { strict: args.includes('--strict'), level });
   console.log(JSON.stringify(report, null, 2));
 }

@@ -1,0 +1,9 @@
+{
+  "command": "PORT=4183 npm run dev",
+  "entryStatus": 200,
+  "level": "C01-L02",
+  "stage": "L02-pending-human-review",
+  "availableEnglishVoices": 0,
+  "pendingEnglishVoices": 7,
+  "method": "HTTP GET of actual CLI-served player index and foldline-build.json; server stopped by Ctrl+C after validation"
+}

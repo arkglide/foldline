@@ -1,0 +1,655 @@
+{
+  "method": "Browser keyboard/relative pointer input; read-only snapshots; not human blind testing",
+  "input": [
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 30,
+        "y": 2.3999999523162843,
+        "z": 15
+      },
+      "target": {
+        "x": 30.9,
+        "z": 15.5
+      }
+    },
+    {
+      "action": "press",
+      "key": "e"
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 31.09019660949707,
+        "y": 2.3999999523162843,
+        "z": 15.622995376586914
+      },
+      "target": {
+        "x": 30.6,
+        "z": 14
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 30.64872932434082,
+        "y": 2.3999999523162843,
+        "z": 14.115753173828125
+      },
+      "target": {
+        "x": 28,
+        "z": 13.8
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "hold",
+      "keys": [
+        "w"
+      ],
+      "durationMs": 2200
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "hold",
+      "keys": [
+        "w",
+        "Space"
+      ],
+      "durationMs": 1600
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 27.986557006835938,
+        "y": 3.089999532699585,
+        "z": 15.680000305175781
+      },
+      "target": {
+        "x": 28,
+        "z": 13.8
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 28.03713607788086,
+        "y": 2.3999999523162843,
+        "z": 13.66661262512207
+      },
+      "target": {
+        "x": 30.6,
+        "z": 14
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 30.69883155822754,
+        "y": 2.3999999523162843,
+        "z": 14.017813682556152
+      },
+      "target": {
+        "x": 28,
+        "z": 13.8
+      }
+    },
+    {
+      "action": "press",
+      "key": "e"
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 28.205097198486328,
+        "y": 2.3999999523162843,
+        "z": 13.795197486877441
+      },
+      "target": {
+        "x": 25.5,
+        "z": 14
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 25.71108055114746,
+        "y": 2.3999999523162843,
+        "z": 14.010993957519531
+      },
+      "target": {
+        "x": 25.5,
+        "z": 18.7
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 25.495372772216797,
+        "y": 2.3999999523162843,
+        "z": 18.760251998901367
+      },
+      "target": {
+        "x": 27,
+        "z": 18.5
+      }
+    },
+    {
+      "action": "press",
+      "key": "e"
+    },
+    {
+      "action": "press",
+      "key": "e"
+    },
+    {
+      "action": "press",
+      "key": "e"
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 26.8806209564209,
+        "y": 2.3999999523162843,
+        "z": 18.541046142578125
+      },
+      "target": {
+        "x": 28.7,
+        "z": 23
+      }
+    },
+    {
+      "action": "pointer-lock"
+    },
+    {
+      "action": "walk",
+      "from": {
+        "x": 28.697481155395508,
+        "y": 2.3999999523162843,
+        "z": 22.865726470947266
+      },
+      "target": {
+        "x": 28.7,
+        "z": 25
+      }
+    }
+  ],
+  "entryStats": {
+    "lifecycleBackend": "cpp-wasm",
+    "nativeOwners": 2,
+    "nativeTimers": 0,
+    "scripts": 1,
+    "timers": 0,
+    "subscriptions": 0,
+    "listeners": 2,
+    "scriptMs": 1.199999999254942,
+    "droppedTime": 0.925,
+    "errors": 0,
+    "fixedSteps": 64,
+    "timeScale": 1,
+    "runtimeCameras": 1,
+    "cameraRigs": 1,
+    "visualResources": 25,
+    "motionControllers": 1,
+    "signalNodes": 0,
+    "signalListeners": 0,
+    "physicsGrabs": 0,
+    "physicsTriggers": 0,
+    "triggerMembers": 0,
+    "checkpointProviders": 3,
+    "checkpointRestoring": false,
+    "storageRequests": 0,
+    "hudElements": 10,
+    "inputHeld": 0,
+    "uiSubscriptions": 0,
+    "uiBlobURLs": 0,
+    "inputGamepads": 0,
+    "inputCaptures": 0,
+    "portals": 2,
+    "portalSurfaces": 2,
+    "portalTravelers": 2,
+    "portalClones": 0,
+    "portalViews": 1,
+    "portalRenderedViews": 1,
+    "portalTraversals": 0,
+    "physicsBodies": 38,
+    "physicsContacts": 2,
+    "physicsSubscriptions": 0,
+    "physicsBackend": "jolt-wasm",
+    "physicsCharacters": 1,
+    "physicsConstraints": 0,
+    "physicsShapeCache": 0,
+    "physicsCacheBytes": 0,
+    "physicsQueriesActive": 0,
+    "physicsDebugMeshes": 0,
+    "audioVoices": 0,
+    "audioBuffers": 4,
+    "audioState": "running",
+    "audioBuses": 4,
+    "audioStreams": 0,
+    "audioWorklets": 0,
+    "audioTransitions": 0,
+    "audioBlobURLs": 0
+  },
+  "finalStats": {
+    "lifecycleBackend": "cpp-wasm",
+    "nativeOwners": 2,
+    "nativeTimers": 0,
+    "scripts": 1,
+    "timers": 0,
+    "subscriptions": 0,
+    "listeners": 2,
+    "scriptMs": 5.199999999254942,
+    "droppedTime": 17.12370000000674,
+    "errors": 0,
+    "fixedSteps": 2196,
+    "timeScale": 1,
+    "runtimeCameras": 1,
+    "cameraRigs": 1,
+    "visualResources": 25,
+    "motionControllers": 1,
+    "signalNodes": 0,
+    "signalListeners": 0,
+    "physicsGrabs": 0,
+    "physicsTriggers": 0,
+    "triggerMembers": 0,
+    "checkpointProviders": 3,
+    "checkpointRestoring": false,
+    "storageRequests": 0,
+    "hudElements": 10,
+    "inputHeld": 0,
+    "uiSubscriptions": 0,
+    "uiBlobURLs": 0,
+    "inputGamepads": 0,
+    "inputCaptures": 0,
+    "portals": 2,
+    "portalSurfaces": 2,
+    "portalTravelers": 2,
+    "portalClones": 0,
+    "portalViews": 2,
+    "portalRenderedViews": 0,
+    "portalTraversals": 1,
+    "physicsBodies": 38,
+    "physicsContacts": 2,
+    "physicsSubscriptions": 0,
+    "physicsBackend": "jolt-wasm",
+    "physicsCharacters": 1,
+    "physicsConstraints": 0,
+    "physicsShapeCache": 0,
+    "physicsCacheBytes": 0,
+    "physicsQueriesActive": 0,
+    "physicsDebugMeshes": 0,
+    "audioVoices": 0,
+    "audioBuffers": 4,
+    "audioState": "running",
+    "audioBuses": 4,
+    "audioStreams": 0,
+    "audioWorklets": 0,
+    "audioTransitions": 0,
+    "audioBlobURLs": 0
+  },
+  "entryPerformance": {
+    "fps": 4.985044865403789,
+    "meshes": 66,
+    "triangles": 2900,
+    "materials": 65,
+    "usedMaterials": 56,
+    "textures": 7,
+    "lights": 4,
+    "resourceTimingDecodedBytes": 0
+  },
+  "final": {
+    "ready": true,
+    "error": "",
+    "paused": false,
+    "retryCount": 0,
+    "position": {
+      "x": 28.721054077148438,
+      "y": 3.299999952316284,
+      "z": 24.785873413085938
+    },
+    "footPosition": {
+      "x": 28.721054077148438,
+      "y": 2.3999999523162843,
+      "z": 24.785873413085938
+    },
+    "eyePosition": {
+      "x": 28.721052169799805,
+      "y": 3.999999761581421,
+      "z": 24.785873413085938
+    },
+    "rotation": {
+      "x": -0.012661697844521817,
+      "y": 0.9799851976707262,
+      "z": -0.06624964746660754,
+      "w": -0.18729572170673628
+    },
+    "velocity": {
+      "x": 0,
+      "y": -0.040833331644535065,
+      "z": 0
+    },
+    "interactTarget": "",
+    "pickPath": [],
+    "rayHit": "",
+    "holding": false,
+    "crate": {
+      "position": {
+        "x": 29.51833152770996,
+        "y": 2.5799999237060547,
+        "z": 17.676836013793945
+      },
+      "rotation": {
+        "x": -3.1488775151978106e-7,
+        "y": -0.7070644548562695,
+        "z": 1.8109000964477519e-7,
+        "w": 0.7071491100505667
+      },
+      "velocity": {
+        "x": 2.8495419912566433e-10,
+        "y": -3.737295628525317e-8,
+        "z": 1.184483400251679e-9
+      }
+    },
+    "stableTime": 0,
+    "gateProgress": 1,
+    "flags": {
+      "entered": true,
+      "glassSeen": true,
+      "foldSeen": true,
+      "borrowed": true,
+      "busCommissioned": true,
+      "isolationCommanded": true,
+      "completed": true
+    },
+    "completed": true,
+    "phase": "complete",
+    "portalEvents": [
+      {
+        "entity": "Coupler",
+        "source": "B2",
+        "destination": "A2",
+        "position": {
+          "x": 28.070596694946293,
+          "y": 3.6643218994140625,
+          "z": 15.977790832519531
+        },
+        "velocity": {
+          "x": 0.21728913486003815,
+          "y": 0.35551339387893677,
+          "z": -6.224282264709473
+        }
+      }
+    ],
+    "blockedEvents": [],
+    "companion": {
+      "disposed": false,
+      "mode": "speaking",
+      "animationMode": "speaking",
+      "delivery": "warm",
+      "snapCount": 1,
+      "retracted": false,
+      "retraction": 1.2837331984942031e-27,
+      "worldPosition": {
+        "x": 28.11684100208231,
+        "y": 3.624424219948943,
+        "z": 24.320473438477265
+      },
+      "localOffset": {
+        "x": 0.39,
+        "y": -0.283945849482189,
+        "z": 0.7
+      },
+      "mountDistance": 0.8501324949869993,
+      "collisionBodies": 0,
+      "resources": {
+        "meshes": 12,
+        "materials": 5,
+        "textures": 1
+      },
+      "parts": [
+        {
+          "id": "zanque:housing",
+          "position": {
+            "x": 28.11684100208231,
+            "y": 3.624424219948943,
+            "z": 24.320473438477265
+          },
+          "active": true
+        },
+        {
+          "id": "zanque:display-bezel",
+          "position": {
+            "x": 28.132876683909714,
+            "y": 3.6322552215781916,
+            "z": 24.38203011154428
+          },
+          "active": true
+        },
+        {
+          "id": "zanque:status-left",
+          "position": {
+            "x": 28.168141217559537,
+            "y": 3.637809479885677,
+            "z": 24.383595520479027
+          },
+          "active": true
+        },
+        {
+          "id": "zanque:status-right",
+          "position": {
+            "x": 28.103041892645265,
+            "y": 3.6394044830330476,
+            "z": 24.40035116268431
+          },
+          "active": true
+        },
+        {
+          "id": "zanque:folded-top",
+          "position": {
+            "x": 28.116192592700298,
+            "y": 3.6936977374954014,
+            "z": 24.311359941681243
+          },
+          "active": true
+        },
+        {
+          "id": "zanque:hinge-left",
+          "position": {
+            "x": 28.204185514728863,
+            "y": 3.611667308410486,
+            "z": 24.285907219598467
+          },
+          "active": true
+        },
+        {
+          "id": "zanque:hinge-right",
+          "position": {
+            "x": 28.02317763569894,
+            "y": 3.616102195210493,
+            "z": 24.33249607841315
+          },
+          "active": true
+        },
+        {
+          "id": "zanque:wing-left",
+          "position": {
+            "x": 28.243272735371953,
+            "y": 3.62082446084045,
+            "z": 24.283719670243865
+          },
+          "active": true
+        },
+        {
+          "id": "zanque:wing-right",
+          "position": {
+            "x": 27.988353832851505,
+            "y": 3.6270702468356175,
+            "z": 24.349332177403046
+          },
+          "active": true
+        },
+        {
+          "id": "zanque:mount-brace",
+          "position": {
+            "x": 28.113188189709387,
+            "y": 3.5549623693413084,
+            "z": 24.312893678321352
+          },
+          "active": true
+        },
+        {
+          "id": "zanque:tool-left",
+          "position": {
+            "x": 28.16196617599778,
+            "y": 3.5258889523009134,
+            "z": 24.32747974495707
+          },
+          "active": true
+        },
+        {
+          "id": "zanque:tool-right",
+          "position": {
+            "x": 28.107187475765038,
+            "y": 3.527231089095652,
+            "z": 24.341579004861515
+          },
+          "active": true
+        }
+      ]
+    },
+    "dialogue": {
+      "version": 1,
+      "consumedEvents": [
+        "bay.enter",
+        "glass.observed",
+        "fold.observed",
+        "crate.borrowed",
+        "dock.latched",
+        "level.complete"
+      ],
+      "startedLines": [
+        "C01-L02-ZQ-001",
+        "C01-L02-ZQ-002",
+        "C01-L02-HW-001",
+        "C01-L02-ZQ-003",
+        "C01-L02-HW-002",
+        "C01-L02-ZQ-004",
+        "C01-L02-ZQ-005"
+      ],
+      "voiceEnabled": true,
+      "subtitlesEnabled": true,
+      "subtitleLanguage": "zh-CN",
+      "preferencesReady": true,
+      "pendingWrites": 0,
+      "persistenceError": null,
+      "paused": false,
+      "currentLine": "C01-L02-ZQ-005",
+      "currentSpeaker": "zhanque",
+      "currentDelivery": "warm",
+      "currentText": "大件搬运，就拜托你啦。",
+      "localizedSpeaker": "栈雀",
+      "currentMode": "subtitle",
+      "elapsed": 0,
+      "audioPlaying": false,
+      "queue": [],
+      "availableAudio": [],
+      "missingAudio": [
+        "C01-L02-ZQ-001",
+        "C01-L02-ZQ-002",
+        "C01-L02-HW-001",
+        "C01-L02-ZQ-003",
+        "C01-L02-HW-002",
+        "C01-L02-ZQ-004",
+        "C01-L02-ZQ-005"
+      ],
+      "history": [
+        {
+          "id": "C01-L02-ZQ-001",
+          "event": "bay.enter",
+          "clock": 0.25,
+          "mode": "subtitle"
+        },
+        {
+          "id": "C01-L02-ZQ-002",
+          "event": "glass.observed",
+          "clock": 5.26589999999851,
+          "mode": "subtitle"
+        },
+        {
+          "id": "C01-L02-HW-001",
+          "event": "fold.observed",
+          "clock": 14.947499999992546,
+          "mode": "subtitle"
+        },
+        {
+          "id": "C01-L02-ZQ-003",
+          "event": "crate.borrowed",
+          "clock": 30.512099999990312,
+          "mode": "subtitle"
+        },
+        {
+          "id": "C01-L02-HW-002",
+          "event": "dock.latched",
+          "clock": 40.2533999999948,
+          "mode": "subtitle"
+        },
+        {
+          "id": "C01-L02-ZQ-004",
+          "event": "dock.latched",
+          "clock": 45.82629999999331,
+          "mode": "subtitle"
+        },
+        {
+          "id": "C01-L02-ZQ-005",
+          "event": "level.complete",
+          "clock": 50.622599999994044,
+          "mode": "subtitle"
+        }
+      ],
+      "errors": [],
+      "expired": 0,
+      "cancelled": 0,
+      "disposed": false
+    },
+    "audioErrors": []
+  },
+  "errors": []
+}

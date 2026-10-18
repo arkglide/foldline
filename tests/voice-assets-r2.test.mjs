@@ -148,3 +148,20 @@ test('partial English production packages only verified takes and rejects old ra
   await writeProduction(rawDirectory, [record], { version: 1 });
   await assert.rejects(processVoiceAssets(data, { root, rawDirectory }), /old Chinese audio must not reuse stable line IDs/);
 });
+
+test('L02 English takes are isolated from L01 assets, raw takes and package provenance', async t => {
+  const { root } = await workspace(t);
+  const data = JSON.parse(await fs.readFile(new URL('../game/data/l02-dialogue.json', import.meta.url), 'utf8'));
+  data.lines = data.lines.slice(0, 1);
+  const rawDirectory = path.join(root, '.cache/voice/l02/raw'); await fs.mkdir(rawDirectory, { recursive: true });
+  await fs.mkdir(path.join(root, 'assets/voice/l01'), { recursive: true });
+  const legacy = JSON.stringify({ version: 1, generated: [], localUserRecording: true });
+  await fs.writeFile(path.join(root, 'assets/voice/l01/manifest.json'), legacy);
+  await writeProduction(rawDirectory, [await take(data, data.lines[0], rawDirectory)]);
+  const processed = await processVoiceAssets(data, { root, level: 'l02' });
+  assert.equal(processed.generated.length, 1);
+  assert.equal((await loadVoiceAssets(data, { root, level: 'l02', strict: true })).assets.length, 1);
+  assert.equal(await fs.readFile(path.join(root, 'assets/voice/l01/manifest.json'), 'utf8'), legacy);
+  await assert.rejects(loadVoiceAssets(data, { root, level: 'l01' }), /level must match/);
+  await assert.rejects(processVoiceAssets(data, { root, level: '../l01' }), /level must match/);
+});
