@@ -13,7 +13,7 @@ export default function (ctx) {
     y: Math.cos(pitch / 2) * Math.sin(yaw / 2), z: -Math.sin(pitch / 2) * Math.sin(yaw / 2),
     w: Math.cos(pitch / 2) * Math.cos(yaw / 2) };
   let rig, controller, a, b, shutter, gate, exit, blind, initialSnapshot, companion, dialogue;
-  let noticeAge = 0, observationTime = 0, holdingWheel = false;
+  let noticeAge = 0, observationTime = 0, upperLookTime = 0, holdingWheel = false;
   let mountObstruction = '', companionEntities = [];
   const feedback = [], audioErrors = [];
   let handleMaterial, latchMaterial, exitMaterial;
@@ -21,7 +21,7 @@ export default function (ctx) {
   let interactTarget = '', portalEvents = [], blockedEvents = [];
   let flags = { handleRequested: false, portalsActive: false, latchRequested: false,
     returnStairOpen: false, completed: false, blindRequested: false, entered: false,
-    exitSeen: false, blockedSeen: false, crossed: false, returned: false, blindObserved: false };
+    exitSeen: false, blockedSeen: false, crossed: false, returned: false, blindObserved: false, lookedBack: false };
   const textCache = new Map();
   function text(id, value) {
     if (id === 'notice') noticeAge = 0;
@@ -59,9 +59,20 @@ export default function (ctx) {
     const options = dialogue.snapshot();
     if (code === 'KeyV') dialogue.setVoiceEnabled(!options.voiceEnabled);
     if (code === 'KeyB') dialogue.setSubtitlesEnabled(!options.subtitlesEnabled);
+    if (code === 'KeyL') dialogue.setSubtitleLanguage(options.subtitleLanguage === 'en' ? 'zh-CN' : 'en');
     const value = dialogue.snapshot();
-    text('notice', code === 'KeyV' ? `语音${value.voiceEnabled ? '已开启' : '已关闭'} · V 切换` :
-      `字幕${value.subtitlesEnabled ? '已开启' : '已关闭'} · B 切换`);
+    const english = value.subtitleLanguage === 'en';
+    text('notice', code === 'KeyL' ? (english ? 'Subtitles: English · L to switch' : '字幕：简体中文 · L 切换') :
+      code === 'KeyV' ? (english ? `English voice: ${value.voiceEnabled ? 'On' : 'Off'} · V` :
+        `英语语音${value.voiceEnabled ? '已开启' : '已关闭'} · V 切换`) :
+      (english ? `Subtitles: ${value.subtitlesEnabled ? 'On' : 'Off'} · B` :
+        `字幕${value.subtitlesEnabled ? '已开启' : '已关闭'} · B 切换`));
+    settingsHint(value);
+  }
+  function settingsHint(value) {
+    text('pauseHint', value.subtitleLanguage === 'en' ?
+      'Click to start / resume · R Retry\nV English voice · B Subtitles · L Language' :
+      '点击画面开始 / 继续 · R 重试\nV 英语语音 · B 字幕开关 · L 字幕语言');
   }
   function showPause(value) {
     ui.get('pauseTitle')?.setVisible(value);
@@ -94,7 +105,7 @@ export default function (ctx) {
       portals.setQuality(quality); // release inactive render-target pool on retry
       controller.clearInput(); rig.setRotation(initialRotation); rig.update();
       companion.update(0, { paused: true, retracted: false }); companion.snap();
-      holdingWheel = false; observationTime = 0; mountObstruction = ''; audioErrors.length = 0;
+      holdingWheel = false; observationTime = 0; upperLookTime = 0; mountObstruction = ''; audioErrors.length = 0;
       portalEvents = []; blockedEvents = []; retryCount++; error = '';
       paused = true; time.timeScale = 0;
       text('notice', '已回到本关安全入口。点击继续。');
@@ -248,7 +259,7 @@ export default function (ctx) {
       // Native action input is intentionally disabled at timeScale=0. This
       // owner-tracked menu shortcut keeps retry available on the pause screen.
       events.listen(window, 'keydown', event => {
-        if (paused && ready && !event.repeat && document.hasFocus() && ['KeyV', 'KeyB'].includes(event.code)) {
+        if (paused && ready && !event.repeat && document.hasFocus() && ['KeyV', 'KeyB', 'KeyL'].includes(event.code)) {
           event.preventDefault(); optionsKey(event.code);
         }
         if (paused && ready && !retrying && !event.repeat && event.code === 'KeyR' && document.hasFocus()) {
@@ -257,6 +268,7 @@ export default function (ctx) {
       });
       initialSnapshot = saves.capture();
       refreshFeedback(); rig.update();
+      settingsHint(dialogue.snapshot());
       text('prompt', ''); text('notice', '');
       globalThis.foldlineL01 = Object.freeze({ snapshot });
       ready = true; time.timeScale = 0; showPause(true);
@@ -291,11 +303,15 @@ export default function (ctx) {
     onUpdate() {
       if (!ready || error) return;
       dialogue.update(time.deltaTime, { paused: paused || retrying });
+      const dialogueState = dialogue.snapshot();
+      settingsHint(dialogueState);
       const p = physics.getState(entity).position;
       const nearFold = flags.portalsActive && ((Math.abs(p.z - 10) < 1.35 && Math.abs(p.x - 11) < 1.65 && p.y < 2) ||
         (Math.abs(p.x - 24) < 1.35 && Math.abs(p.z - 10) < 1.65 && p.y > 2.5));
-      const companionState = { paused, speaking: dialogue.snapshot().currentSpeaker === 'zhanque',
-        observing: observationTime > 0 || !!interactTarget, retracted: nearFold };
+      const companionState = { paused,
+        speaking: dialogueState.currentSpeaker === 'zhanque' && (dialogueState.audioPlaying || dialogueState.subtitlesEnabled),
+        delivery: dialogueState.currentDelivery,
+        observing: observationTime > 0 || upperLookTime > 0 || !!interactTarget, retracted: nearFold };
       if (paused || retrying) {
         holdingWheel = false; shutter.setPaused(true); companion.update(0, companionState);
       }
@@ -307,6 +323,7 @@ export default function (ctx) {
       companion.update(time.deltaTime, companionState);
       if (input.wasActionPressed('voice')) optionsKey('KeyV');
       if (input.wasActionPressed('subtitles')) optionsKey('KeyB');
+      if (input.wasActionPressed('language')) optionsKey('KeyL');
       interactTarget = chooseInteraction();
       holdingWheel = !flags.portalsActive && interactTarget === 'ShutterHandle' && input.isActionDown('interact');
       shutter.setPaused(!holdingWheel || flags.portalsActive);
@@ -337,7 +354,20 @@ export default function (ctx) {
         const hit = aligned ? physics.raycast(eye, target, { ignore: [entity], sensors: false }) : null;
         const visible = hit?.entity.id === 'ExitDoor';
         observationTime = aligned && visible ? observationTime + time.deltaTime : 0;
-        if (observationTime > .6) { flags.exitSeen = true; dialogue.emit('exit.seen'); }
+        if (observationTime > .6) { flags.exitSeen = true; observationTime = 0; dialogue.emit('exit.seen'); }
+      }
+      // Optional recognition of the actual starting-side cabinet from the
+      // upper overlook. Occlusion and deliberate sustained gaze matter; merely
+      // entering an area does not count as looking back or gate progression.
+      if (flags.crossed && !flags.lookedBack) {
+        const atOverlook = p.y > 3.1 && p.x < 21.6 && p.z > 11.1;
+        const target = { x: 11 - eye.x, y: 3.8 - eye.y, z: 10.1 - eye.z };
+        const direction = rig.camera.ray(.5, .5, 1).direction;
+        const length = Math.hypot(target.x, target.y, target.z);
+        const aligned = atOverlook && (direction.x * target.x + direction.y * target.y + direction.z * target.z) / length > .965;
+        const hit = aligned ? physics.raycast(eye, target, { ignore: [entity], sensors: false }) : null;
+        upperLookTime = hit?.entity.id === 'A1CabinetCrown' ? upperLookTime + time.deltaTime : 0;
+        if (upperLookTime > .8) { flags.lookedBack = true; upperLookTime = 0; dialogue.emit('upper.lookback'); }
       }
       if (!flags.blockedSeen && !flags.returnStairOpen && p.x > 20.0 && p.z < 3.1 && p.y < 1.2) {
         flags.blockedSeen = true; dialogue.emit('route.blocked');

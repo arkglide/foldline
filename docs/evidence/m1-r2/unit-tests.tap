@@ -1,0 +1,253 @@
+TAP version 13
+# BJS - [05:45:45]: Babylon.js v9.28.0 - Null engine
+# BJS - [05:45:45]: Babylon.js v9.28.0 - Null engine
+# BJS - [05:45:45]: Babylon.js v9.28.0 - Null engine
+# BJS - [05:45:45]: Babylon.js v9.28.0 - Null engine
+# BJS - [05:45:45]: Babylon.js v9.28.0 - Null engine
+# BJS - [05:45:45]: Babylon.js v9.28.0 - Null engine
+# BJS - [05:45:45]: Babylon.js v9.28.0 - Null engine
+# BJS - [05:45:45]: Babylon.js v9.28.0 - Null engine
+# BJS - [05:45:45]: Babylon.js v9.28.0 - Null engine
+# Subtest: 栈雀 uses native visible parts without collision bodies or per-frame allocation
+ok 1 - 栈雀 uses native visible parts without collision bodies or per-frame allocation
+  ---
+  duration_ms: 33.84313
+  type: 'test'
+  ...
+# Subtest: mapped camera anchors 栈雀 immediately, without a world interpolation trail
+ok 2 - mapped camera anchors 栈雀 immediately, without a world interpolation trail
+  ---
+  duration_ms: 6.463147
+  type: 'test'
+  ...
+# Subtest: retry snap reuses parts; explicit disposal and native owner cleanup release all companion resources
+ok 3 - retry snap reuses parts; explicit disposal and native owner cleanup release all companion resources
+  ---
+  duration_ms: 6.173298
+  type: 'test'
+  ...
+# Subtest: live-aperture shoulder fold retracts locally and stays folded across a mapped view
+ok 4 - live-aperture shoulder fold retracts locally and stays folded across a mapped view
+  ---
+  duration_ms: 4.827063
+  type: 'test'
+  ...
+# Subtest: dialogue delivery changes articulation while pause, mount and resource bounds remain stable
+ok 5 - dialogue delivery changes articulation while pause, mount and resource bounds remain stable
+  ---
+  duration_ms: 20.722027
+  type: 'test'
+  ...
+# Subtest: preferences use one versioned native key and survive a fresh runtime independently of checkpoints
+ok 6 - preferences use one versioned native key and survive a fresh runtime independently of checkpoints
+  ---
+  duration_ms: 5.336398
+  type: 'test'
+  ...
+# Subtest: late reads merge untouched saved fields but never overwrite settings the player already changed
+ok 7 - late reads merge untouched saved fields but never overwrite settings the player already changed
+  ---
+  duration_ms: 0.91085
+  type: 'test'
+  ...
+# Subtest: writes are serial and coalesce rapid input without a stale final preference snapshot
+ok 8 - writes are serial and coalesce rapid input without a stale final preference snapshot
+  ---
+  duration_ms: 0.927485
+  type: 'test'
+  ...
+# Subtest: invalid/corrupt stored preferences fall back, and failed writes retry only after another explicit change
+ok 9 - invalid/corrupt stored preferences fall back, and failed writes retry only after another explicit change
+  ---
+  duration_ms: 1.200218
+  type: 'test'
+  ...
+# Subtest: dispose suppresses late read callbacks, new writes, and follow-up writes after an in-flight one
+ok 10 - dispose suppresses late read callbacks, new writes, and follow-up writes after an in-flight one
+  ---
+  duration_ms: 1.661442
+  type: 'test'
+  ...
+# Subtest: unknown language and invalid values cannot corrupt a persisted preference document
+ok 11 - unknown language and invalid values cannot corrupt a persisted preference document
+  ---
+  duration_ms: 0.558999
+  type: 'test'
+  ...
+# Subtest: R2 data separates English voice and both subtitles, with valid unique assets and causal delivery
+ok 12 - R2 data separates English voice and both subtitles, with valid unique assets and causal delivery
+  ---
+  duration_ms: 2.86135
+  type: 'test'
+  ...
+# Subtest: missing voice assets honestly report 0/15 and retain localized subtitles without replay
+ok 13 - missing voice assets honestly report 0/15 and retain localized subtitles without replay
+  ---
+  duration_ms: 2.304695
+  type: 'test'
+  ...
+# Subtest: switching an active subtitle updates text and name immediately without restarting English audio or its clock
+ok 14 - switching an active subtitle updates text and name immediately without restarting English audio or its clock
+  ---
+  duration_ms: 0.94482
+  type: 'test'
+  ...
+# Subtest: serial priority queue never plays a reply before its parent actually starts
+ok 15 - serial priority queue never plays a reply before its parent actually starts
+  ---
+  duration_ms: 1.216853
+  type: 'test'
+  ...
+# Subtest: a consumed event is insufficient for a reply, and cancelled or expired parents produce no orphan response
+ok 16 - a consumed event is insufficient for a reply, and cancelled or expired parents produce no orphan response
+  ---
+  duration_ms: 0.623414
+  type: 'test'
+  ...
+# Subtest: new progression cancels queued observations without interrupting the line already playing
+ok 17 - new progression cancels queued observations without interrupting the line already playing
+  ---
+  duration_ms: 0.437038
+  type: 'test'
+  ...
+# Subtest: pause freezes the voice and subtitle clock, then resumes the same line
+ok 18 - pause freezes the voice and subtitle clock, then resumes the same line
+  ---
+  duration_ms: 0.564937
+  type: 'test'
+  ...
+# Subtest: checkpoint v1 stores event progression separately from settings and drops live audio/queue on restore
+ok 19 - checkpoint v1 stores event progression separately from settings and drops live audio/queue on restore
+  ---
+  duration_ms: 0.85033
+  type: 'test'
+  ...
+# Subtest: voice/subtitles/language remain independent through retry; enabling voice never restarts a partial sentence
+ok 20 - voice/subtitles/language remain independent through retry; enabling voice never restarts a partial sentence
+  ---
+  duration_ms: 0.49958
+  type: 'test'
+  ...
+# Subtest: failed native playback falls back without blocking events, retries, or later queue progress
+ok 21 - failed native playback falls back without blocking events, retries, or later queue progress
+  ---
+  duration_ms: 3.834472
+  type: 'test'
+  ...
+# Subtest: native read preference failure is non-blocking and a later explicit setting write can recover
+ok 22 - native read preference failure is non-blocking and a later explicit setting write can recover
+  ---
+  duration_ms: 7.175262
+  type: 'test'
+  ...
+# Subtest: PCM processing preserves browser-decodable duration, controls peak, fades edges, and rejects invalid/silent WAV
+ok 23 - PCM processing preserves browser-decodable duration, controls peak, fades edges, and rejects invalid/silent WAV
+  ---
+  duration_ms: 6.739027
+  type: 'test'
+  ...
+# Subtest: npm CLI launch preserves arguments with spaces and shell characters on Windows
+ok 24 - npm CLI launch preserves arguments with spaces and shell characters on Windows
+  ---
+  duration_ms: 42.434412
+  type: 'test'
+  ...
+# Subtest: failed npm CLI remains an installation failure
+ok 25 - failed npm CLI remains an installation failure
+  ---
+  duration_ms: 32.868486
+  type: 'test'
+  ...
+# Subtest: direct Windows invocation gives a useful error when no npm CLI is available
+ok 26 - direct Windows invocation gives a useful error when no npm CLI is available
+  ---
+  duration_ms: 1.74791
+  type: 'test'
+  ...
+# Subtest: installed npm CLI can be launched through the same runner
+ok 27 - installed npm CLI can be launched through the same runner
+  ---
+  duration_ms: 74.454202
+  type: 'test'
+  ...
+# Subtest: CRLF runtime sync can look dirty in status while pinned content stays unchanged
+ok 28 - CRLF runtime sync can look dirty in status while pinned content stays unchanged
+  ---
+  duration_ms: 67.444287
+  type: 'test'
+  ...
+# Subtest: real source and binary edits are reported and preserved
+ok 29 - real source and binary edits are reported and preserved
+  ---
+  duration_ms: 36.834569
+  type: 'test'
+  ...
+# Subtest: staged edits are still refused when the working file is reverted to HEAD
+ok 30 - staged edits are still refused when the working file is reverted to HEAD
+  ---
+  duration_ms: 36.854965
+  type: 'test'
+  ...
+# Subtest: checkout verification still rejects the wrong pin and nested checkouts
+ok 31 - checkout verification still rejects the wrong pin and nested checkouts
+  ---
+  duration_ms: 31.67238
+  type: 'test'
+  ...
+# Subtest: an entirely missing English set is an honest subtitle fallback, strict delivery rejects it
+ok 32 - an entirely missing English set is an honest subtitle fallback, strict delivery rejects it
+  ---
+  duration_ms: 7.098799
+  type: 'test'
+  ...
+# Subtest: stable IDs cannot package unmanifested WAV or a version 1 Chinese manifest
+ok 33 - stable IDs cannot package unmanifested WAV or a version 1 Chinese manifest
+  ---
+  duration_ms: 7.304594
+  type: 'test'
+  ...
+# Subtest: English processing records actual alternate English culture, hashes and separate voiceText
+ok 34 - English processing records actual alternate English culture, hashes and separate voiceText
+  ---
+  duration_ms: 13.614015
+  type: 'test'
+  ...
+# Subtest: Chinese subtitle and display-name edits do not require an English rerecord; English edits do
+ok 35 - Chinese subtitle and display-name edits do not require an English rerecord; English edits do
+  ---
+  duration_ms: 9.955182
+  type: 'test'
+  ...
+# Subtest: Chinese takes, outdated rate, duplicate IDs and corrupted raw hashes are rejected before output changes
+ok 36 - Chinese takes, outdated rate, duplicate IDs and corrupted raw hashes are rejected before output changes
+  ---
+  duration_ms: 14.38066
+  type: 'test'
+  ...
+# Subtest: replaced or malformed processed WAV cannot bypass the English package manifest
+ok 37 - replaced or malformed processed WAV cannot bypass the English package manifest
+  ---
+  duration_ms: 5.259384
+  type: 'test'
+  ...
+# Subtest: a merged partial rerecord replaces its take and preserves untouched voice metadata and output
+ok 38 - a merged partial rerecord replaces its take and preserves untouched voice metadata and output
+  ---
+  duration_ms: 7.654322
+  type: 'test'
+  ...
+# Subtest: partial English production packages only verified takes and rejects old raw metadata
+ok 39 - partial English production packages only verified takes and rejects old raw metadata
+  ---
+  duration_ms: 4.270769
+  type: 'test'
+  ...
+1..39
+# tests 39
+# suites 0
+# pass 39
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1877.271918

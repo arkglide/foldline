@@ -125,6 +125,7 @@ export async function l01Project() {
     scene: { nodes }, scripts: {
       'l01.js': await fs.readFile(new URL('./l01.js', import.meta.url), 'utf8'),
       'dialogue.js': await fs.readFile(new URL('./dialogue.js', import.meta.url), 'utf8'),
+      'dialogue-preferences.js': await fs.readFile(new URL('./dialogue-preferences.js', import.meta.url), 'utf8'),
       'companion.js': await fs.readFile(new URL('./companion.js', import.meta.url), 'utf8'),
       'data/l01-dialogue.js': `export default ${await fs.readFile(new URL('./data/l01-dialogue.json', import.meta.url), 'utf8')};`,
     },
@@ -132,7 +133,7 @@ export async function l01Project() {
     settings: { gravity: { x: 0, y: -9.8, z: 0 }, backgroundColor: '#47575b',
       ambientIntensity: .85, ambientColor: '#ffffff', fpsCap: 60, fixedTimeStep: 1 / 60,
       maxSubSteps: 8, timeScale: 1,
-      build: { title: '折径 · 侧向通行 / M1-R1', protectCode: false, showLogs: false } },
+      build: { title: '折径 · 侧向通行 / M1-R2', protectCode: false, showLogs: false } },
     content: { materials: {}, textures: [], prefabs: {}, prefabInstances: {}, audio: [],
       physics: { groups: [{ name: 'Default', mask: 1 }], debug: false },
       mixer: { buses: [{ id: 'Master', name: 'Master', parentId: null, volume: 1, mute: false },
@@ -143,21 +144,22 @@ export async function l01Project() {
       gameplay: { captureInput: true,
         actions: [['moveX', ['KeyD'], ['KeyA']], ['moveZ', ['KeyW'], ['KeyS']],
           ['jump', ['Space'], []], ['interact', ['KeyE'], []], ['retry', ['KeyR'], []],
-          ['voice', ['KeyV'], []], ['subtitles', ['KeyB'], []]]
+          ['voice', ['KeyV'], []], ['subtitles', ['KeyB'], []], ['language', ['KeyL'], []]]
           .map(([name, positive, negative]) => ({ name, positive, negative })),
         hud: [
           label('title', '折径 / FOLDLINE     01 · 侧向通行', 3, 3, { fontSize: 19 }),
           label('objective', '抵达高处的出口', 3, 8),
-          label('stage', 'C01-L01 · M1-R1 · 栈雀已挂载', 3, 12, { fontSize: 13, color: '#c5cec9' }),
+          label('stage', 'C01-L01 · M1-R2 · 栈雀已挂载', 3, 12, { fontSize: 13, color: '#c5cec9' }),
           label('controls', 'WASD 移动   鼠标观察   E 操作/按住转轮   R 重试   Esc 暂停', 3, 95, { fontSize: 13 }),
           label('dialogue', '', 50, 82, { anchorX: .5, width: 82, height: 8, fontSize: 18 }),
           label('audioStatus', '', 3, 17, { fontSize: 12, color: '#c5cec9' }),
+          label('dialogueSettings', '', 50, 66, { anchorX: .5, width: 86, height: 6, fontSize: 16 }),
           label('prompt', '', 50, 78, { anchorX: .5, width: 70, height: 6, fontSize: 18 }),
           label('notice', '', 50, 72, { anchorX: .5, width: 75, height: 5, fontSize: 14 }),
           label('crosshair', '·', 50, 50, { anchorX: .5, anchorY: .5, fontSize: 34, background: 'transparent' }),
           label('pauseTitle', '侧向通行', 50, 39, { anchorX: .5, fontSize: 34, width: 50, height: 9 }),
-          label('pauseHint', '点击画面开始 / 继续 · R 重试\nV 语音开关 · B 字幕开关', 50, 51,
-            { anchorX: .5, width: 65, height: 12, fontSize: 19 }),
+          label('pauseHint', '点击画面开始 / 继续 · R 重试\nV 英语语音 · B 字幕开关 · L 字幕语言', 50, 51,
+            { anchorX: .5, width: 82, height: 12, fontSize: 18 }),
         ] } },
   };
 }

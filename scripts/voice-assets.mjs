@@ -65,12 +65,42 @@ export function processPcmWave(bytes, processing) {
   return output;
 }
 
+const engineName = 'Windows System.Speech';
+const englishCulture = value => typeof value === 'string' && /^en(?:-[A-Za-z0-9]+)+$/.test(value);
+const digest = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
+const migration = 'Back up assets/voice/l01 and .cache/voice/raw outside their active paths, then regenerate English takes with scripts/tts.ps1.';
+
+function uniqueRecords(records, context) {
+  const seen = new Set();
+  for (const record of records) {
+    if (!record || typeof record.id !== 'string' || seen.has(record.id)) throw Error(`Duplicate or invalid ${context} record`);
+    seen.add(record.id);
+  }
+}
+
+function validateProvenance(value, recordsKey, context) {
+  if (!value || value.version !== 2 || value.engine !== engineName || value.spokenLanguage !== 'en' || !Array.isArray(value[recordsKey]))
+    throw Error(`Expected version 2 English ${context}; old Chinese audio must not reuse stable line IDs. ${migration}`);
+  uniqueRecords(value[recordsKey], context);
+}
+
+function takeMatchesLine(take, line, data) {
+  const settings = data.characters[line.character].voice;
+  return take && take.voiceText === line.voiceText && take.character === line.character && englishCulture(take.culture) &&
+    typeof take.voice === 'string' && !!take.voice.trim() && Number.isInteger(take.rate) && take.rate >= -10 && take.rate <= 10 &&
+    take.rate === settings.rate && Number.isInteger(take.volume) && take.volume >= 0 && take.volume <= 100 && take.volume === settings.volume;
+}
+
+function sameProcessing(a, b) {
+  return a && ['highPassHz', 'lowPassHz', 'peak'].every(key => a[key] === b[key]);
+}
+
 export async function loadVoiceAssets(data, { root = repoRoot, strict = false } = {}) {
   validateDialogue(data);
   let manifest;
   try { manifest = JSON.parse(await fs.readFile(path.join(root, 'assets/voice/l01/manifest.json'), 'utf8')); }
   catch (error) { if (error.code !== 'ENOENT') throw error; }
-  if (manifest && (manifest.version !== 1 || !Array.isArray(manifest.generated))) throw Error('Invalid voice asset manifest');
+  if (manifest) validateProvenance(manifest, 'generated', 'voice asset manifest');
   const assets = [], buffers = new Map(), report = { generated: [], missing: [] };
   for (const line of data.lines) {
     let bytes;
@@ -79,17 +109,21 @@ export async function loadVoiceAssets(data, { root = repoRoot, strict = false } 
       if (error.code !== 'ENOENT') throw error;
       report.missing.push({ id: line.id, character: line.character, file: line.file }); continue;
     }
+    // IDs are intentionally stable across the Chinese-to-English migration. A
+    // plausible WAV with no provenance could therefore contain old Chinese speech.
+    if (!manifest) throw Error(`Unverified voice asset ${line.id}: an English manifest is required. ${migration}`);
+    const record = manifest.generated.find(item => item.id === line.id);
+    if (!takeMatchesLine(record, line, data) || record.file !== line.file || record.audioId !== line.audioId ||
+      !sameProcessing(record.processing, data.characters[line.character].processing) || !digest(record.rawSha256) ||
+      record.sha256 !== sha256(bytes))
+      throw Error(`Voice asset or English voiceText changed for ${line.id}; regenerate and process the take before packaging`);
     const wave = readPcmWave(bytes);
-    if (manifest) {
-      const record = manifest.generated.find(item => item.id === line.id);
-      if (!record || record.file !== line.file || record.text !== line.subtitle || record.sha256 !== sha256(bytes))
-        throw Error(`Voice asset or subtitle changed for ${line.id}; regenerate and process the take before packaging`);
-    }
     const buffer = bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength);
     buffers.set(line.audioId, buffer);
-    assets.push({ id: line.audioId, name: `${data.characters[line.character].name} / ${line.id}`,
+    assets.push({ id: line.audioId, name: `${data.characters[line.character].names.en} / ${line.id}`,
       mime: 'audio/wav', byteLength: bytes.byteLength, stream: false });
-    report.generated.push({ id: line.id, file: line.file, duration: wave.duration, sha256: sha256(bytes), bytes: bytes.byteLength });
+    report.generated.push({ id: line.id, file: line.file, culture: record.culture, voice: record.voice,
+      duration: wave.duration, sha256: sha256(bytes), bytes: bytes.byteLength });
   }
   if (strict && report.missing.length) throw Error(`Missing Windows voice assets: ${report.missing.map(line => line.id).join(', ')}`);
   return { assets, buffers, report };
@@ -98,28 +132,27 @@ export async function loadVoiceAssets(data, { root = repoRoot, strict = false } 
 export async function processVoiceAssets(data, { root = repoRoot, rawDirectory = path.join(root, '.cache/voice/raw') } = {}) {
   validateDialogue(data);
   const production = JSON.parse(await fs.readFile(path.join(rawDirectory, 'production.json'), 'utf8'));
-  if (production.version !== 1 || production.engine !== 'Windows System.Speech' || !Array.isArray(production.lines))
-    throw Error('Expected provenance from scripts/tts.ps1 on Windows');
+  validateProvenance(production, 'lines', 'Windows take metadata');
   const generated = [], missing = [], outputFiles = [];
   for (const line of data.lines) {
     const take = production.lines.find(take => take.id === line.id);
     if (!take) { missing.push(line.id); continue; }
-    if (take.text !== line.subtitle || take.character !== line.character || take.culture !== data.characters[line.character].voice.culture ||
-      take.file !== `${line.id}.wav` || typeof take.voice !== 'string' || !take.voice)
-      throw Error(`Outdated or invalid take metadata for ${line.id}; regenerate this line on Windows`);
+    if (!takeMatchesLine(take, line, data) || take.file !== `${line.id}.wav` || !digest(take.sha256))
+      throw Error(`Outdated or invalid English take metadata for ${line.id}; regenerate this line on Windows`);
     const raw = await fs.readFile(path.join(rawDirectory, take.file));
     if (sha256(raw) !== take.sha256) throw Error(`Raw take hash differs for ${line.id}`);
     const processed = processPcmWave(raw, data.characters[line.character].processing);
     outputFiles.push({ target: path.join(root, line.file), processed });
-    generated.push({ id: line.id, character: line.character, file: line.file, text: line.subtitle, voice: take.voice, rate: take.rate,
-      culture: take.culture, duration: readPcmWave(processed).duration, sha256: sha256(processed), processing: data.characters[line.character].processing });
+    generated.push({ id: line.id, character: line.character, audioId: line.audioId, file: line.file, voiceText: line.voiceText,
+      voice: take.voice, rate: take.rate, volume: take.volume, culture: take.culture, rawSha256: take.sha256,
+      duration: readPcmWave(processed).duration, sha256: sha256(processed), processing: data.characters[line.character].processing });
   }
-  // Validate every take before writing any output, so a stale later sentence
-  // cannot leave an apparently successful half-update of the voice package.
+  // Validate every take before writing any output. A stale later sentence must
+  // not produce an apparently successful half-update of the English package.
   for (const { target, processed } of outputFiles) {
     await fs.mkdir(path.dirname(target), { recursive: true }); await fs.writeFile(target, processed);
   }
-  const manifest = { version: 1, engine: production.engine, generated, missing };
+  const manifest = { version: 2, engine: production.engine, spokenLanguage: 'en', generated, missing };
   const target = path.join(root, 'assets/voice/l01/manifest.json');
   await fs.mkdir(path.dirname(target), { recursive: true }); await fs.writeFile(target, JSON.stringify(manifest, null, 2) + '\n');
   return manifest;

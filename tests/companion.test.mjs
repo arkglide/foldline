@@ -117,3 +117,31 @@ test('live-aperture shoulder fold retracts locally and stays folded across a map
     assert.equal(s.visuals.stats().visualResources, 0);
   } finally { s.done(); }
 });
+
+test('dialogue delivery changes articulation while pause, mount and resource bounds remain stable', () => {
+  const poses = [];
+  const camera = { position: { x: 3, y: 1.6, z: 4 }, rotation: { x: 0, y: 0, z: 0, w: 1 } };
+  for (const delivery of ['curious', 'dry', 'surprised', 'warm', 'matterOfFact']) {
+    const s = setup();
+    try {
+      const companion = createCompanion({ visuals: s.v }, { getPose: () => camera });
+      for (let i = 0; i < 30; i++) companion.update(1 / 60, { speaking: true, delivery });
+      const state = companion.snapshot();
+      assert.equal(state.delivery, delivery);
+      assert.deepEqual(state.resources, { meshes: 12, materials: 5 });
+      assert.equal(s.physics.stats().physicsBodies, 0);
+      assert.ok(state.parts.every(p => Math.hypot(p.position.x - camera.position.x,
+        p.position.y - camera.position.y, p.position.z - camera.position.z) < 1.05));
+      poses.push(state.parts.find(p => p.id === 'zanque:wing-left').position);
+      companion.update(10, { paused: true, speaking: true, delivery: 'unknown' });
+      assert.equal(companion.snapshot().delivery, delivery, 'pause freezes the current performance accent');
+      assert.deepEqual(companion.snapshot().parts, state.parts);
+      companion.update(1 / 60, { delivery: 'unknown' });
+      assert.equal(companion.snapshot().delivery, 'matterOfFact', 'unsupported accents have a safe default');
+      companion.dispose(); assert.equal(s.visuals.stats().visualResources, 0);
+      assert.deepEqual(s.errors, []);
+    } finally { s.done(); }
+  }
+  assert.equal(new Set(poses.map(p => JSON.stringify(p))).size, 5, 'the five delivery accents have distinct actual native poses');
+  assert.deepEqual(camera, { position: { x: 3, y: 1.6, z: 4 }, rotation: { x: 0, y: 0, z: 0, w: 1 } });
+});

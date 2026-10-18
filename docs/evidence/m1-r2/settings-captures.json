@@ -1,0 +1,511 @@
+{
+  "kind": "Additional actual L-key/pointer-lock menu verification; not voice audition or human playtesting",
+  "captures": [
+    {
+      "language": "en",
+      "hud": {
+        "pauseHint": {
+          "text": "Click to start / resume · R Retry\nV English voice · B Subtitles · L Language",
+          "visible": true
+        },
+        "dialogueSettings": {
+          "text": "V Voice: On · B Subtitles: On · L Language: English",
+          "visible": true
+        },
+        "audioStatus": {
+          "text": "English voices awaiting Windows 0/15",
+          "visible": true
+        }
+      },
+      "state": {
+        "ready": true,
+        "error": "",
+        "phase": "locked",
+        "position": {
+          "x": 9.5,
+          "y": 0.8999998569488525,
+          "z": 3
+        },
+        "footPosition": {
+          "x": 9.5,
+          "y": -1.4305114748314196e-7,
+          "z": 3
+        },
+        "eyePosition": {
+          "x": 9.5,
+          "y": 1.5999997854232788,
+          "z": 2.999999761581421
+        },
+        "rotation": {
+          "x": -0.04424967251117367,
+          "y": 0.46432064111205384,
+          "z": 0.02323539649321268,
+          "w": 0.8842558665961299
+        },
+        "velocity": {
+          "x": 0,
+          "y": -0.16333332657814026,
+          "z": 0
+        },
+        "interactTarget": "",
+        "portalEvents": [],
+        "blockedEvents": [],
+        "returnStairOpen": false,
+        "shutterProgress": 0,
+        "gateProgress": 0,
+        "exitProgress": 0,
+        "blindProgress": 0,
+        "holdingWheel": false,
+        "companion": {
+          "disposed": false,
+          "mode": "paused",
+          "animationMode": "speaking",
+          "delivery": "curious",
+          "snapCount": 1,
+          "retracted": false,
+          "retraction": 0,
+          "worldPosition": {
+            "x": 10.317625543331705,
+            "y": 1.3933642724423807,
+            "z": 3.0901258309114685
+          },
+          "localOffset": {
+            "x": 0.39,
+            "y": -0.2779072771006197,
+            "z": 0.7
+          },
+          "mountDistance": 0.8481347019820781,
+          "collisionBodies": 0,
+          "resources": {
+            "meshes": 12,
+            "materials": 5
+          },
+          "parts": [
+            {
+              "id": "zanque:housing",
+              "position": {
+                "x": 10.317625543331705,
+                "y": 1.3933642724423807,
+                "z": 3.0901258309114685
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:display-bezel",
+              "position": {
+                "x": 10.272277681105628,
+                "y": 1.3869067499600796,
+                "z": 3.045297675719273
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:status-left",
+              "position": {
+                "x": 10.240481025936583,
+                "y": 1.3880639728038136,
+                "z": 3.06156178305337
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:status-right",
+              "position": {
+                "x": 10.287199137826821,
+                "y": 1.3935394049044627,
+                "z": 3.0135133140026924
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:folded-top",
+              "position": {
+                "x": 10.308934456308773,
+                "y": 1.462692903048679,
+                "z": 3.0895758244910456
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:hinge-left",
+              "position": {
+                "x": 10.262971257879366,
+                "y": 1.3780953794190476,
+                "z": 3.1660626218162697
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:hinge-right",
+              "position": {
+                "x": 10.392870398257097,
+                "y": 1.3933197516013405,
+                "z": 3.0324644395778
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:wing-left",
+              "position": {
+                "x": 10.229074333714404,
+                "y": 1.3843553062275638,
+                "z": 3.186757101491952
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:wing-right",
+              "position": {
+                "x": 10.411541220006598,
+                "y": 1.405740696306193,
+                "z": 2.9990942404717456
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:mount-brace",
+              "position": {
+                "x": 10.338191011431963,
+                "y": 1.3276655325113025,
+                "z": 3.1026350921234798
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:tool-left",
+              "position": {
+                "x": 10.295393342216416,
+                "y": 1.2910048131843022,
+                "z": 3.1188110018150748
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:tool-right",
+              "position": {
+                "x": 10.334704924172835,
+                "y": 1.295612188976312,
+                "z": 3.0783799729797483
+              },
+              "active": true
+            }
+          ]
+        },
+        "mountObstruction": "",
+        "dialogue": {
+          "version": 1,
+          "consumedEvents": [
+            "court.enter"
+          ],
+          "startedLines": [
+            "C01-L01-ZQ-001"
+          ],
+          "voiceEnabled": true,
+          "subtitlesEnabled": true,
+          "subtitleLanguage": "en",
+          "preferencesReady": true,
+          "pendingWrites": 0,
+          "persistenceError": null,
+          "paused": true,
+          "currentLine": "C01-L01-ZQ-001",
+          "currentSpeaker": "zhanque",
+          "currentDelivery": "curious",
+          "currentText": "Feet tucked in. Right. Let's see what still works.",
+          "localizedSpeaker": "Zhanque",
+          "currentMode": "subtitle",
+          "elapsed": 0.33209999999776485,
+          "audioPlaying": false,
+          "queue": [],
+          "availableAudio": [],
+          "missingAudio": [
+            "C01-L01-ZQ-001",
+            "C01-L01-ZQ-002",
+            "C01-L01-ZQ-010",
+            "C01-L01-HW-001",
+            "C01-L01-ZQ-003",
+            "C01-L01-HW-002",
+            "C01-L01-ZQ-005",
+            "C01-L01-HW-004",
+            "C01-L01-ZQ-006",
+            "C01-L01-ZQ-011",
+            "C01-L01-HW-005",
+            "C01-L01-ZQ-007",
+            "C01-L01-ZQ-008",
+            "C01-L01-HW-003",
+            "C01-L01-ZQ-009"
+          ],
+          "history": [
+            {
+              "id": "C01-L01-ZQ-001",
+              "event": "court.enter",
+              "clock": 0.043,
+              "mode": "subtitle"
+            }
+          ],
+          "errors": [],
+          "expired": 0,
+          "cancelled": 0,
+          "disposed": false
+        },
+        "audioErrors": [],
+        "completed": false,
+        "retryCount": 0,
+        "paused": true
+      },
+      "screenshot": "05-english-settings.png"
+    },
+    {
+      "language": "zh-CN",
+      "hud": {
+        "pauseHint": {
+          "text": "点击画面开始 / 继续 · R 重试\nV 英语语音 · B 字幕开关 · L 字幕语言",
+          "visible": true
+        },
+        "dialogueSettings": {
+          "text": "V 语音：开 · B 字幕：开 · L 字幕：中文",
+          "visible": true
+        },
+        "audioStatus": {
+          "text": "英文语音待 Windows 生成 0/15",
+          "visible": true
+        }
+      },
+      "state": {
+        "ready": true,
+        "error": "",
+        "phase": "locked",
+        "position": {
+          "x": 9.5,
+          "y": 0.8999998569488525,
+          "z": 3
+        },
+        "footPosition": {
+          "x": 9.5,
+          "y": -1.4305114748314196e-7,
+          "z": 3
+        },
+        "eyePosition": {
+          "x": 9.5,
+          "y": 1.5999997854232788,
+          "z": 2.999999761581421
+        },
+        "rotation": {
+          "x": -0.04424967251117367,
+          "y": 0.46432064111205384,
+          "z": 0.02323539649321268,
+          "w": 0.8842558665961299
+        },
+        "velocity": {
+          "x": 0,
+          "y": -0.16333332657814026,
+          "z": 0
+        },
+        "interactTarget": "",
+        "portalEvents": [],
+        "blockedEvents": [],
+        "returnStairOpen": false,
+        "shutterProgress": 0,
+        "gateProgress": 0,
+        "exitProgress": 0,
+        "blindProgress": 0,
+        "holdingWheel": false,
+        "companion": {
+          "disposed": false,
+          "mode": "paused",
+          "animationMode": "speaking",
+          "delivery": "curious",
+          "snapCount": 1,
+          "retracted": false,
+          "retraction": 0,
+          "worldPosition": {
+            "x": 10.317625543331705,
+            "y": 1.3933642724423807,
+            "z": 3.0901258309114685
+          },
+          "localOffset": {
+            "x": 0.39,
+            "y": -0.2779072771006197,
+            "z": 0.7
+          },
+          "mountDistance": 0.8481347019820781,
+          "collisionBodies": 0,
+          "resources": {
+            "meshes": 12,
+            "materials": 5
+          },
+          "parts": [
+            {
+              "id": "zanque:housing",
+              "position": {
+                "x": 10.317625543331705,
+                "y": 1.3933642724423807,
+                "z": 3.0901258309114685
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:display-bezel",
+              "position": {
+                "x": 10.272277681105628,
+                "y": 1.3869067499600796,
+                "z": 3.045297675719273
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:status-left",
+              "position": {
+                "x": 10.240481025936583,
+                "y": 1.3880639728038136,
+                "z": 3.06156178305337
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:status-right",
+              "position": {
+                "x": 10.287199137826821,
+                "y": 1.3935394049044627,
+                "z": 3.0135133140026924
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:folded-top",
+              "position": {
+                "x": 10.308934456308773,
+                "y": 1.462692903048679,
+                "z": 3.0895758244910456
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:hinge-left",
+              "position": {
+                "x": 10.262971257879366,
+                "y": 1.3780953794190476,
+                "z": 3.1660626218162697
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:hinge-right",
+              "position": {
+                "x": 10.392870398257097,
+                "y": 1.3933197516013405,
+                "z": 3.0324644395778
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:wing-left",
+              "position": {
+                "x": 10.229074333714404,
+                "y": 1.3843553062275638,
+                "z": 3.186757101491952
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:wing-right",
+              "position": {
+                "x": 10.411541220006598,
+                "y": 1.405740696306193,
+                "z": 2.9990942404717456
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:mount-brace",
+              "position": {
+                "x": 10.338191011431963,
+                "y": 1.3276655325113025,
+                "z": 3.1026350921234798
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:tool-left",
+              "position": {
+                "x": 10.295393342216416,
+                "y": 1.2910048131843022,
+                "z": 3.1188110018150748
+              },
+              "active": true
+            },
+            {
+              "id": "zanque:tool-right",
+              "position": {
+                "x": 10.334704924172835,
+                "y": 1.295612188976312,
+                "z": 3.0783799729797483
+              },
+              "active": true
+            }
+          ]
+        },
+        "mountObstruction": "",
+        "dialogue": {
+          "version": 1,
+          "consumedEvents": [
+            "court.enter"
+          ],
+          "startedLines": [
+            "C01-L01-ZQ-001"
+          ],
+          "voiceEnabled": true,
+          "subtitlesEnabled": true,
+          "subtitleLanguage": "zh-CN",
+          "preferencesReady": true,
+          "pendingWrites": 0,
+          "persistenceError": null,
+          "paused": true,
+          "currentLine": "C01-L01-ZQ-001",
+          "currentSpeaker": "zhanque",
+          "currentDelivery": "curious",
+          "currentText": "脚收好了。来，看看还有什么能用。",
+          "localizedSpeaker": "栈雀",
+          "currentMode": "subtitle",
+          "elapsed": 0.33209999999776485,
+          "audioPlaying": false,
+          "queue": [],
+          "availableAudio": [],
+          "missingAudio": [
+            "C01-L01-ZQ-001",
+            "C01-L01-ZQ-002",
+            "C01-L01-ZQ-010",
+            "C01-L01-HW-001",
+            "C01-L01-ZQ-003",
+            "C01-L01-HW-002",
+            "C01-L01-ZQ-005",
+            "C01-L01-HW-004",
+            "C01-L01-ZQ-006",
+            "C01-L01-ZQ-011",
+            "C01-L01-HW-005",
+            "C01-L01-ZQ-007",
+            "C01-L01-ZQ-008",
+            "C01-L01-HW-003",
+            "C01-L01-ZQ-009"
+          ],
+          "history": [
+            {
+              "id": "C01-L01-ZQ-001",
+              "event": "court.enter",
+              "clock": 0.043,
+              "mode": "subtitle"
+            }
+          ],
+          "errors": [],
+          "expired": 0,
+          "cancelled": 0,
+          "disposed": false
+        },
+        "audioErrors": [],
+        "completed": false,
+        "retryCount": 0,
+        "paused": true
+      },
+      "screenshot": "06-chinese-settings.png"
+    }
+  ]
+}

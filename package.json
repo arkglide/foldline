@@ -10,10 +10,10 @@
     "prepare:game": "node scripts/prepare-game.mjs",
     "dev": "npm run prepare:game && node scripts/serve.mjs",
     "test": "npm run test:unit && npm run test:browser",
-    "test:unit": "npm run setup:engine && node --test --test-concurrency=1 tests/engine-setup.test.mjs tests/dialogue.test.mjs tests/companion.test.mjs",
+    "test:unit": "npm run setup:engine && node --test --test-concurrency=1 tests/engine-setup.test.mjs tests/dialogue.test.mjs tests/dialogue-preferences.test.mjs tests/voice-assets-r2.test.mjs tests/companion.test.mjs",
     "voices:check": "node scripts/voice-assets.mjs --check",
     "voices:process": "node scripts/voice-assets.mjs --process",
-    "test:browser": "npm run prepare:game && node --test --test-concurrency=1 tests/browser-l01-r1.test.mjs",
+    "test:browser": "npm run prepare:game && node --test --test-concurrency=1 tests/browser-l01-r2.test.mjs",
     "test:setup": "node --test tests/engine-setup.test.mjs",
     "check": "node --check game/l01.js && node --check game/project.mjs && node --check scripts/prepare-game.mjs"
   },

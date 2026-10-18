@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "cooldown": 0.65,
   "characters": {
     "zhanque": {
@@ -7,92 +7,341 @@
       "bus": "CompanionVoice",
       "volume": 0.86,
       "rate": 1,
-      "voice": { "culture": "zh-CN", "windowsName": null, "rate": 1, "volume": 95 },
-      "processing": { "highPassHz": 140, "lowPassHz": 5200, "peak": 0.76 }
+      "voice": {
+        "culture": "en-US",
+        "windowsName": null,
+        "rate": 1,
+        "volume": 95
+      },
+      "processing": {
+        "highPassHz": 140,
+        "lowPassHz": 5200,
+        "peak": 0.76
+      },
+      "names": {
+        "en": "Zhanque",
+        "zh-CN": "栈雀"
+      }
     },
     "hengwu": {
       "name": "衡务",
       "bus": "BroadcastVoice",
       "volume": 0.72,
       "rate": 1,
-      "voice": { "culture": "zh-CN", "windowsName": null, "rate": -1, "volume": 95 },
-      "processing": { "highPassHz": 360, "lowPassHz": 2700, "peak": 0.67 }
+      "voice": {
+        "culture": "en-US",
+        "windowsName": null,
+        "rate": -1,
+        "volume": 95
+      },
+      "processing": {
+        "highPassHz": 360,
+        "lowPassHz": 2700,
+        "peak": 0.67
+      },
+      "names": {
+        "en": "Hengwu",
+        "zh-CN": "衡务"
+      }
     }
   },
   "lines": [
     {
-      "id": "C01-L01-ZQ-001", "character": "zhanque",
-      "subtitle": "支脚收好了。嗯，这里比图纸上宽。",
-      "audioId": "voice-c01-l01-zq-001", "file": "assets/voice/l01/C01-L01-ZQ-001.wav",
-      "trigger": "court.enter", "priority": 10, "duration": 3.6, "maxAge": 8
+      "id": "C01-L01-ZQ-001",
+      "character": "zhanque",
+      "audioId": "voice-c01-l01-zq-001",
+      "file": "assets/voice/l01/C01-L01-ZQ-001.wav",
+      "trigger": "court.enter",
+      "priority": 10,
+      "duration": 3.8,
+      "maxAge": 8,
+      "voiceText": "Feet tucked in. Right. Let's see what still works.",
+      "subtitles": {
+        "en": "Feet tucked in. Right. Let's see what still works.",
+        "zh-CN": "脚收好了。来，看看还有什么能用。"
+      },
+      "delivery": "curious"
     },
     {
-      "id": "C01-L01-ZQ-002", "character": "zhanque",
-      "subtitle": "出口倒是醒着。只是我们还在楼下。",
-      "audioId": "voice-c01-l01-zq-002", "file": "assets/voice/l01/C01-L01-ZQ-002.wav",
-      "trigger": "exit.seen", "priority": 15, "duration": 3.5, "maxAge": 10,
-      "cancelOn": ["fold.crossed", "return.open", "level.complete"]
+      "id": "C01-L01-ZQ-002",
+      "character": "zhanque",
+      "audioId": "voice-c01-l01-zq-002",
+      "file": "assets/voice/l01/C01-L01-ZQ-002.wav",
+      "trigger": "exit.seen",
+      "priority": 15,
+      "duration": 4.2,
+      "maxAge": 10,
+      "cancelOn": [
+        "fold.crossed",
+        "return.open",
+        "level.complete"
+      ],
+      "voiceText": "There's the exit. I was hoping for one on our floor.",
+      "subtitles": {
+        "en": "There's the exit. I was hoping for one on our floor.",
+        "zh-CN": "出口在那儿。我还盼着它能跟我们在一层呢。"
+      },
+      "delivery": "dry"
     },
     {
-      "id": "C01-L01-HW-001", "character": "hengwu",
-      "subtitle": "上行检修梯处于隔离状态。请保留返回通路。",
-      "audioId": "voice-c01-l01-hw-001", "file": "assets/voice/l01/C01-L01-HW-001.wav",
-      "trigger": "route.blocked", "priority": 20, "duration": 4, "maxAge": 12,
-      "cancelOn": ["return.open", "level.complete"]
+      "id": "C01-L01-ZQ-010",
+      "character": "zhanque",
+      "voiceText": "I think it's jammed. Quiet sort of jam, though.",
+      "subtitles": {
+        "en": "I think it's jammed. Quiet sort of jam, though.",
+        "zh-CN": "我猜是卡住了。不过，卡得还挺安静。"
+      },
+      "audioId": "voice-c01-l01-zq-010",
+      "file": "assets/voice/l01/C01-L01-ZQ-010.wav",
+      "trigger": "route.blocked",
+      "priority": 21,
+      "duration": 4,
+      "maxAge": 10,
+      "cancelOn": [
+        "fold.crossed",
+        "return.open",
+        "level.complete"
+      ],
+      "delivery": "curious"
     },
     {
-      "id": "C01-L01-ZQ-003", "character": "zhanque",
-      "subtitle": "这条线绕过了设备背面。图纸上可没画这个弯。",
-      "audioId": "voice-c01-l01-zq-003", "file": "assets/voice/l01/C01-L01-ZQ-003.wav",
-      "trigger": "maintenance.observed", "priority": 8, "duration": 4.2, "maxAge": 7,
-      "cancelOn": ["fold.ready", "fold.crossed", "level.complete"]
+      "id": "C01-L01-HW-001",
+      "character": "hengwu",
+      "audioId": "voice-c01-l01-hw-001",
+      "file": "assets/voice/l01/C01-L01-HW-001.wav",
+      "trigger": "route.blocked",
+      "priority": 20,
+      "duration": 3.8,
+      "maxAge": 12,
+      "cancelOn": [
+        "fold.crossed",
+        "return.open",
+        "level.complete"
+      ],
+      "voiceText": "No fault is logged. The stair gate is isolated.",
+      "subtitles": {
+        "en": "No fault is logged. The stair gate is isolated.",
+        "zh-CN": "未记录故障。楼梯隔离门处于封闭状态。"
+      },
+      "delivery": "matterOfFact",
+      "after": "C01-L01-ZQ-010"
     },
     {
-      "id": "C01-L01-HW-002", "character": "hengwu",
-      "subtitle": "固定折口接驳完成。两侧落脚区确认。",
-      "audioId": "voice-c01-l01-hw-002", "file": "assets/voice/l01/C01-L01-HW-002.wav",
-      "trigger": "fold.ready", "priority": 30, "duration": 3.4, "maxAge": 12,
-      "cancelOn": ["fold.crossed", "level.complete"]
+      "id": "C01-L01-ZQ-003",
+      "character": "zhanque",
+      "audioId": "voice-c01-l01-zq-003",
+      "file": "assets/voice/l01/C01-L01-ZQ-003.wav",
+      "trigger": "maintenance.observed",
+      "priority": 8,
+      "duration": 4.8,
+      "maxAge": 7,
+      "cancelOn": [
+        "fold.ready",
+        "fold.crossed",
+        "level.complete"
+      ],
+      "voiceText": "Oh, that's where the line goes. Couldn't see that bend from out there.",
+      "subtitles": {
+        "en": "Oh, that's where the line goes. Couldn't see that bend from out there.",
+        "zh-CN": "哦，原来线路通向这边。刚才在外面看不见这个弯。"
+      },
+      "delivery": "curious"
     },
     {
-      "id": "C01-L01-ZQ-005", "character": "zhanque",
-      "subtitle": "我猜那边是仓库……唔，扶栏不像。",
-      "audioId": "voice-c01-l01-zq-005", "file": "assets/voice/l01/C01-L01-ZQ-005.wav",
-      "trigger": "fold.ready", "priority": 7, "duration": 3.7, "maxAge": 10, "delay": 4.2,
-      "cancelOn": ["fold.crossed", "return.open", "level.complete"]
+      "id": "C01-L01-HW-002",
+      "character": "hengwu",
+      "audioId": "voice-c01-l01-hw-002",
+      "file": "assets/voice/l01/C01-L01-HW-002.wav",
+      "trigger": "fold.ready",
+      "priority": 30,
+      "duration": 3.8,
+      "maxAge": 12,
+      "cancelOn": [
+        "fold.crossed",
+        "level.complete"
+      ],
+      "voiceText": "Fixed link established. Both landings confirmed clear.",
+      "subtitles": {
+        "en": "Fixed link established. Both landings confirmed clear.",
+        "zh-CN": "固定接驳已建立。两侧落脚区确认无障碍。"
+      },
+      "delivery": "matterOfFact"
     },
     {
-      "id": "C01-L01-ZQ-006", "character": "zhanque",
-      "subtitle": "刚才还在下面……那条绕弯的线，我认得。",
-      "audioId": "voice-c01-l01-zq-006", "file": "assets/voice/l01/C01-L01-ZQ-006.wav",
-      "trigger": "fold.crossed", "priority": 40, "duration": 4.1, "maxAge": 10,
-      "cancelOn": ["level.complete"]
+      "id": "C01-L01-ZQ-005",
+      "character": "zhanque",
+      "audioId": "voice-c01-l01-zq-005",
+      "file": "assets/voice/l01/C01-L01-ZQ-005.wav",
+      "trigger": "fold.ready",
+      "priority": 7,
+      "duration": 3.8,
+      "maxAge": 10,
+      "delay": 4.2,
+      "cancelOn": [
+        "fold.crossed",
+        "return.open",
+        "level.complete"
+      ],
+      "voiceText": "A loading bay, maybe? Those rails look familiar.",
+      "subtitles": {
+        "en": "A loading bay, maybe? Those rails look familiar.",
+        "zh-CN": "会不会是装货平台？那种栏杆我好像见过。"
+      },
+      "delivery": "curious"
     },
     {
-      "id": "C01-L01-ZQ-007", "character": "zhanque",
-      "subtitle": "这回停电也能走回去了。我喜欢楼梯。",
-      "audioId": "voice-c01-l01-zq-007", "file": "assets/voice/l01/C01-L01-ZQ-007.wav",
-      "trigger": "return.open", "priority": 35, "duration": 3.6, "maxAge": 10,
-      "cancelOn": ["level.complete"]
+      "id": "C01-L01-HW-004",
+      "character": "hengwu",
+      "voiceText": "That platform is registered as an inspection gallery.",
+      "subtitles": {
+        "en": "That platform is registered as an inspection gallery.",
+        "zh-CN": "该平台登记为巡检廊。"
+      },
+      "audioId": "voice-c01-l01-hw-004",
+      "file": "assets/voice/l01/C01-L01-HW-004.wav",
+      "trigger": "fold.ready",
+      "priority": 6,
+      "duration": 3.6,
+      "maxAge": 17,
+      "after": "C01-L01-ZQ-005",
+      "cancelOn": [
+        "fold.crossed",
+        "return.open",
+        "level.complete"
+      ],
+      "delivery": "matterOfFact"
     },
     {
-      "id": "C01-L01-ZQ-008", "character": "zhanque",
-      "subtitle": "绕了一圈，没换地方。换的是路。",
-      "audioId": "voice-c01-l01-zq-008", "file": "assets/voice/l01/C01-L01-ZQ-008.wav",
-      "trigger": "court.returned", "priority": 10, "duration": 3.3, "maxAge": 8,
-      "cancelOn": ["level.complete"]
+      "id": "C01-L01-ZQ-006",
+      "character": "zhanque",
+      "audioId": "voice-c01-l01-zq-006",
+      "file": "assets/voice/l01/C01-L01-ZQ-006.wav",
+      "trigger": "fold.crossed",
+      "priority": 40,
+      "duration": 3.8,
+      "maxAge": 10,
+      "cancelOn": [
+        "level.complete"
+      ],
+      "voiceText": "Oh. Up here already? I hadn't finished looking.",
+      "subtitles": {
+        "en": "Oh. Up here already? I hadn't finished looking.",
+        "zh-CN": "咦，已经到上面了？我还没看够呢。"
+      },
+      "delivery": "surprised"
     },
     {
-      "id": "C01-L01-HW-003", "character": "hengwu",
-      "subtitle": "巡检段通路已恢复。保留人工回路。",
-      "audioId": "voice-c01-l01-hw-003", "file": "assets/voice/l01/C01-L01-HW-003.wav",
-      "trigger": "level.complete", "priority": 50, "duration": 3.4, "maxAge": 20
+      "id": "C01-L01-ZQ-011",
+      "character": "zhanque",
+      "voiceText": "There's the way we came in. Much easier to read the place from here.",
+      "subtitles": {
+        "en": "There's the way we came in. Much easier to read the place from here.",
+        "zh-CN": "那儿就是我们进来的地方。从这儿看，整个庭院就好懂多了。"
+      },
+      "audioId": "voice-c01-l01-zq-011",
+      "file": "assets/voice/l01/C01-L01-ZQ-011.wav",
+      "trigger": "upper.lookback",
+      "priority": 12,
+      "duration": 5,
+      "maxAge": 9,
+      "cancelOn": [
+        "court.returned",
+        "level.complete"
+      ],
+      "delivery": "curious"
     },
     {
-      "id": "C01-L01-ZQ-009", "character": "zhanque",
-      "subtitle": "算我们修好的。别把楼梯的功劳全记给折口。",
-      "audioId": "voice-c01-l01-zq-009", "file": "assets/voice/l01/C01-L01-ZQ-009.wav",
-      "trigger": "level.complete", "priority": 45, "duration": 4, "maxAge": 22, "delay": 4.2
+      "id": "C01-L01-HW-005",
+      "character": "hengwu",
+      "voiceText": "Stair isolation released. The physical return route is open.",
+      "subtitles": {
+        "en": "Stair isolation released. The physical return route is open.",
+        "zh-CN": "楼梯隔离已解除。实体返回通道已开放。"
+      },
+      "audioId": "voice-c01-l01-hw-005",
+      "file": "assets/voice/l01/C01-L01-HW-005.wav",
+      "trigger": "return.open",
+      "priority": 36,
+      "duration": 4,
+      "maxAge": 10,
+      "cancelOn": [
+        "court.returned",
+        "level.complete"
+      ],
+      "delivery": "matterOfFact"
+    },
+    {
+      "id": "C01-L01-ZQ-007",
+      "character": "zhanque",
+      "audioId": "voice-c01-l01-zq-007",
+      "file": "assets/voice/l01/C01-L01-ZQ-007.wav",
+      "trigger": "return.open",
+      "priority": 35,
+      "duration": 3.9,
+      "maxAge": 10,
+      "cancelOn": [
+        "level.complete"
+      ],
+      "voiceText": "A way back that doesn't need power. I'll take that.",
+      "subtitles": {
+        "en": "A way back that doesn't need power. I'll take that.",
+        "zh-CN": "这条回去的路不用电。这个我喜欢。"
+      },
+      "delivery": "warm",
+      "after": "C01-L01-HW-005"
+    },
+    {
+      "id": "C01-L01-ZQ-008",
+      "character": "zhanque",
+      "audioId": "voice-c01-l01-zq-008",
+      "file": "assets/voice/l01/C01-L01-ZQ-008.wav",
+      "trigger": "court.returned",
+      "priority": 10,
+      "duration": 4,
+      "maxAge": 8,
+      "cancelOn": [
+        "level.complete"
+      ],
+      "voiceText": "Same corner. I like it better with a way out.",
+      "subtitles": {
+        "en": "Same corner. I like it better with a way out.",
+        "zh-CN": "还是这个拐角。有了出路，看着顺眼多了。"
+      },
+      "delivery": "dry"
+    },
+    {
+      "id": "C01-L01-HW-003",
+      "character": "hengwu",
+      "audioId": "voice-c01-l01-hw-003",
+      "file": "assets/voice/l01/C01-L01-HW-003.wav",
+      "trigger": "level.complete",
+      "priority": 50,
+      "duration": 3.9,
+      "maxAge": 20,
+      "voiceText": "Inspection circuit restored. Keep the manual route clear.",
+      "subtitles": {
+        "en": "Inspection circuit restored. Keep the manual route clear.",
+        "zh-CN": "巡检回路已恢复。请保持人工通路畅通。"
+      },
+      "delivery": "matterOfFact"
+    },
+    {
+      "id": "C01-L01-ZQ-009",
+      "character": "zhanque",
+      "audioId": "voice-c01-l01-zq-009",
+      "file": "assets/voice/l01/C01-L01-ZQ-009.wav",
+      "trigger": "level.complete",
+      "priority": 45,
+      "duration": 3.8,
+      "maxAge": 22,
+      "delay": 4.2,
+      "voiceText": "Good. Someone else might need those stairs.",
+      "subtitles": {
+        "en": "Good. Someone else might need those stairs.",
+        "zh-CN": "那就好。说不定还有人要走这段楼梯。"
+      },
+      "delivery": "warm",
+      "after": "C01-L01-HW-003"
     }
   ]
 }

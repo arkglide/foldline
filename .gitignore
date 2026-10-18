@@ -6,3 +6,4 @@ playwright-report/
 *.log
 docs/evidence/m1-l01/failure-*.png
 docs/evidence/m1-r1/failure-*.png
+docs/evidence/m1-r2/failure-*.png

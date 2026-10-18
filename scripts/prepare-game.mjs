@@ -43,7 +43,7 @@ for (const [name, raw] of Object.entries(game.files)) {
 await fs.writeFile(path.join(root, '.generated/l01.project.json'), JSON.stringify(project, null, 2) + '\n');
 await fs.writeFile(path.join(output, 'foldline-build.json'), JSON.stringify({
   level: 'C01-L01', stage: 'M1-greybox', engineCommit: ENGINE_COMMIT,
-  revision: 'M1-R1', voice: voiceReport,
+  revision: 'M1-R2', voiceLanguage: 'en', subtitleLanguages: ['zh-CN', 'en'], voice: voiceReport,
 }, null, 2) + '\n');
 console.log(`C01-L01: ${project.scene.nodes.length} nodes; native ArkGlide ${ENGINE_COMMIT.slice(0, 12)}; ${output}`);
 console.log(`WinTTS voices: ${voiceReport.generated.length} available, ${voiceReport.missing.length} pending; 4 original mechanical cues.`);
