@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "cooldown": 0.65,
+  "characters": {
+    "zhanque": {
+      "name": "栈雀",
+      "bus": "CompanionVoice",
+      "volume": 0.86,
+      "rate": 1,
+      "voice": { "culture": "zh-CN", "windowsName": null, "rate": 1, "volume": 95 },
+      "processing": { "highPassHz": 140, "lowPassHz": 5200, "peak": 0.76 }
+    },
+    "hengwu": {
+      "name": "衡务",
+      "bus": "BroadcastVoice",
+      "volume": 0.72,
+      "rate": 1,
+      "voice": { "culture": "zh-CN", "windowsName": null, "rate": -1, "volume": 95 },
+      "processing": { "highPassHz": 360, "lowPassHz": 2700, "peak": 0.67 }
+    }
+  },
+  "lines": [
+    {
+      "id": "C01-L01-ZQ-001", "character": "zhanque",
+      "subtitle": "支脚收好了。嗯，这里比图纸上宽。",
+      "audioId": "voice-c01-l01-zq-001", "file": "assets/voice/l01/C01-L01-ZQ-001.wav",
+      "trigger": "court.enter", "priority": 10, "duration": 3.6, "maxAge": 8
+    },
+    {
+      "id": "C01-L01-ZQ-002", "character": "zhanque",
+      "subtitle": "出口倒是醒着。只是我们还在楼下。",
+      "audioId": "voice-c01-l01-zq-002", "file": "assets/voice/l01/C01-L01-ZQ-002.wav",
+      "trigger": "exit.seen", "priority": 15, "duration": 3.5, "maxAge": 10,
+      "cancelOn": ["fold.crossed", "return.open", "level.complete"]
+    },
+    {
+      "id": "C01-L01-HW-001", "character": "hengwu",
+      "subtitle": "上行检修梯处于隔离状态。请保留返回通路。",
+      "audioId": "voice-c01-l01-hw-001", "file": "assets/voice/l01/C01-L01-HW-001.wav",
+      "trigger": "route.blocked", "priority": 20, "duration": 4, "maxAge": 12,
+      "cancelOn": ["return.open", "level.complete"]
+    },
+    {
+      "id": "C01-L01-ZQ-003", "character": "zhanque",
+      "subtitle": "这条线绕过了设备背面。图纸上可没画这个弯。",
+      "audioId": "voice-c01-l01-zq-003", "file": "assets/voice/l01/C01-L01-ZQ-003.wav",
+      "trigger": "maintenance.observed", "priority": 8, "duration": 4.2, "maxAge": 7,
+      "cancelOn": ["fold.ready", "fold.crossed", "level.complete"]
+    },
+    {
+      "id": "C01-L01-HW-002", "character": "hengwu",
+      "subtitle": "固定折口接驳完成。两侧落脚区确认。",
+      "audioId": "voice-c01-l01-hw-002", "file": "assets/voice/l01/C01-L01-HW-002.wav",
+      "trigger": "fold.ready", "priority": 30, "duration": 3.4, "maxAge": 12,
+      "cancelOn": ["fold.crossed", "level.complete"]
+    },
+    {
+      "id": "C01-L01-ZQ-005", "character": "zhanque",
+      "subtitle": "我猜那边是仓库……唔，扶栏不像。",
+      "audioId": "voice-c01-l01-zq-005", "file": "assets/voice/l01/C01-L01-ZQ-005.wav",
+      "trigger": "fold.ready", "priority": 7, "duration": 3.7, "maxAge": 10, "delay": 4.2,
+      "cancelOn": ["fold.crossed", "return.open", "level.complete"]
+    },
+    {
+      "id": "C01-L01-ZQ-006", "character": "zhanque",
+      "subtitle": "刚才还在下面……那条绕弯的线，我认得。",
+      "audioId": "voice-c01-l01-zq-006", "file": "assets/voice/l01/C01-L01-ZQ-006.wav",
+      "trigger": "fold.crossed", "priority": 40, "duration": 4.1, "maxAge": 10,
+      "cancelOn": ["level.complete"]
+    },
+    {
+      "id": "C01-L01-ZQ-007", "character": "zhanque",
+      "subtitle": "这回停电也能走回去了。我喜欢楼梯。",
+      "audioId": "voice-c01-l01-zq-007", "file": "assets/voice/l01/C01-L01-ZQ-007.wav",
+      "trigger": "return.open", "priority": 35, "duration": 3.6, "maxAge": 10,
+      "cancelOn": ["level.complete"]
+    },
+    {
+      "id": "C01-L01-ZQ-008", "character": "zhanque",
+      "subtitle": "绕了一圈，没换地方。换的是路。",
+      "audioId": "voice-c01-l01-zq-008", "file": "assets/voice/l01/C01-L01-ZQ-008.wav",
+      "trigger": "court.returned", "priority": 10, "duration": 3.3, "maxAge": 8,
+      "cancelOn": ["level.complete"]
+    },
+    {
+      "id": "C01-L01-HW-003", "character": "hengwu",
+      "subtitle": "巡检段通路已恢复。保留人工回路。",
+      "audioId": "voice-c01-l01-hw-003", "file": "assets/voice/l01/C01-L01-HW-003.wav",
+      "trigger": "level.complete", "priority": 50, "duration": 3.4, "maxAge": 20
+    },
+    {
+      "id": "C01-L01-ZQ-009", "character": "zhanque",
+      "subtitle": "算我们修好的。别把楼梯的功劳全记给折口。",
+      "audioId": "voice-c01-l01-zq-009", "file": "assets/voice/l01/C01-L01-ZQ-009.wav",
+      "trigger": "level.complete", "priority": 45, "duration": 4, "maxAge": 22, "delay": 4.2
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "recordedAt": "2026-10-17T18:59:00.197614+00:00",
+  "kind": "Automated real-input browser technical validation; not human blind playtesting or acceptance",
+  "commands": {
+    "prepare": "npm run prepare:game",
+    "browser": "node --test --test-reporter=tap --test-concurrency=1 tests/browser-l01-r1.test.mjs",
+    "unit": "npm run test:unit",
+    "syntax": "npm run check; node --check game/companion.js; node --check game/dialogue.js; node --check scripts/voice-assets.mjs; node --check scripts/feedback-assets.mjs",
+    "voiceInventory": "npm run voices:check"
+  },
+  "node": "v24.19.0",
+  "chromium": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+  "playwright": "1.64.0",
+  "engineCommit": "da8ea1cf098ad99ccc89451d34bf4e272cdc15aa",
+  "branch": "m1-r1/l01-experience",
+  "baseCommit": "a2212a66785f217c6f2cf318865e5825b4143c40",
+  "result": {
+    "browser": {
+      "passed": 2,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "durationMs": 173745.978805
+    },
+    "unit": {
+      "passed": 19,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "durationMs": 1520.876021
+    },
+    "syntax": "passed"
+  },
+  "rendering": "Headless Chromium WebGL2 ANGLE SwiftShader software rendering; 1280x800, device scale 1",
+  "input": "Playwright keyboard and relative PointerEvent through native input/rig; readonly game snapshot; no direct body/camera/progression setters",
+  "coverage": {
+    "completeRuns": 3,
+    "firstRunTraversals": 3,
+    "firstRunEvents": 9,
+    "firstRunDialogueHistory": 11,
+    "retryCountInLifecycle": 3,
+    "nativeStops": 3,
+    "resourceKeysChecked": 31,
+    "mechanicalVoiceDuringHandwheel": 1,
+    "mechanicalAudioBuffers": 4
+  },
+  "voice": {
+    "generated": [],
+    "missing": [
+      {
+        "id": "C01-L01-ZQ-001",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-001.wav"
+      },
+      {
+        "id": "C01-L01-ZQ-002",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-002.wav"
+      },
+      {
+        "id": "C01-L01-HW-001",
+        "character": "hengwu",
+        "file": "assets/voice/l01/C01-L01-HW-001.wav"
+      },
+      {
+        "id": "C01-L01-ZQ-003",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-003.wav"
+      },
+      {
+        "id": "C01-L01-HW-002",
+        "character": "hengwu",
+        "file": "assets/voice/l01/C01-L01-HW-002.wav"
+      },
+      {
+        "id": "C01-L01-ZQ-005",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-005.wav"
+      },
+      {
+        "id": "C01-L01-ZQ-006",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-006.wav"
+      },
+      {
+        "id": "C01-L01-ZQ-007",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-007.wav"
+      },
+      {
+        "id": "C01-L01-ZQ-008",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-008.wav"
+      },
+      {
+        "id": "C01-L01-HW-003",
+        "character": "hengwu",
+        "file": "assets/voice/l01/C01-L01-HW-003.wav"
+      },
+      {
+        "id": "C01-L01-ZQ-009",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-009.wav"
+      }
+    ]
+  },
+  "pauseCheck": "document.exitPointerLock followed by actual keyboard input, plus native outer player pause/resume; not a physical Escape key test",
+  "limitations": [
+    "Automation follows a designed route and is not blind player testing.",
+    "Windows System.Speech was not run; 0/11 dialogue WAV assets are available. Four actual mechanical SFX are not voiceover.",
+    "Real dialogue waveform playback was covered by mock lifecycle/PCM unit checks, not by installed Windows voices in this browser.",
+    "Hardware Escape, partial-plane interruption, exhaustive collision seam/jump attempts, different aspect ratios and Windows GPU comfort require human testing.",
+    "No persistent save UI or chapter integration was added. Native snapshot provider and retry state restoration were tested."
+  ],
+  "sha256": {
+    "game/l01.js": "50d4189039ad20731a728eec61aefe9456269277cd57d3a45b025780109952b6",
+    "game/project.mjs": "c7dea15bfe7832e72bfcdb48c30a96b71dfd289754856a137c2e2ef8f6c9c3e9",
+    "game/companion.js": "f33b96bf21a362a26e31e69c2f81fba7be467f1911b9a18915291b7ff91c2c06",
+    "game/dialogue.js": "16a00f9c992291f1a7f55af7d024c067a0f24540e1438abcb8b3a5bb78fdb6f6",
+    "game/data/l01-dialogue.json": "032ef5d3d4d94630bcc01ac46af2ab8eab26217705e4ef06fa67114faa186eb0",
+    "scripts/prepare-game.mjs": "e5907efd2c7eadfdbd7cfe4c3ceb2e75849b439bc009add2c5c1e24f47be852f",
+    "scripts/voice-assets.mjs": "7138706c06beb10a2106a14c07368a0659de9041e18939b22b346e223d8c522a",
+    "scripts/tts.ps1": "bccf124813c8ec7b657ee9a5594c507c551c61b05c95a8acc661e9072ce936dc",
+    "scripts/feedback-assets.mjs": "01e8a413d923181ecc29afb3bd2aea43b40272092d77f84385e15b1f5d179aca",
+    "scripts/engine.mjs": "de88b2be1c0fe4cb99df04ca634d4a5b48c4f95c56c448b18287bb9f2d881865",
+    "tests/input-driver.mjs": "bbb0284add2887b4db710ea1d0ada0bcfbe9c46f770432d0fcff6bb06754f350",
+    "tests/browser-l01-r1.test.mjs": "435386cc1d062939f631b4dada7382a9a6758efa8f92d9e5560b32f89efcb212",
+    "tests/companion.test.mjs": "7010b8e70da567833e275ec386b9dcab01548310e6d2269be64d641f238db7e2",
+    "tests/dialogue.test.mjs": "3fa33ac0d65f2b9a8c0b6fdd6f6075e9d8c57fe80c0e4786b9c15cebd5cfc07c",
+    "tests/engine-setup.test.mjs": "1e8afc9703bab0e88d93051c059c98404b9df6520d7f486086269e3050973ca2",
+    "package.json": "0287d6aa29460a8bb151c4c01ba6e4f094f6a88b682828a5c250f504b7acd1ca",
+    "package-lock.json": "97d886b547c0b6f0c4a4634e6ce6209a41566e09b93063578bf274a134e912e4",
+    "assets/audio/prototype/mechanism-connect.wav": "d52252f95896604ebec256a0af2e47294b2b7d0c2e005048913fde530ba7ee98",
+    "assets/audio/prototype/mechanism-inspect.wav": "b1de487828ea2d46eaf10641e9628f16317f2abeb8c80e1df6f65b4d525f3596",
+    "assets/audio/prototype/mechanism-return.wav": "04b85a2f70ed4fcf9c17980a2f8f5764f2ff66508fa86c0738b6a6044a3a1387",
+    "assets/audio/prototype/mechanism-turn.wav": "3eb7a271d5d160b03e249ad8a2763b28aac868af577ec2fcb6de9e9d497911ee"
+  }
+}
