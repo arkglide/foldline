@@ -6,6 +6,14 @@
 const MOUNT = Object.freeze({ x: .39, y: -.28, z: .70 });
 const RETRACTED_MOUNT = Object.freeze({ x: .40, y: -.34, z: -.12 });
 const MODEL_SCALE = .82;
+// Small articulation accents, not facial lip sync or generated audio analysis.
+const DELIVERY = Object.freeze({
+  curious: { yaw: -.08, roll: .035, nod: .028, pace: 7, wing: .08 },
+  dry: { yaw: .025, roll: -.025, nod: .010, pace: 5, wing: .025 },
+  surprised: { yaw: -.025, roll: .04, nod: .032, pace: 10, wing: .14 },
+  warm: { yaw: -.035, roll: .015, nod: .020, pace: 6, wing: .05 },
+  matterOfFact: { yaw: 0, roll: 0, nod: .014, pace: 7, wing: .03 },
+});
 const IDENTITY = Object.freeze({ x: 0, y: 0, z: 0, w: 1 });
 const add = (a, b) => ({ x: a.x + b.x, y: a.y + b.y, z: a.z + b.z });
 function multiply(a, b) {
@@ -46,7 +54,7 @@ export function createCompanion({ visuals }, { getPose }) {
   const parts = [], materials = [];
   let disposed = false, phase = 0, mode = 'idle', paused = false, snapCount = 0;
   let local = { ...MOUNT }, worldPosition = null, lastEye = null, lampState = '';
-  let speech = 0, observation = 0, retracted = false, retraction = 0;
+  let speech = 0, observation = 0, retracted = false, retraction = 0, delivery = 'matterOfFact';
   const material = options => { const handle = visuals.createMaterial(options); materials.push(handle); return handle; };
   let lights;
   try {
@@ -85,14 +93,16 @@ export function createCompanion({ visuals }, { getPose }) {
     const pose = getPose();
     lastEye = { ...pose.position };
     worldPosition = add(pose.position, rotate(pose.rotation, local));
-    const tilt = multiply(axis('y', -.10 - observation * .14),
-      multiply(axis('x', -.08 + Math.sin(phase * 9) * speech * .025), axis('z', .03)));
+    const accent = DELIVERY[delivery];
+    const tilt = multiply(axis('y', -.10 - observation * .14 + accent.yaw * speech),
+      multiply(axis('x', -.08 + Math.sin(phase * accent.pace) * speech * accent.nod),
+        axis('z', .03 + accent.roll * speech)));
     const rotation = multiply(pose.rotation, tilt);
     for (const part of parts) {
       const offset = { ...part.offset };
       let joint = IDENTITY;
       if (part.wing) {
-        const openAngle = .22 + observation * .24 + speech * (.06 + .03 * Math.sin(phase * 12));
+        const openAngle = .22 + observation * .24 + speech * (accent.wing + .02 * Math.sin(phase * 12));
         const angle = part.wing * (openAngle * (1 - retraction) + Math.PI * .48 * retraction);
         joint = axis('z', angle);
         // Fold around a fixed housing hinge, rather than orbiting a wing.
@@ -115,6 +125,7 @@ export function createCompanion({ visuals }, { getPose }) {
     if (!paused) {
       const step = Number.isFinite(dt) ? Math.min(.1, Math.max(0, dt)) : 0;
       phase += step;
+      delivery = Object.hasOwn(DELIVERY, state.delivery) ? state.delivery : 'matterOfFact';
       mode = state.speaking ? 'speaking' : state.observing ? 'observing' : 'idle';
       const gain = 1 - Math.exp(-12 * step);
       speech += ((mode === 'speaking' ? 1 : 0) - speech) * gain;
@@ -142,7 +153,7 @@ export function createCompanion({ visuals }, { getPose }) {
   }
   function snapshot() {
     return {
-      disposed, mode: paused ? 'paused' : mode, animationMode: mode, snapCount, retracted, retraction,
+      disposed, mode: paused ? 'paused' : mode, animationMode: mode, delivery, snapCount, retracted, retraction,
       worldPosition: worldPosition && { ...worldPosition }, localOffset: { ...local },
       mountDistance: worldPosition && lastEye ? Math.hypot(worldPosition.x - lastEye.x,
         worldPosition.y - lastEye.y, worldPosition.z - lastEye.z) : null,

@@ -1,14 +1,26 @@
-/** Single-voice, event-driven dialogue. Assets are offline files, never browser TTS. */
+import { createDialoguePreferences } from './dialogue-preferences.js';
+
+/** Single-voice, event-driven dialogue. English audio is independent of subtitle language. */
 export function validateDialogue(data) {
-  if (data?.version !== 1 || !data.characters || !Array.isArray(data.lines)) throw Error('Invalid dialogue data version');
+  if (data?.version !== 2 || !data.characters || !Array.isArray(data.lines)) throw Error('Invalid dialogue data version');
+  if (data.cooldown !== undefined && (!Number.isFinite(data.cooldown) || data.cooldown < 0 || data.cooldown > 10))
+    throw Error('Invalid dialogue cooldown');
+  const deliveries = new Set(['curious', 'dry', 'surprised', 'warm', 'matterOfFact']);
+  for (const character of Object.values(data.characters)) {
+    if (!character?.names || ['en', 'zh-CN'].some(language => typeof character.names[language] !== 'string' || !character.names[language].trim()) ||
+      character.voice?.culture !== 'en-US') throw Error('Invalid bilingual dialogue character');
+  }
   const ids = new Set(), audioIds = new Set();
   for (const line of data.lines) {
     if (!/^[A-Za-z0-9_-]{1,80}$/.test(line?.id || '') || ids.has(line.id) ||
       !/^[A-Za-z0-9_-]{1,80}$/.test(line.audioId || '') || audioIds.has(line.audioId)) throw Error('Dialogue IDs must be unique and filename-safe');
     ids.add(line.id); audioIds.add(line.audioId);
-    if (!data.characters[line.character]?.name || typeof line.subtitle !== 'string' || !line.subtitle.trim() ||
+    if (!data.characters[line.character] || typeof line.voiceText !== 'string' || !line.voiceText.trim() ||
+      ['en', 'zh-CN'].some(language => typeof line.subtitles?.[language] !== 'string' || !line.subtitles[language].trim()) ||
+      line.voiceText !== line.subtitles.en ||
       typeof line.trigger !== 'string' || !line.trigger || typeof line.file !== 'string' ||
       !/^assets\/voice\/l01\/[A-Za-z0-9_-]+\.wav$/.test(line.file)) throw Error(`Invalid dialogue line ${line.id}`);
+    if (line.delivery !== undefined && !deliveries.has(line.delivery)) throw Error(`Invalid delivery in ${line.id}`);
     for (const [key, min, max] of [['duration', .1, 30], ['maxAge', .1, 120], ['priority', -1000, 1000]]) {
       if (!Number.isFinite(line[key]) || line[key] < min || line[key] > max) throw Error(`Invalid ${key} in ${line.id}`);
     }
@@ -17,37 +29,56 @@ export function validateDialogue(data) {
     if (line.cancelOn !== undefined && (!Array.isArray(line.cancelOn) || line.cancelOn.some(v => typeof v !== 'string')))
       throw Error(`Invalid cancelOn in ${line.id}`);
   }
+  const byId = new Map(data.lines.map(line => [line.id, line]));
+  for (const line of data.lines) {
+    const seen = new Set([line.id]);
+    let parent = line.after;
+    while (parent !== undefined) {
+      if (!byId.has(parent) || seen.has(parent)) throw Error(`Invalid after dependency in ${line.id}`);
+      seen.add(parent); parent = byId.get(parent).after;
+    }
+  }
   return data;
 }
 
 export function createDialogue(ctx, data, { onSpeaker = () => {} } = {}) {
   validateDialogue(data);
   const available = new Set(ctx.audio.list());
-  const eventNames = new Set(data.lines.map(line => line.trigger));
+  const eventNames = new Set(data.lines.flatMap(line => [line.trigger, ...(line.cancelOn ?? [])]));
   const lineIds = new Set(data.lines.map(line => line.id));
   const byEvent = new Map([...eventNames].map(event => [event, data.lines.filter(line => line.trigger === event)]));
   let disposed = false, clock = 0, sequence = 0, cooldown = 0, paused = true;
-  let voiceEnabled = true, subtitlesEnabled = true, active = null, queue = [];
+  let voiceEnabled = true, subtitlesEnabled = true, subtitleLanguage = 'zh-CN', active = null, queue = [];
+  let preferences = null;
   let consumed = new Set(), started = new Set(), history = [], errors = [], expired = 0, cancelled = 0;
   const uiCache = new Map();
   function hud(id, value, visible = !!value) {
+    if (disposed) return;
     const handle = ctx.ui.get(id);
     if (uiCache.get(id) !== value) { handle?.setText(value); uiCache.set(id, value); }
     handle?.setVisible(visible);
   }
   function status() {
     const count = data.lines.filter(line => available.has(line.audioId)).length;
-    const assetStatus = count === data.lines.length ? `语音素材 ${count}/${data.lines.length}` :
-      `语音待 Windows 生成 ${count}/${data.lines.length}`;
-    hud('audioStatus', `${assetStatus} · 语音${voiceEnabled ? '开' : '关'} · 字幕${subtitlesEnabled ? '开' : '关'}${errors.length ? ' · 音频失败，使用字幕' : ''}`, paused);
+    const english = subtitleLanguage === 'en', countText = `${count}/${data.lines.length}`;
+    const assetStatus = count === data.lines.length ? (english ? `English voice assets ${countText}` : `英文语音素材 ${countText}`) :
+      (english ? `English voices awaiting Windows ${countText}` : `英文语音待 Windows 生成 ${countText}`);
+    const failed = errors.length ? (english ? ' · Audio unavailable' : ' · 音频失败') : '';
+    const persistence = preferences?.snapshot().persistenceError ? (english ? ' · Settings not saved' : ' · 设置未保存') : '';
+    hud('audioStatus', assetStatus + failed + persistence, paused);
+    hud('dialogueSettings', english ?
+      `V Voice: ${voiceEnabled ? 'On' : 'Off'} · B Subtitles: ${subtitlesEnabled ? 'On' : 'Off'} · L Language: English` :
+      `V 语音：${voiceEnabled ? '开' : '关'} · B 字幕：${subtitlesEnabled ? '开' : '关'} · L 字幕：中文`, paused);
   }
   function subtitle() {
     const line = active?.line;
-    hud('dialogue', line ? `${data.characters[line.character].name}：${line.subtitle}` : '',
+    const speaker = line ? data.characters[line.character].names[subtitleLanguage] : '';
+    hud('dialogue', line ? `${speaker}${subtitleLanguage === 'en' ? ': ' : '：'}${line.subtitles[subtitleLanguage]}` : '',
       !!line && subtitlesEnabled && !paused);
   }
   function stopVoice() {
-    active?.voice?.stop();
+    try { active?.voice?.stop(); }
+    catch (error) { if (active) failAudio(active.line, error); }
     if (active) active.voice = null;
   }
   function endLine() {
@@ -92,7 +123,10 @@ export function createDialogue(ctx, data, { onSpeaker = () => {} } = {}) {
     const before = queue.length;
     queue = queue.filter(entry => !entry.line.cancelOn?.includes(event));
     cancelled += before - queue.length;
-    for (const line of byEvent.get(event)) queue.push({ line, at: clock, sequence: sequence++ });
+    for (const line of byEvent.get(event)) {
+      if (line.cancelOn?.some(cancelEvent => consumed.has(cancelEvent))) { cancelled++; continue; }
+      queue.push({ line, at: clock, sequence: sequence++ });
+    }
     return true;
   }
   function update(dt, state = {}) {
@@ -109,7 +143,8 @@ export function createDialogue(ctx, data, { onSpeaker = () => {} } = {}) {
       if (active.voice ? !active.voice.playing : active.elapsed >= active.line.duration) endLine();
     } else cooldown = Math.max(0, cooldown - dt);
     if (!active && cooldown <= 0) {
-      const eligible = queue.filter(entry => clock >= entry.at + (entry.line.delay || 0));
+      const eligible = queue.filter(entry => clock >= entry.at + (entry.line.delay || 0) &&
+        (!entry.line.after || started.has(entry.line.after)));
       eligible.sort((a, b) => b.line.priority - a.line.priority || a.sequence - b.sequence);
       if (eligible[0]) { queue.splice(queue.indexOf(eligible[0]), 1); startLine(eligible[0]); }
     }
@@ -129,16 +164,21 @@ export function createDialogue(ctx, data, { onSpeaker = () => {} } = {}) {
     subtitle(); status();
   }
   function reset() { restore({ version: 1, consumedEvents: [], startedLines: [] }); }
-  function setVoiceEnabled(value) {
+  function applyPreferences(value) {
     if (disposed) return;
-    voiceEnabled = !!value;
+    voiceEnabled = value.voiceEnabled; subtitlesEnabled = value.subtitlesEnabled; subtitleLanguage = value.subtitleLanguage;
     if (!voiceEnabled && active?.voice) { stopVoice(); active.mode = 'subtitle'; }
-    status();
+    subtitle(); status();
   }
-  function setSubtitlesEnabled(value) { if (!disposed) { subtitlesEnabled = !!value; subtitle(); status(); } }
+  function setVoiceEnabled(value) { if (!disposed) preferences.set('voiceEnabled', !!value); }
+  function setSubtitlesEnabled(value) { if (!disposed) preferences.set('subtitlesEnabled', !!value); }
+  function setSubtitleLanguage(value) { if (!disposed) preferences.set('subtitleLanguage', value); }
   function snapshot() {
-    return structuredClone({ ...capture(), paused, voiceEnabled, subtitlesEnabled,
+    return structuredClone({ ...capture(), ...preferences.snapshot(), paused, voiceEnabled, subtitlesEnabled, subtitleLanguage,
       currentLine: active?.line.id ?? null, currentSpeaker: active?.line.character ?? null,
+      currentDelivery: active?.line.delivery ?? null,
+      currentText: active?.line.subtitles[subtitleLanguage] ?? null,
+      localizedSpeaker: active ? data.characters[active.line.character].names[subtitleLanguage] : null,
       currentMode: active?.mode ?? null, elapsed: active?.elapsed ?? 0,
       audioPlaying: !!active?.voice?.playing, queue: queue.map(entry => entry.line.id),
       availableAudio: data.lines.filter(line => available.has(line.audioId)).map(line => line.id),
@@ -147,9 +187,12 @@ export function createDialogue(ctx, data, { onSpeaker = () => {} } = {}) {
   }
   function dispose() {
     if (disposed) return;
-    stopVoice(); active = null; queue = []; disposed = true; onSpeaker(null, null);
-    hud('dialogue', '', false); hud('audioStatus', '', false);
+    stopVoice(); active = null; queue = []; preferences.dispose(); onSpeaker(null, null);
+    hud('dialogue', '', false); hud('audioStatus', '', false); hud('dialogueSettings', '', false);
+    disposed = true;
   }
+  preferences = createDialoguePreferences(ctx.storage, { onChange: applyPreferences });
   status(); subtitle();
-  return Object.freeze({ emit, update, setVoiceEnabled, setSubtitlesEnabled, capture, restore, reset, snapshot, dispose });
+  return Object.freeze({ ready: preferences.ready, emit, update, setVoiceEnabled, setSubtitlesEnabled,
+    setSubtitleLanguage, capture, restore, reset, snapshot, dispose });
 }

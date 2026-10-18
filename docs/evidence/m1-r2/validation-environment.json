@@ -1,0 +1,183 @@
+{
+  "recordedAt": "2026-10-18T05:54:43.836245+00:00",
+  "kind": "Automated technical validation using actual keyboard/relative pointer input; not blind player testing or English voice audition",
+  "branch": "m1-r2/english-dialogue",
+  "baseCommit": "23aab558f59e924424b5bcf835d7204f01cf64b0",
+  "engineCommit": "da8ea1cf098ad99ccc89451d34bf4e272cdc15aa",
+  "node": "v24.19.0",
+  "chromium": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+  "playwright": "1.64.0",
+  "commands": {
+    "unit": "node --test --test-reporter=tap --test-concurrency=1 tests/engine-setup.test.mjs tests/dialogue.test.mjs tests/dialogue-preferences.test.mjs tests/voice-assets-r2.test.mjs tests/companion.test.mjs",
+    "browser": "node --test --test-reporter=tap --test-concurrency=1 tests/browser-l01-r2.test.mjs",
+    "prepare": "npm run prepare:game",
+    "syntax": "npm run check; node --check game/dialogue.js; node --check game/dialogue-preferences.js; node --check game/companion.js; node --check scripts/voice-assets.mjs",
+    "voiceInventory": "npm run voices:check"
+  },
+  "results": {
+    "unit": {
+      "tests": 39,
+      "passed": 39,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "durationMs": 1877.271918
+    },
+    "browser": {
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "durationMs": 123510.209028
+    }
+  },
+  "rendering": "Headless Chromium WebGL2 ANGLE SwiftShader, 1280x800 CSS pixels; not a Windows GPU performance benchmark",
+  "input": "Playwright keyboard and relative PointerEvent through native input/rig. Readonly snapshots; no direct player/camera/progression setters.",
+  "coverage": {
+    "completeRuns": 2,
+    "firstRunEvents": 10,
+    "firstRunStartedLines": 14,
+    "firstRunTraversals": 3,
+    "retryCount": 2,
+    "recordedNativeStops": 3,
+    "resourceKeysChecked": 32,
+    "savedPreferences": {
+      "voiceEnabled": false,
+      "subtitlesEnabled": false,
+      "subtitleLanguage": "en"
+    }
+  },
+  "voice": {
+    "generated": [],
+    "missing": [
+      {
+        "id": "C01-L01-ZQ-001",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-001.wav"
+      },
+      {
+        "id": "C01-L01-ZQ-002",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-002.wav"
+      },
+      {
+        "id": "C01-L01-ZQ-010",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-010.wav"
+      },
+      {
+        "id": "C01-L01-HW-001",
+        "character": "hengwu",
+        "file": "assets/voice/l01/C01-L01-HW-001.wav"
+      },
+      {
+        "id": "C01-L01-ZQ-003",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-003.wav"
+      },
+      {
+        "id": "C01-L01-HW-002",
+        "character": "hengwu",
+        "file": "assets/voice/l01/C01-L01-HW-002.wav"
+      },
+      {
+        "id": "C01-L01-ZQ-005",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-005.wav"
+      },
+      {
+        "id": "C01-L01-HW-004",
+        "character": "hengwu",
+        "file": "assets/voice/l01/C01-L01-HW-004.wav"
+      },
+      {
+        "id": "C01-L01-ZQ-006",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-006.wav"
+      },
+      {
+        "id": "C01-L01-ZQ-011",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-011.wav"
+      },
+      {
+        "id": "C01-L01-HW-005",
+        "character": "hengwu",
+        "file": "assets/voice/l01/C01-L01-HW-005.wav"
+      },
+      {
+        "id": "C01-L01-ZQ-007",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-007.wav"
+      },
+      {
+        "id": "C01-L01-ZQ-008",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-008.wav"
+      },
+      {
+        "id": "C01-L01-HW-003",
+        "character": "hengwu",
+        "file": "assets/voice/l01/C01-L01-HW-003.wav"
+      },
+      {
+        "id": "C01-L01-ZQ-009",
+        "character": "zhanque",
+        "file": "assets/voice/l01/C01-L01-ZQ-009.wav"
+      }
+    ]
+  },
+  "limitations": [
+    "No Windows System.Speech/PowerShell execution or actual English voice WAVs. 0/15 English lines generated; four mechanical SFX are separate.",
+    "Unit audio handles and temporary non-speech PCM validate duration/manifest logic, not actual Windows synthesis or voice quality.",
+    "Hardware Escape and human usability/acting/comfort remain unverified; pause uses standard document.exitPointerLock plus real menu keys.",
+    "Preference persistence is same-origin native storage. Disabled storage, changed origin or cleared site data cannot preserve settings.",
+    "No new target-device performance benchmark, formal art or future scene was produced."
+  ],
+  "sha256": {
+    "game/l01.js": "82593c632bd8f620cc13ccdee92472339465f536a0b3a6e9ac0b8b0f32c45826",
+    "game/project.mjs": "542b0aa063fb695c4d0bbdb151d8488ad76f1cea702925da081a730a5705ba11",
+    "game/companion.js": "635c9938e3a6f8954231d4d0d2d86ec37721725e62d4f9ccdc47ffecda5ba7db",
+    "game/dialogue.js": "0f5f147ea67c519bdfc18591abbd29b8160d0cb7ab63f5da09ba9d2d8b7bdae3",
+    "game/dialogue-preferences.js": "a93f50c3287490e405c2e54ae593105a088503620df5a666c0d9a18ae7bed573",
+    "game/data/l01-dialogue.json": "faa0a7d383905edec377b2d7bb016b350366003626e30deedc5e9a47383dfb72",
+    "scripts/prepare-game.mjs": "7bd1714f46fbcfc7b9f9da9009fd1af7bbf243976191d5d064576269c55625e4",
+    "scripts/tts.ps1": "a62bbcb1c9ac74d6e849f4881d604147ba1e1056a78f9e1f7dc0751f02703efc",
+    "scripts/voice-assets.mjs": "78e651fd32d81d05eaed0822253aa24ca99977e4971496f5a740ca5774c93542",
+    "scripts/engine.mjs": "700ace2e94c86a6888cb5ae887f03705434a4dc1ab50b7832d22a31c3a5fd48d",
+    "scripts/feedback-assets.mjs": "01e8a413d923181ecc29afb3bd2aea43b40272092d77f84385e15b1f5d179aca",
+    "tests/input-driver.mjs": "bbb0284add2887b4db710ea1d0ada0bcfbe9c46f770432d0fcff6bb06754f350",
+    "tests/browser-l01-r2.test.mjs": "0b89077c54e6b13036f22d6001a81dee004c9483776611e23bcac21bd1fc3102",
+    "tests/dialogue.test.mjs": "54a57171773ce5c52d3f537c18ff2237ca1c5af136961cbc5d6474ba72a6e16f",
+    "tests/dialogue-preferences.test.mjs": "e888388be6c61a6cb40d8e8c522d8f8a9fa9a7ea977bb0678e161909cebcbc7a",
+    "tests/voice-assets-r2.test.mjs": "734dd9baa29ee6945a48ba6866a88508013001aef4ea935170d13dca193e2f40",
+    "tests/companion.test.mjs": "f121b49d61c38e352e8cdc4963fa7705ce3a2ba2bb0e9f937d413c2eba015083",
+    "tests/engine-setup.test.mjs": "42f5d33e8e60e0970ce464b7e16a38ad2b99cfe4e390d4281279afa20cd8fbb0",
+    "package.json": "3e3904738696848c9aebd76211c4ba100364d7c53bde6a9a5d51912fd27b52d6",
+    "package-lock.json": "97d886b547c0b6f0c4a4634e6ce6209a41566e09b93063578bf274a134e912e4",
+    "assets/audio/prototype/mechanism-connect.wav": "d52252f95896604ebec256a0af2e47294b2b7d0c2e005048913fde530ba7ee98",
+    "assets/audio/prototype/mechanism-inspect.wav": "b1de487828ea2d46eaf10641e9628f16317f2abeb8c80e1df6f65b4d525f3596",
+    "assets/audio/prototype/mechanism-return.wav": "04b85a2f70ed4fcf9c17980a2f8f5764f2ff66508fa86c0738b6a6044a3a1387",
+    "assets/audio/prototype/mechanism-turn.wav": "3eb7a271d5d160b03e249ad8a2763b28aac868af577ec2fcb6de9e9d497911ee"
+  },
+  "additionalSettingsMenuCheck": {
+    "method": "Actual L key input and native pointer-lock exit, with visible HUD text assertions; waited native render frames before capturing screenshots.",
+    "evidence": "settings-captures.json",
+    "languages": [
+      "en",
+      "zh-CN"
+    ],
+    "passed": true,
+    "screenshots": [
+      "05-english-settings.png",
+      "06-chinese-settings.png"
+    ]
+  },
+  "postRunFormatting": {
+    "file": "tests/browser-l01-r2.test.mjs",
+    "change": "Removed one trailing space after a statement; executable code unchanged.",
+    "executedSha256": "70a3ad000aa045b32321d56e68aa5378a15169186c02360b0db56779a7f34816",
+    "deliveredSha256": "0b89077c54e6b13036f22d6001a81dee004c9483776611e23bcac21bd1fc3102"
+  }
+}

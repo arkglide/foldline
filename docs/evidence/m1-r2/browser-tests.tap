@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: M1-R2: live bilingual subtitles, input-only native portals and event-linked character responses
+ok 1 - M1-R2: live bilingual subtitles, input-only native portals and event-linked character responses
+  ---
+  duration_ms: 70026.59408
+  type: 'test'
+  ...
+# Subtest: M1-R2: independent settings persist through pause/retry/re-entry/reload with clean native resources
+ok 2 - M1-R2: independent settings persist through pause/retry/re-entry/reload with clean native resources
+  ---
+  duration_ms: 53014.114849
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 123510.209028
