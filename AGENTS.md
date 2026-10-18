@@ -11,6 +11,7 @@
 - **S01、L02、L03、其他章节、自由放门、跨门抓取、正式美术与完整剧情系统未获批准。**
 - 新会话先读 `docs/README.md`、`docs/production-and-acceptance.md`，再读相关关卡设计和技术核查；先检查 Git 状态，保留已有修改。
 - 本轮运行、截图、空间差异与未验证事项见 `docs/m1-r1-review.md`；旧 `docs/m1-c01-l01.md` 只作历史。实际引擎固定 `da8ea1cf098ad99ccc89451d34bf4e272cdc15aa`；用 `npm ci`、`npm run dev` 准备本关，相关检查为 `npm run check` / `npm run test:browser`，不运行完整编辑器构建。
+- Windows启动维护见 `docs/startup-cache-fix.md`：缓存检查依据Git归一化内容差异及暂存差异，不能仅因CRLF状态标记重置/清空缓存；真实修改须保留。新建缓存的LF设置只作用于其本地Git配置，不修改用户全局配置或外部引擎仓库。
 - 云任务已经隔离；使用现有 checkout。除非用户明确要求，不创建 Git worktree。
 - 状态以用户的明确批准与验收记录为准。Codex 自己写下“完成”不构成人工验收。
 

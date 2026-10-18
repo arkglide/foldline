@@ -51,16 +51,24 @@ export async function runNpm(args, cwd, {
   return run('npm', args, cwd, { quiet });
 }
 
-async function verifyCheckout(directory) {
+export async function verifyCheckout(directory, expectedCommit = ENGINE_COMMIT) {
   const checkoutRoot = await run('git', ['rev-parse', '--show-toplevel'], directory, { quiet: true });
   if (await realpath(checkoutRoot) !== await realpath(directory))
     throw new Error(`Engine cache is not an independent Git checkout: ${directory}`);
   const actual = await run('git', ['rev-parse', 'HEAD'], directory, { quiet: true });
-  if (actual !== ENGINE_COMMIT)
-    throw new Error(`ArkGlide must be pinned to ${ENGINE_COMMIT}; found ${actual} in ${directory}`);
-  const changed = await run('git', ['status', '--porcelain', '--untracked-files=no'], directory, { quiet: true });
-  if (changed)
-    throw new Error(`ArkGlide has tracked changes in ${directory}; preserve or remove this cache before retrying.`);
+  if (actual !== expectedCommit)
+    throw new Error(`ArkGlide must be pinned to ${expectedCommit}; found ${actual} in ${directory}`);
+  // On Windows sync-wasm can mix LF with a CRLF checkout. Git status then
+  // reports M even when Git's normalized diff is empty. Compare actual content
+  // against the pinned tree instead; never reset or rewrite an existing cache.
+  const diff = ['--name-only', '--no-ext-diff', '--no-textconv', 'HEAD', '--'];
+  const changed = await run('git', ['diff', ...diff], directory, { quiet: true });
+  // Check the index too: a staged edit can be hidden by reverting the working
+  // file to HEAD without unstaging it. It must still be preserved and reported.
+  const staged = await run('git', ['diff', '--cached', ...diff], directory, { quiet: true });
+  if (changed || staged)
+    throw new Error(`ArkGlide has tracked changes in ${directory}:\n${changed || staged}\n` +
+      'Preserve these edits before retrying. To create a fresh cache, rename .cache/arkglide to a backup directory; do not delete your changes.');
 }
 
 /**
@@ -85,6 +93,10 @@ export async function ensureEngine({ root = PROJECT_ROOT, source = process.env.F
     const temporary = await mkdtemp(path.join(cacheRoot, 'arkglide-bootstrap-'));
     try {
       await run('git', ['init', '--quiet'], temporary);
+      // Scope LF checkout rules to this newly provisioned cache only. Existing
+      // caches and FOLDLINE_ENGINE_SOURCE keep their local/user configuration.
+      await run('git', ['config', '--local', 'core.autocrlf', 'false'], temporary);
+      await run('git', ['config', '--local', 'core.eol', 'lf'], temporary);
       await run('git', ['remote', 'add', 'origin', ENGINE_REPOSITORY], temporary);
       await run('git', ['fetch', '--no-tags', '--depth', '1', source || 'origin', ENGINE_COMMIT], temporary);
       await run('git', ['checkout', '--quiet', '--detach', ENGINE_COMMIT], temporary);

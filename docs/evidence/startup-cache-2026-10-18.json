@@ -1,0 +1,68 @@
+{
+  "recordedAt": "2026-10-18T05:00:35.196Z",
+  "node": "v24.19.0",
+  "chromium": "154.0.8037.57",
+  "platform": "linux",
+  "engineCommit": "da8ea1cf098ad99ccc89451d34bf4e272cdc15aa",
+  "method": "Isolated checkout of the real pinned engine with local core.autocrlf=true. Ran the unchanged full prepare-game pipeline twice. First run performed locked npm ci (161 packages) because the CRLF lockfile produced a different cache fingerprint; second run reused these dependencies. No full editor build or game source changes.",
+  "preparations": [
+    {
+      "run": 1,
+      "exitCode": 0,
+      "status": "M public/lib/arkglide_math.js\n M public/lib/babylon-LICENSE.md",
+      "contentDiff": "",
+      "stagedDiff": "",
+      "generatedSha256": "fdfdd719bb2f1fe0902f9ab712610b33a6ade4475bba3ff4c7e183dd246ce6a8",
+      "cachedAutocrlf": "true",
+      "nodes": 136,
+      "level": "C01-L01",
+      "voiceAssets": 0,
+      "voicePending": 11,
+      "stdout": "\nadded 161 packages in 11s\nC01-L01: 136 nodes; native ArkGlide da8ea1cf098a; <temporary fixture>/.generated/l01\nWinTTS voices: 0 available, 11 pending; 4 original mechanical cues.\n"
+    },
+    {
+      "run": 2,
+      "exitCode": 0,
+      "status": "M public/lib/arkglide_math.js\n M public/lib/babylon-LICENSE.md",
+      "contentDiff": "",
+      "stagedDiff": "",
+      "generatedSha256": "fdfdd719bb2f1fe0902f9ab712610b33a6ade4475bba3ff4c7e183dd246ce6a8",
+      "cachedAutocrlf": "true",
+      "nodes": 136,
+      "level": "C01-L01",
+      "voiceAssets": 0,
+      "voicePending": 11,
+      "stdout": "C01-L01: 136 nodes; native ArkGlide da8ea1cf098a; <temporary fixture>/.generated/l01\nWinTTS voices: 0 available, 11 pending; 4 original mechanical cues.\n"
+    }
+  ],
+  "httpStatus": 200,
+  "browserRuntime": {
+    "ready": true,
+    "error": "",
+    "phase": "locked",
+    "companion": {
+      "meshes": 12,
+      "materials": 5
+    },
+    "audioBuffers": 4,
+    "scriptErrors": 0
+  },
+  "pageErrors": [],
+  "sha256": {
+    "scripts/engine.mjs": "700ace2e94c86a6888cb5ae887f03705434a4dc1ab50b7832d22a31c3a5fd48d",
+    "tests/engine-setup.test.mjs": "42f5d33e8e60e0970ce464b7e16a38ad2b99cfe4e390d4281279afa20cd8fbb0"
+  },
+  "limitations": [
+    "Linux host with actual Git CRLF conversion; not a native Windows OS startup test.",
+    "The first CRLF preparation installed 161 locked npm packages; the second reused them. Fresh engine bootstrap LF configuration was reviewed separately; no native Windows npm installation was performed.",
+    "Browser check covers exported runtime initialization; full L01 playthrough was not repeated for this startup-only repair."
+  ],
+  "setupTests": {
+    "command": "npm run test:setup",
+    "passed": 8,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "durationMs": 430.27286
+  }
+}
