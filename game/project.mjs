@@ -149,8 +149,6 @@ export async function l01Project() {
         hud: [
           label('title', '折径 / FOLDLINE     01 · 侧向通行', 3, 3, { fontSize: 19 }),
           label('objective', '抵达高处的出口', 3, 8),
-          label('stage', 'C01-L01 · M1-R2 · 栈雀已挂载', 3, 12, { fontSize: 13, color: '#c5cec9' }),
-          label('controls', 'WASD 移动   鼠标观察   E 操作/按住转轮   R 重试   Esc 暂停', 3, 95, { fontSize: 13 }),
           label('dialogue', '', 50, 82, { anchorX: .5, width: 82, height: 8, fontSize: 18 }),
           label('audioStatus', '', 3, 17, { fontSize: 12, color: '#c5cec9' }),
           label('dialogueSettings', '', 50, 66, { anchorX: .5, width: 86, height: 6, fontSize: 16 }),

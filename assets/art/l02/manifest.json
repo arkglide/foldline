@@ -1,0 +1,38 @@
+{
+  "recordedAt": "2026-10-18",
+  "scope": "C01-L02; reuse accepted coastal material library without duplicate downloads",
+  "files": [
+    {
+      "file": "../l01/concrete023-color.jpg",
+      "source": "../l01/manifest.json",
+      "author": "Lennart Demes / ambientCG",
+      "license": "CC0-1.0",
+      "sha256": "5484867ff4175b12481655ef84f6f76033f859a748bd055ca403bc5aa5dcd689",
+      "bytes": 74807
+    },
+    {
+      "file": "../l01/metal032-color.jpg",
+      "source": "../l01/manifest.json",
+      "author": "Lennart Demes / ambientCG",
+      "license": "CC0-1.0",
+      "sha256": "c38476e28f619cd2577203e5c340f64facc2ed7d7acf561ab8009badf86fa20f",
+      "bytes": 10884
+    },
+    {
+      "file": "signage.svg",
+      "source": "Original Foldline SVG typography; scripts/l02-signage.mjs",
+      "author": "Foldline contributors",
+      "license": "MIT",
+      "sha256": "7f6e0eb3beba3df28b7f1b64668dc082ad69e3057dec97b282a6210e5369b865",
+      "bytes": 827
+    },
+    {
+      "file": "signage.png",
+      "source": "Original Foldline SVG typography; scripts/l02-signage.mjs",
+      "author": "Foldline contributors",
+      "license": "MIT",
+      "sha256": "09da7e2e57074217d34edda8dd9739ec9ad50f94d31716d999da25f2ecfc8f5c",
+      "bytes": 77123
+    }
+  ]
+}

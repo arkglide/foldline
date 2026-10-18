@@ -19,7 +19,7 @@ export function validateDialogue(data) {
       ['en', 'zh-CN'].some(language => typeof line.subtitles?.[language] !== 'string' || !line.subtitles[language].trim()) ||
       line.voiceText !== line.subtitles.en ||
       typeof line.trigger !== 'string' || !line.trigger || typeof line.file !== 'string' ||
-      !/^assets\/voice\/l01\/[A-Za-z0-9_-]+\.wav$/.test(line.file)) throw Error(`Invalid dialogue line ${line.id}`);
+      !/^assets\/voice\/(?:l01|l02)\/[A-Za-z0-9_-]+\.wav$/.test(line.file)) throw Error(`Invalid dialogue line ${line.id}`);
     if (line.delivery !== undefined && !deliveries.has(line.delivery)) throw Error(`Invalid delivery in ${line.id}`);
     for (const [key, min, max] of [['duration', .1, 30], ['maxAge', .1, 120], ['priority', -1000, 1000]]) {
       if (!Number.isFinite(line[key]) || line[key] < min || line[key] > max) throw Error(`Invalid ${key} in ${line.id}`);

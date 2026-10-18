@@ -3,19 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Foldline C01-L01 native ArkGlide visual sample",
-  "engines": { "node": ">=20.19.0" },
+  "description": "Foldline C01-L01 / L02 native ArkGlide puzzle",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "scripts": {
     "setup:engine": "node scripts/engine.mjs",
     "prepare:game": "node scripts/prepare-game.mjs",
     "dev": "npm run prepare:game && node scripts/serve.mjs",
     "test": "npm run test:unit && npm run test:browser",
-    "test:unit": "npm run setup:engine && node --test --test-concurrency=1 tests/engine-setup.test.mjs tests/dialogue.test.mjs tests/dialogue-preferences.test.mjs tests/voice-assets-r2.test.mjs tests/companion.test.mjs tests/l01-art.test.mjs",
+    "test:unit": "npm run setup:engine && node --test --test-concurrency=1 tests/engine-setup.test.mjs tests/dialogue.test.mjs tests/dialogue-preferences.test.mjs tests/voice-assets-r2.test.mjs tests/companion.test.mjs tests/l01-art.test.mjs tests/l02-project.test.mjs",
     "voices:check": "node scripts/voice-assets.mjs --check",
     "voices:process": "node scripts/voice-assets.mjs --process",
-    "test:browser": "npm run prepare:game && node --test --test-concurrency=1 tests/browser-l01-r3.test.mjs",
+    "test:browser": "npm run prepare:game && node --test --test-concurrency=1 tests/browser-l02.test.mjs",
     "test:setup": "node --test tests/engine-setup.test.mjs",
-    "check": "node --check game/l01.js && node --check game/project.mjs && node --check game/companion.js && node --check game/l01-art.js && node --check game/art/geometry.mjs && node --check game/art/l01-visuals.mjs && node --check scripts/prepare-game.mjs && node --check scripts/benchmark-l01.mjs"
+    "check": "node --check game/l01.js && node --check game/project.mjs && node --check game/companion.js && node --check game/l01-art.js && node --check game/art/geometry.mjs && node --check game/art/l01-visuals.mjs && node --check scripts/prepare-game.mjs && node --check scripts/benchmark-l01.mjs && node --check game/l02.js && node --check game/l02-project.mjs && node --check scripts/benchmark-m2.mjs && node --check scripts/l02-signage.mjs && node --check scripts/voice-assets.mjs",
+    "dev:l01": "node scripts/prepare-game.mjs --level=l01 && node scripts/serve.mjs --level=l01",
+    "test:browser:l01": "node scripts/prepare-game.mjs --level=l01 && node --test --test-concurrency=1 tests/browser-l01-r3.test.mjs",
+    "voices:l02:check": "node scripts/voice-assets.mjs --level=l02 --check",
+    "voices:l02:process": "node scripts/voice-assets.mjs --level=l02 --process"
   },
-  "devDependencies": { "playwright": "1.64.0" }
+  "devDependencies": {
+    "playwright": "1.64.0"
+  }
 }

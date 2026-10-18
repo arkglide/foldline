@@ -1,6 +1,7 @@
 <# Windows PowerShell 5.1, ASCII source; bilingual dialogue JSON is explicitly UTF-8. #>
 [CmdletBinding()]
 param(
+  [ValidateSet('l01','l02')] [string]$Level = 'l01',
   [switch]$ListVoices,
   [string]$ZhanqueVoice,
   [string]$HengwuVoice,
@@ -14,7 +15,7 @@ if ([Environment]::OSVersion.Platform -ne [PlatformID]::Win32NT) {
 Add-Type -AssemblyName System.Speech
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $utf8 = New-Object System.Text.UTF8Encoding($false)
-$dataFile = Join-Path $repoRoot 'game/data/l01-dialogue.json'
+$dataFile = Join-Path $repoRoot ("game/data/{0}-dialogue.json" -f $Level)
 $data = [IO.File]::ReadAllText($dataFile, $utf8) | ConvertFrom-Json
 $speech = New-Object System.Speech.Synthesis.SpeechSynthesizer
 try {
@@ -26,7 +27,10 @@ try {
   if ($english.Count -eq 0) {
     throw 'No enabled offline English voice is visible to System.Speech. Install a Windows desktop English TTS voice, then rerun -ListVoices. Online and OneCore voices may not appear here.'
   }
-  if (-not $OutDirectory) { $OutDirectory = Join-Path $repoRoot '.cache/voice/raw' }
+  if (-not $OutDirectory) {
+    $rawPath = if ($Level -eq 'l01') { '.cache/voice/raw' } else { '.cache/voice/l02/raw' }
+    $OutDirectory = Join-Path $repoRoot $rawPath
+  }
   $OutDirectory = [IO.Path]::GetFullPath($OutDirectory)
   [IO.Directory]::CreateDirectory($OutDirectory) | Out-Null
   $metadataFile = Join-Path $OutDirectory 'production.json'
@@ -34,7 +38,7 @@ try {
   if (Test-Path $metadataFile) {
     $old = [IO.File]::ReadAllText($metadataFile, $utf8) | ConvertFrom-Json
     if ($old.version -ne 2 -or $old.engine -ne 'Windows System.Speech' -or $old.spokenLanguage -ne 'en') {
-      throw 'Old/non-English take metadata found. Back up .cache/voice/raw and assets/voice/l01 outside their active paths, then generate the English set. Stable IDs must not reuse Chinese audio.'
+      throw "Old/non-English take metadata found. Back up $OutDirectory and assets/voice/$Level outside their active paths, then generate the English set. Stable IDs must not reuse Chinese audio."
     }
     $previous = @($old.lines)
     if (@($previous | Group-Object id | Where-Object { $_.Count -gt 1 }).Count -gt 0) { throw 'Duplicate IDs in existing production.json.' }

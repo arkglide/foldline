@@ -7,7 +7,7 @@ import { serveStatic } from '../scripts/serve.mjs';
 import { InputDriver, cameraAngles } from './input-driver.mjs';
 
 const output = fileURLToPath(new URL('../.generated/l01/', import.meta.url));
-const evidence = new URL('../docs/evidence/m1-r3/', import.meta.url);
+const evidence = new URL(process.env.FOLDLINE_EVIDENCE_DIR || '../docs/evidence/m1-r3/', import.meta.url);
 const buildMetadata = JSON.parse(await fs.readFile(new URL('../.generated/l01/foldline-build.json', import.meta.url), 'utf8'));
 const dialogueData = JSON.parse(await fs.readFile(new URL('../game/data/l01-dialogue.json', import.meta.url), 'utf8'));
 let server, browser, baseUrl;

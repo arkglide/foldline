@@ -32,7 +32,9 @@ export async function serveStatic(directory, port = 4173) {
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const output = fileURLToPath(new URL('../.generated/l01/', import.meta.url));
+  const level = process.argv.find(a => a.startsWith('--level='))?.slice(8) || 'l02';
+  if (!['l01', 'l02'].includes(level)) throw Error('Unknown level');
+  const output = fileURLToPath(new URL(`../.generated/${level}/`, import.meta.url));
   const server = await serveStatic(output, Number(process.env.PORT || 4173));
-  console.log(`Foldline C01-L01 HTTP server: 127.0.0.1:${server.address().port} (Ctrl+C to stop)`);
+  console.log(`Foldline C01-${level.toUpperCase()} HTTP server: 127.0.0.1:${server.address().port} (Ctrl+C to stop)`);
 }

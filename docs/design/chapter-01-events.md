@@ -1,5 +1,7 @@
 # 第一章事件、广播与恢复合同
 
+M2补充：L02使用 `bay.enter / glass.observed / fold.observed / crate.borrowed / dock.latched / level.complete` 事件。实际匣子B2→A2穿越才发借物事件；松手/低速/稳定0.3s才锁存。EV05在当前范围仅落实母线、G2真实运动和 `isolationCommanded`，不设置不存在的Wclosed。R只恢复本关原生初始快照；CP04持久章节继续和W状态留待章节整合。对白为7句英语/双语字幕，数据见 `game/data/l02-dialogue.json`，Windows素材制作见语音文档。
+
 M1-R2保留L01事件和稳定ID，扩展为15句英语/双语字幕，新增可选真实目视事件 `upper.lookback`；配音0/15待生成。下文M0全章合同不等于实现清单，当前精确触发与证据以[R2记录](../m1-r2-review.md)及[对白数据](../../game/data/l01-dialogue.json)为准。
 
 M0 的正式章节事件合同，不是已实现的状态机。M1-R1仅实现L01的机械/固定折口/完成/入口重试，以及栈雀、衡务的11句事件对白与字幕；实际WinTTS配音0/11待生成。全章广播、章节检查点及其他单元未制作，当前事件精确合同见 [R1记录](../m1-r1-review.md) 与 [对白数据](../../game/data/l01-dialogue.json)。坐标/物件见[空间设计](chapter-01-awakening.md)。状态必须对应实际世界；按按钮、发指令、机构到位和玩家理解是四件不同的事。

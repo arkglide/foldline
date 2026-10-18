@@ -1,4 +1,6 @@
-# L01 英语离线配音与双语字幕
+# 英语离线配音与双语字幕：L01 / L02
+
+当前M2新增L02独立7句批次，制作命令见本文末节；以下L01原合同继续保留，不覆盖用户已试听的本地15句。
 
 M1-R2 的主要配音语言为**英语**；字幕可选简体中文、英语。当前 Linux 云环境没有 Windows System.Speech，也没有 PowerShell，**实际生成并接入的英语 WinTTS 配音为 0 / 15**。游戏保留缺音字幕回退；暂停菜单显示实际资源数量。没有静音占位、在线服务、浏览器即时朗读或 Linux 语音冒充 Windows 配音。4个现有机械音效单独计数。
 
@@ -131,3 +133,36 @@ assets/voice/l01/C01-L01-ZQ-009.wav
 ## R3 状态说明
 
 用户已在R3请求中明确确认本地R2英文配音、字幕及角色基础体验可接受。本轮只升级L01视觉，不重录、改写或替换这15句。云端仓库当前仍没有收到对应WAV（实际库存0/15），该技术库存不否定用户的本地试听结果；本地已生成的合法manifest/WAV仍按原流程自动接入。正式环境与本地人声的音画协调需用户在R3复玩时确认。
+
+
+## M2：L02独立配音批次
+
+L01本地15句已获用户试听认可；不要重录或覆盖它们。新关的7句源为[l02-dialogue.json](../game/data/l02-dialogue.json)，沿用Zhanque/Hengwu的英语声音、语速、音量、离线滤波、串行队列、字幕偏好和表演模式。云端目前**0/7英语WAV**，缺音时是字幕回退，尚未完成本地试听；不是在线TTS或用机械音效代替对白。
+
+Windows PowerShell在仓库根目录运行，失败即停止：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tts.ps1 -Level l02
+if ($LASTEXITCODE -ne 0) { throw 'L02 TTS generation failed' }
+node scripts/voice-assets.mjs --level=l02 --process
+if ($LASTEXITCODE -ne 0) { throw 'L02 voice processing failed' }
+node scripts/voice-assets.mjs --level=l02 --check --strict
+if ($LASTEXITCODE -ne 0) { throw 'L02 voice assets are incomplete' }
+npm run dev
+```
+
+使用此前L01已试听的同一组`-ZhanqueVoice` / `-HengwuVoice`显式参数可延续声线。只有Zira一个英语声音时仍用它作两角，通过原参数区分，不能借用中文Huihui。默认`-Level l01`保留旧命令兼容；**L02必须显式指定l02**。原始录音为`.cache/voice/l02/raw`，成品为`assets/voice/l02`，与L01的`.cache/voice/raw`和`assets/voice/l01`隔离。不会读取或备份/清空L01的旧中文metadata。本关若确有旧录音，先将对应目录移至活动路径之外保留，再重新制作；不能绕过英语来源/hash检查。
+
+| ID | 角色 | 实际触发 | English voice / subtitle | 中文字幕 |
+| --- | --- | --- | --- | --- |
+| `C01-L02-ZQ-001` | 栈雀 | `bay.enter` | A parts counter. I wonder who was last in line. | 备件台。我倒想知道，上回排队的是谁。 |
+| `C01-L02-ZQ-002` | 栈雀 | `glass.observed` | Still on the shelf. Very securely on the shelf. | 还在架子上。放得可真够稳妥的。 |
+| `C01-L02-HW-001` | 衡务 | `fold.observed` | Service aperture. Personnel clearance is not provided. | 检修孔。未配置人员通行净空。 |
+| `C01-L02-ZQ-003` | 栈雀 | `crate.borrowed` | Oh! We stayed here. That came all the way round. | 咦！我们还在这儿，它倒绕过来了。 |
+| `C01-L02-HW-002` | 衡务 | `dock.latched` | Service power connected. Maintenance isolation requested. | 检修供电已接通。维护线隔离请求已发送。 |
+| `C01-L02-ZQ-004` | 栈雀 | `dock.latched` | It keeps the connection. That's a useful little catch. | 接通以后还能保持。这个小棘爪挺管用。 |
+| `C01-L02-ZQ-005` | 栈雀 | `level.complete` | I'll leave carrying the large things to you. | 大件搬运，就拜托你啦。 |
+
+`glass.observed`只在玩家实际观察玻璃/交互后出现；`fold.observed`需实际穿门射线路径，非走入触发区就讲解；`crate.borrowed`只由原生匣子B2→A2穿越发出。低优先观察允许在借物/锁存后取消，避免过时提示。栈雀锁存点评有`after`依赖衡务实际先开始，若玩家直接出门可取消。所有事件每次时间线只消费一次，E重复交互不重播。R恢复初始检查点后是新时间线；暂停/重载/停止沿用原有播放清理，不以语音结束触发机关。
+
+实际已接入的声音仍是4个已有机械WAV（取放/接驳/棘爪/电机反馈）；新角色声音只会在上述本地生成、来源校验并重新`prepare:game`后打包。Linux未安装System.Speech，不声称生成、听过或验证了真实L02配音。

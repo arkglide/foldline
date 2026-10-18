@@ -1,0 +1,181 @@
+{
+  "version": 2,
+  "cooldown": 0.65,
+  "characters": {
+    "zhanque": {
+      "name": "栈雀",
+      "bus": "CompanionVoice",
+      "volume": 0.86,
+      "rate": 1,
+      "voice": {
+        "culture": "en-US",
+        "windowsName": null,
+        "rate": 1,
+        "volume": 95
+      },
+      "processing": {
+        "highPassHz": 140,
+        "lowPassHz": 5200,
+        "peak": 0.76
+      },
+      "names": {
+        "en": "Zhanque",
+        "zh-CN": "栈雀"
+      }
+    },
+    "hengwu": {
+      "name": "衡务",
+      "bus": "BroadcastVoice",
+      "volume": 0.72,
+      "rate": 1,
+      "voice": {
+        "culture": "en-US",
+        "windowsName": null,
+        "rate": -1,
+        "volume": 95
+      },
+      "processing": {
+        "highPassHz": 360,
+        "lowPassHz": 2700,
+        "peak": 0.67
+      },
+      "names": {
+        "en": "Hengwu",
+        "zh-CN": "衡务"
+      }
+    }
+  },
+  "lines": [
+    {
+      "id": "C01-L02-ZQ-001",
+      "character": "zhanque",
+      "audioId": "voice-c01-l02-zq-001",
+      "file": "assets/voice/l02/C01-L02-ZQ-001.wav",
+      "trigger": "bay.enter",
+      "priority": 10,
+      "duration": 4.2,
+      "maxAge": 14,
+      "voiceText": "A parts counter. I wonder who was last in line.",
+      "subtitles": {
+        "en": "A parts counter. I wonder who was last in line.",
+        "zh-CN": "备件台。我倒想知道，上回排队的是谁。"
+      },
+      "delivery": "curious",
+      "cancelOn": [
+        "crate.borrowed",
+        "dock.latched",
+        "level.complete"
+      ]
+    },
+    {
+      "id": "C01-L02-ZQ-002",
+      "character": "zhanque",
+      "audioId": "voice-c01-l02-zq-002",
+      "file": "assets/voice/l02/C01-L02-ZQ-002.wav",
+      "trigger": "glass.observed",
+      "priority": 15,
+      "duration": 3.7,
+      "maxAge": 14,
+      "voiceText": "Still on the shelf. Very securely on the shelf.",
+      "subtitles": {
+        "en": "Still on the shelf. Very securely on the shelf.",
+        "zh-CN": "还在架子上。放得可真够稳妥的。"
+      },
+      "delivery": "dry",
+      "cancelOn": [
+        "crate.borrowed",
+        "dock.latched",
+        "level.complete"
+      ]
+    },
+    {
+      "id": "C01-L02-HW-001",
+      "character": "hengwu",
+      "audioId": "voice-c01-l02-hw-001",
+      "file": "assets/voice/l02/C01-L02-HW-001.wav",
+      "trigger": "fold.observed",
+      "priority": 20,
+      "duration": 4.0,
+      "maxAge": 14,
+      "voiceText": "Service aperture. Personnel clearance is not provided.",
+      "subtitles": {
+        "en": "Service aperture. Personnel clearance is not provided.",
+        "zh-CN": "检修孔。未配置人员通行净空。"
+      },
+      "delivery": "matterOfFact",
+      "cancelOn": [
+        "crate.borrowed",
+        "dock.latched",
+        "level.complete"
+      ]
+    },
+    {
+      "id": "C01-L02-ZQ-003",
+      "character": "zhanque",
+      "audioId": "voice-c01-l02-zq-003",
+      "file": "assets/voice/l02/C01-L02-ZQ-003.wav",
+      "trigger": "crate.borrowed",
+      "priority": 35,
+      "duration": 4.0,
+      "maxAge": 14,
+      "voiceText": "Oh! We stayed here. That came all the way round.",
+      "subtitles": {
+        "en": "Oh! We stayed here. That came all the way round.",
+        "zh-CN": "咦！我们还在这儿，它倒绕过来了。"
+      },
+      "delivery": "surprised"
+    },
+    {
+      "id": "C01-L02-HW-002",
+      "character": "hengwu",
+      "audioId": "voice-c01-l02-hw-002",
+      "file": "assets/voice/l02/C01-L02-HW-002.wav",
+      "trigger": "dock.latched",
+      "priority": 45,
+      "duration": 4.8,
+      "maxAge": 14,
+      "voiceText": "Service power connected. Maintenance isolation requested.",
+      "subtitles": {
+        "en": "Service power connected. Maintenance isolation requested.",
+        "zh-CN": "检修供电已接通。维护线隔离请求已发送。"
+      },
+      "delivery": "matterOfFact"
+    },
+    {
+      "id": "C01-L02-ZQ-004",
+      "character": "zhanque",
+      "audioId": "voice-c01-l02-zq-004",
+      "file": "assets/voice/l02/C01-L02-ZQ-004.wav",
+      "trigger": "dock.latched",
+      "priority": 30,
+      "duration": 3.8,
+      "maxAge": 14,
+      "voiceText": "It keeps the connection. That's a useful little catch.",
+      "subtitles": {
+        "en": "It keeps the connection. That's a useful little catch.",
+        "zh-CN": "接通以后还能保持。这个小棘爪挺管用。"
+      },
+      "delivery": "curious",
+      "after": "C01-L02-HW-002",
+      "cancelOn": [
+        "level.complete"
+      ]
+    },
+    {
+      "id": "C01-L02-ZQ-005",
+      "character": "zhanque",
+      "audioId": "voice-c01-l02-zq-005",
+      "file": "assets/voice/l02/C01-L02-ZQ-005.wav",
+      "trigger": "level.complete",
+      "priority": 50,
+      "duration": 3.7,
+      "maxAge": 14,
+      "voiceText": "I'll leave carrying the large things to you.",
+      "subtitles": {
+        "en": "I'll leave carrying the large things to you.",
+        "zh-CN": "大件搬运，就拜托你啦。"
+      },
+      "delivery": "warm"
+    }
+  ]
+}

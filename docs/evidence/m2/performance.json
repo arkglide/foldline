@@ -1,0 +1,135 @@
+{
+  "method": "Sequential 1280x800 DPR1 Chromium ANGLE SwiftShader; 1.5s warm-up + 6s frame-count window; same engine and filters. Different spaces, not a same-scene speedup claim. HTTP body bytes from served response lengths; opaque iframe ResourceTiming is not used.",
+  "buildSizes": {
+    "l01": {
+      "files": 70,
+      "bytes": 14299058
+    },
+    "l02": {
+      "files": 69,
+      "bytes": 13791305
+    }
+  },
+  "results": [
+    {
+      "level": "l01",
+      "condition": "entry",
+      "fps": 3.825427449935375,
+      "allocatedMeshes": 110,
+      "visibleMeshes": 106,
+      "allocatedTriangles": 9408,
+      "visibleTriangles": 9272,
+      "allocatedMaterials": 115,
+      "visibleMaterials": 24,
+      "textures": 7,
+      "lights": 3,
+      "physics": {
+        "physicsBodies": 74,
+        "physicsContacts": 1,
+        "physicsSubscriptions": 0,
+        "physicsBackend": "jolt-wasm",
+        "physicsCharacters": 1,
+        "physicsConstraints": 0,
+        "physicsShapeCache": 0,
+        "physicsCacheBytes": 0,
+        "physicsQueriesActive": 0,
+        "physicsDebugMeshes": 0
+      },
+      "visuals": {
+        "visualResources": 30
+      },
+      "portals": {
+        "portals": 2,
+        "portalSurfaces": 2,
+        "portalTravelers": 1,
+        "portalClones": 0,
+        "portalViews": 0,
+        "portalRenderedViews": 0,
+        "portalTraversals": 0
+      },
+      "httpBodyBytes": 14251961,
+      "httpRequests": 63,
+      "errors": []
+    },
+    {
+      "level": "l02",
+      "condition": "entry",
+      "fps": 4.830274159701255,
+      "allocatedMeshes": 66,
+      "visibleMeshes": 33,
+      "allocatedTriangles": 2900,
+      "visibleTriangles": 2504,
+      "allocatedMaterials": 65,
+      "visibleMaterials": 23,
+      "textures": 7,
+      "lights": 4,
+      "physics": {
+        "physicsBodies": 38,
+        "physicsContacts": 2,
+        "physicsSubscriptions": 0,
+        "physicsBackend": "jolt-wasm",
+        "physicsCharacters": 1,
+        "physicsConstraints": 0,
+        "physicsShapeCache": 0,
+        "physicsCacheBytes": 0,
+        "physicsQueriesActive": 0,
+        "physicsDebugMeshes": 0
+      },
+      "visuals": {
+        "visualResources": 25
+      },
+      "portals": {
+        "portals": 2,
+        "portalSurfaces": 2,
+        "portalTravelers": 2,
+        "portalClones": 0,
+        "portalViews": 1,
+        "portalRenderedViews": 1,
+        "portalTraversals": 0
+      },
+      "httpBodyBytes": 13745290,
+      "httpRequests": 62,
+      "errors": []
+    },
+    {
+      "level": "l02",
+      "condition": "near-aperture",
+      "fps": 5.163654534854668,
+      "allocatedMeshes": 66,
+      "visibleMeshes": 33,
+      "allocatedTriangles": 2900,
+      "visibleTriangles": 2504,
+      "allocatedMaterials": 65,
+      "visibleMaterials": 23,
+      "textures": 7,
+      "lights": 4,
+      "physics": {
+        "physicsBodies": 38,
+        "physicsContacts": 2,
+        "physicsSubscriptions": 0,
+        "physicsBackend": "jolt-wasm",
+        "physicsCharacters": 1,
+        "physicsConstraints": 0,
+        "physicsShapeCache": 0,
+        "physicsCacheBytes": 0,
+        "physicsQueriesActive": 0,
+        "physicsDebugMeshes": 0
+      },
+      "visuals": {
+        "visualResources": 25
+      },
+      "portals": {
+        "portals": 2,
+        "portalSurfaces": 2,
+        "portalTravelers": 2,
+        "portalClones": 0,
+        "portalViews": 1,
+        "portalRenderedViews": 1,
+        "portalTraversals": 0
+      },
+      "httpBodyBytes": 13745290,
+      "httpRequests": 62,
+      "errors": []
+    }
+  ]
+}
