@@ -17,6 +17,8 @@ npm run dev
 
 Windows 若使用旧版脚本遇到 `spawn npm ENOENT`，请更新 `scripts/engine.mjs` 后重试；已有 `.cache` 可以保留。启动脚本现通过 Node 调用 npm CLI，避免直接启动 `npm.cmd`。
 
+若第二次启动报 `ArkGlide has tracked changes`，也请先更新该脚本、保留缓存再运行。Windows CRLF 与上游运行时同步可能造成 Git 状态误报；新检查按 Git 归一化后的真实内容差异判断。真实修改仍会被列出并保留，必要时先将 `.cache/arkglide` 重命名备份，再准备新缓存。不要直接清空改动。详见[缓存启动修复](docs/startup-cache-fix.md)。
+
 ```sh
 npm run check
 npm run test:setup
